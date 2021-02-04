@@ -1028,6 +1028,34 @@ private static final long serialVersionUID = 0L;
             telemetryDataCase_ = 70;
             break;
           }
+          case 570: {
+            POGOProtos.Rpc.ImageGalleryTelemetry.Builder subBuilder = null;
+            if (telemetryDataCase_ == 71) {
+              subBuilder = ((POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_).toBuilder();
+            }
+            telemetryData_ =
+                input.readMessage(POGOProtos.Rpc.ImageGalleryTelemetry.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_);
+              telemetryData_ = subBuilder.buildPartial();
+            }
+            telemetryDataCase_ = 71;
+            break;
+          }
+          case 578: {
+            POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.Builder subBuilder = null;
+            if (telemetryDataCase_ == 72) {
+              subBuilder = ((POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_).toBuilder();
+            }
+            telemetryData_ =
+                input.readMessage(POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_);
+              telemetryData_ = subBuilder.buildPartial();
+            }
+            telemetryDataCase_ = 72;
+            break;
+          }
           case 8010: {
             POGOProtos.Rpc.ServerData.Builder subBuilder = null;
             if (serverData_ != null) {
@@ -1161,6 +1189,8 @@ private static final long serialVersionUID = 0L;
     AR_MAPPING_SESSION_TELEMETRY(68),
     POKEMON_HOME_TELEMETRY(69),
     POKEMON_SEARCH_TELEMETRY(70),
+    IMAGE_GALLERY_TELEMETRY(71),
+    PLAYER_SHOWN_LEVEL_UP_SHARE_SCREEN_TELEMETRY(72),
     TELEMETRYDATA_NOT_SET(0);
     private final int value;
     private TelemetryDataCase(int value) {
@@ -1248,6 +1278,8 @@ private static final long serialVersionUID = 0L;
         case 68: return AR_MAPPING_SESSION_TELEMETRY;
         case 69: return POKEMON_HOME_TELEMETRY;
         case 70: return POKEMON_SEARCH_TELEMETRY;
+        case 71: return IMAGE_GALLERY_TELEMETRY;
+        case 72: return PLAYER_SHOWN_LEVEL_UP_SHARE_SCREEN_TELEMETRY;
         case 0: return TELEMETRYDATA_NOT_SET;
         default: return null;
       }
@@ -3433,6 +3465,68 @@ private static final long serialVersionUID = 0L;
     return POGOProtos.Rpc.PokemonSearchTelemetry.getDefaultInstance();
   }
 
+  public static final int IMAGE_GALLERY_TELEMETRY_FIELD_NUMBER = 71;
+  /**
+   * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+   * @return Whether the imageGalleryTelemetry field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageGalleryTelemetry() {
+    return telemetryDataCase_ == 71;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+   * @return The imageGalleryTelemetry.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.ImageGalleryTelemetry getImageGalleryTelemetry() {
+    if (telemetryDataCase_ == 71) {
+       return (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_;
+    }
+    return POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance();
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.ImageGalleryTelemetryOrBuilder getImageGalleryTelemetryOrBuilder() {
+    if (telemetryDataCase_ == 71) {
+       return (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_;
+    }
+    return POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance();
+  }
+
+  public static final int PLAYER_SHOWN_LEVEL_UP_SHARE_SCREEN_TELEMETRY_FIELD_NUMBER = 72;
+  /**
+   * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+   * @return Whether the playerShownLevelUpShareScreenTelemetry field is set.
+   */
+  @java.lang.Override
+  public boolean hasPlayerShownLevelUpShareScreenTelemetry() {
+    return telemetryDataCase_ == 72;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+   * @return The playerShownLevelUpShareScreenTelemetry.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry getPlayerShownLevelUpShareScreenTelemetry() {
+    if (telemetryDataCase_ == 72) {
+       return (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_;
+    }
+    return POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance();
+  }
+  /**
+   * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetryOrBuilder getPlayerShownLevelUpShareScreenTelemetryOrBuilder() {
+    if (telemetryDataCase_ == 72) {
+       return (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_;
+    }
+    return POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance();
+  }
+
   public static final int SERVER_DATA_FIELD_NUMBER = 1001;
   private POGOProtos.Rpc.ServerData serverData_;
   /**
@@ -3708,6 +3802,12 @@ private static final long serialVersionUID = 0L;
     }
     if (telemetryDataCase_ == 70) {
       output.writeMessage(70, (POGOProtos.Rpc.PokemonSearchTelemetry) telemetryData_);
+    }
+    if (telemetryDataCase_ == 71) {
+      output.writeMessage(71, (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_);
+    }
+    if (telemetryDataCase_ == 72) {
+      output.writeMessage(72, (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_);
     }
     if (serverData_ != null) {
       output.writeMessage(1001, getServerData());
@@ -4003,6 +4103,14 @@ private static final long serialVersionUID = 0L;
     if (telemetryDataCase_ == 70) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(70, (POGOProtos.Rpc.PokemonSearchTelemetry) telemetryData_);
+    }
+    if (telemetryDataCase_ == 71) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(71, (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_);
+    }
+    if (telemetryDataCase_ == 72) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(72, (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_);
     }
     if (serverData_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -4319,6 +4427,14 @@ private static final long serialVersionUID = 0L;
         if (!getPokemonSearchTelemetry()
             .equals(other.getPokemonSearchTelemetry())) return false;
         break;
+      case 71:
+        if (!getImageGalleryTelemetry()
+            .equals(other.getImageGalleryTelemetry())) return false;
+        break;
+      case 72:
+        if (!getPlayerShownLevelUpShareScreenTelemetry()
+            .equals(other.getPlayerShownLevelUpShareScreenTelemetry())) return false;
+        break;
       case 0:
       default:
     }
@@ -4621,6 +4737,14 @@ private static final long serialVersionUID = 0L;
       case 70:
         hash = (37 * hash) + POKEMON_SEARCH_TELEMETRY_FIELD_NUMBER;
         hash = (53 * hash) + getPokemonSearchTelemetry().hashCode();
+        break;
+      case 71:
+        hash = (37 * hash) + IMAGE_GALLERY_TELEMETRY_FIELD_NUMBER;
+        hash = (53 * hash) + getImageGalleryTelemetry().hashCode();
+        break;
+      case 72:
+        hash = (37 * hash) + PLAYER_SHOWN_LEVEL_UP_SHARE_SCREEN_TELEMETRY_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerShownLevelUpShareScreenTelemetry().hashCode();
         break;
       case 0:
       default:
@@ -5288,6 +5412,20 @@ private static final long serialVersionUID = 0L;
           result.telemetryData_ = pokemonSearchTelemetryBuilder_.build();
         }
       }
+      if (telemetryDataCase_ == 71) {
+        if (imageGalleryTelemetryBuilder_ == null) {
+          result.telemetryData_ = telemetryData_;
+        } else {
+          result.telemetryData_ = imageGalleryTelemetryBuilder_.build();
+        }
+      }
+      if (telemetryDataCase_ == 72) {
+        if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+          result.telemetryData_ = telemetryData_;
+        } else {
+          result.telemetryData_ = playerShownLevelUpShareScreenTelemetryBuilder_.build();
+        }
+      }
       if (serverDataBuilder_ == null) {
         result.serverData_ = serverData_;
       } else {
@@ -5632,6 +5770,14 @@ private static final long serialVersionUID = 0L;
         }
         case POKEMON_SEARCH_TELEMETRY: {
           mergePokemonSearchTelemetry(other.getPokemonSearchTelemetry());
+          break;
+        }
+        case IMAGE_GALLERY_TELEMETRY: {
+          mergeImageGalleryTelemetry(other.getImageGalleryTelemetry());
+          break;
+        }
+        case PLAYER_SHOWN_LEVEL_UP_SHARE_SCREEN_TELEMETRY: {
+          mergePlayerShownLevelUpShareScreenTelemetry(other.getPlayerShownLevelUpShareScreenTelemetry());
           break;
         }
         case TELEMETRYDATA_NOT_SET: {
@@ -15550,6 +15696,288 @@ private static final long serialVersionUID = 0L;
       telemetryDataCase_ = 70;
       onChanged();;
       return pokemonSearchTelemetryBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.ImageGalleryTelemetry, POGOProtos.Rpc.ImageGalleryTelemetry.Builder, POGOProtos.Rpc.ImageGalleryTelemetryOrBuilder> imageGalleryTelemetryBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     * @return Whether the imageGalleryTelemetry field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageGalleryTelemetry() {
+      return telemetryDataCase_ == 71;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     * @return The imageGalleryTelemetry.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ImageGalleryTelemetry getImageGalleryTelemetry() {
+      if (imageGalleryTelemetryBuilder_ == null) {
+        if (telemetryDataCase_ == 71) {
+          return (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_;
+        }
+        return POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance();
+      } else {
+        if (telemetryDataCase_ == 71) {
+          return imageGalleryTelemetryBuilder_.getMessage();
+        }
+        return POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    public Builder setImageGalleryTelemetry(POGOProtos.Rpc.ImageGalleryTelemetry value) {
+      if (imageGalleryTelemetryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        telemetryData_ = value;
+        onChanged();
+      } else {
+        imageGalleryTelemetryBuilder_.setMessage(value);
+      }
+      telemetryDataCase_ = 71;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    public Builder setImageGalleryTelemetry(
+        POGOProtos.Rpc.ImageGalleryTelemetry.Builder builderForValue) {
+      if (imageGalleryTelemetryBuilder_ == null) {
+        telemetryData_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageGalleryTelemetryBuilder_.setMessage(builderForValue.build());
+      }
+      telemetryDataCase_ = 71;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    public Builder mergeImageGalleryTelemetry(POGOProtos.Rpc.ImageGalleryTelemetry value) {
+      if (imageGalleryTelemetryBuilder_ == null) {
+        if (telemetryDataCase_ == 71 &&
+            telemetryData_ != POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance()) {
+          telemetryData_ = POGOProtos.Rpc.ImageGalleryTelemetry.newBuilder((POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          telemetryData_ = value;
+        }
+        onChanged();
+      } else {
+        if (telemetryDataCase_ == 71) {
+          imageGalleryTelemetryBuilder_.mergeFrom(value);
+        }
+        imageGalleryTelemetryBuilder_.setMessage(value);
+      }
+      telemetryDataCase_ = 71;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    public Builder clearImageGalleryTelemetry() {
+      if (imageGalleryTelemetryBuilder_ == null) {
+        if (telemetryDataCase_ == 71) {
+          telemetryDataCase_ = 0;
+          telemetryData_ = null;
+          onChanged();
+        }
+      } else {
+        if (telemetryDataCase_ == 71) {
+          telemetryDataCase_ = 0;
+          telemetryData_ = null;
+        }
+        imageGalleryTelemetryBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    public POGOProtos.Rpc.ImageGalleryTelemetry.Builder getImageGalleryTelemetryBuilder() {
+      return getImageGalleryTelemetryFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ImageGalleryTelemetryOrBuilder getImageGalleryTelemetryOrBuilder() {
+      if ((telemetryDataCase_ == 71) && (imageGalleryTelemetryBuilder_ != null)) {
+        return imageGalleryTelemetryBuilder_.getMessageOrBuilder();
+      } else {
+        if (telemetryDataCase_ == 71) {
+          return (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_;
+        }
+        return POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.ImageGalleryTelemetry, POGOProtos.Rpc.ImageGalleryTelemetry.Builder, POGOProtos.Rpc.ImageGalleryTelemetryOrBuilder> 
+        getImageGalleryTelemetryFieldBuilder() {
+      if (imageGalleryTelemetryBuilder_ == null) {
+        if (!(telemetryDataCase_ == 71)) {
+          telemetryData_ = POGOProtos.Rpc.ImageGalleryTelemetry.getDefaultInstance();
+        }
+        imageGalleryTelemetryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.ImageGalleryTelemetry, POGOProtos.Rpc.ImageGalleryTelemetry.Builder, POGOProtos.Rpc.ImageGalleryTelemetryOrBuilder>(
+                (POGOProtos.Rpc.ImageGalleryTelemetry) telemetryData_,
+                getParentForChildren(),
+                isClean());
+        telemetryData_ = null;
+      }
+      telemetryDataCase_ = 71;
+      onChanged();;
+      return imageGalleryTelemetryBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry, POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.Builder, POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetryOrBuilder> playerShownLevelUpShareScreenTelemetryBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     * @return Whether the playerShownLevelUpShareScreenTelemetry field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlayerShownLevelUpShareScreenTelemetry() {
+      return telemetryDataCase_ == 72;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     * @return The playerShownLevelUpShareScreenTelemetry.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry getPlayerShownLevelUpShareScreenTelemetry() {
+      if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+        if (telemetryDataCase_ == 72) {
+          return (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_;
+        }
+        return POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance();
+      } else {
+        if (telemetryDataCase_ == 72) {
+          return playerShownLevelUpShareScreenTelemetryBuilder_.getMessage();
+        }
+        return POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    public Builder setPlayerShownLevelUpShareScreenTelemetry(POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry value) {
+      if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        telemetryData_ = value;
+        onChanged();
+      } else {
+        playerShownLevelUpShareScreenTelemetryBuilder_.setMessage(value);
+      }
+      telemetryDataCase_ = 72;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    public Builder setPlayerShownLevelUpShareScreenTelemetry(
+        POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.Builder builderForValue) {
+      if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+        telemetryData_ = builderForValue.build();
+        onChanged();
+      } else {
+        playerShownLevelUpShareScreenTelemetryBuilder_.setMessage(builderForValue.build());
+      }
+      telemetryDataCase_ = 72;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    public Builder mergePlayerShownLevelUpShareScreenTelemetry(POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry value) {
+      if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+        if (telemetryDataCase_ == 72 &&
+            telemetryData_ != POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance()) {
+          telemetryData_ = POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.newBuilder((POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          telemetryData_ = value;
+        }
+        onChanged();
+      } else {
+        if (telemetryDataCase_ == 72) {
+          playerShownLevelUpShareScreenTelemetryBuilder_.mergeFrom(value);
+        }
+        playerShownLevelUpShareScreenTelemetryBuilder_.setMessage(value);
+      }
+      telemetryDataCase_ = 72;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    public Builder clearPlayerShownLevelUpShareScreenTelemetry() {
+      if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+        if (telemetryDataCase_ == 72) {
+          telemetryDataCase_ = 0;
+          telemetryData_ = null;
+          onChanged();
+        }
+      } else {
+        if (telemetryDataCase_ == 72) {
+          telemetryDataCase_ = 0;
+          telemetryData_ = null;
+        }
+        playerShownLevelUpShareScreenTelemetryBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    public POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.Builder getPlayerShownLevelUpShareScreenTelemetryBuilder() {
+      return getPlayerShownLevelUpShareScreenTelemetryFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetryOrBuilder getPlayerShownLevelUpShareScreenTelemetryOrBuilder() {
+      if ((telemetryDataCase_ == 72) && (playerShownLevelUpShareScreenTelemetryBuilder_ != null)) {
+        return playerShownLevelUpShareScreenTelemetryBuilder_.getMessageOrBuilder();
+      } else {
+        if (telemetryDataCase_ == 72) {
+          return (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_;
+        }
+        return POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry, POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.Builder, POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetryOrBuilder> 
+        getPlayerShownLevelUpShareScreenTelemetryFieldBuilder() {
+      if (playerShownLevelUpShareScreenTelemetryBuilder_ == null) {
+        if (!(telemetryDataCase_ == 72)) {
+          telemetryData_ = POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.getDefaultInstance();
+        }
+        playerShownLevelUpShareScreenTelemetryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry, POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry.Builder, POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetryOrBuilder>(
+                (POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry) telemetryData_,
+                getParentForChildren(),
+                isClean());
+        telemetryData_ = null;
+      }
+      telemetryDataCase_ = 72;
+      onChanged();;
+      return playerShownLevelUpShareScreenTelemetryBuilder_;
     }
 
     private POGOProtos.Rpc.ServerData serverData_;

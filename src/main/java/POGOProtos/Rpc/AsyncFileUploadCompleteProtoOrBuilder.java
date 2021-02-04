@@ -20,12 +20,12 @@ public interface AsyncFileUploadCompleteProtoOrBuilder extends
       getSubmissionIdBytes();
 
   /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
    * @return The enum numeric value on the wire for uploadStatus.
    */
   int getUploadStatusValue();
   /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
    * @return The uploadStatus.
    */
   POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status getUploadStatus();

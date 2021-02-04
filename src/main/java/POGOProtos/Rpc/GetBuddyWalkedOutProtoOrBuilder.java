@@ -58,4 +58,10 @@ public interface GetBuddyWalkedOutProtoOrBuilder extends
    * @return The megaPokemonId.
    */
   POGOProtos.Rpc.HoloPokemonId getMegaPokemonId();
+
+  /**
+   * <code>int32 xl_candy = 8;</code>
+   * @return The xlCandy.
+   */
+  int getXlCandy();
 }

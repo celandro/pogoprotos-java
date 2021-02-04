@@ -17,9 +17,9 @@ public enum OnboardingType
    */
   ONBOARDING_TYPE_PROFILE(1),
   /**
-   * <code>ONBOARDING_TYPE_FRIEND_LIST_V2 = 2;</code>
+   * <code>ONBOARDING_TYPE_CROSS_GAME_FRIEND_LIST = 2;</code>
    */
-  ONBOARDING_TYPE_FRIEND_LIST_V2(2),
+  ONBOARDING_TYPE_CROSS_GAME_FRIEND_LIST(2),
   /**
    * <code>ONBOARDING_TYPE_ONLINE_STATUS_OVERVIEW = 3;</code>
    */
@@ -40,9 +40,9 @@ public enum OnboardingType
    */
   public static final int ONBOARDING_TYPE_PROFILE_VALUE = 1;
   /**
-   * <code>ONBOARDING_TYPE_FRIEND_LIST_V2 = 2;</code>
+   * <code>ONBOARDING_TYPE_CROSS_GAME_FRIEND_LIST = 2;</code>
    */
-  public static final int ONBOARDING_TYPE_FRIEND_LIST_V2_VALUE = 2;
+  public static final int ONBOARDING_TYPE_CROSS_GAME_FRIEND_LIST_VALUE = 2;
   /**
    * <code>ONBOARDING_TYPE_ONLINE_STATUS_OVERVIEW = 3;</code>
    */
@@ -79,7 +79,7 @@ public enum OnboardingType
     switch (value) {
       case 0: return ONBOARDING_TYPE_UNSET;
       case 1: return ONBOARDING_TYPE_PROFILE;
-      case 2: return ONBOARDING_TYPE_FRIEND_LIST_V2;
+      case 2: return ONBOARDING_TYPE_CROSS_GAME_FRIEND_LIST;
       case 3: return ONBOARDING_TYPE_ONLINE_STATUS_OVERVIEW;
       case 4: return ONBOARDING_TYPE_ONLINE_STATUS_TOGGLE;
       default: return null;

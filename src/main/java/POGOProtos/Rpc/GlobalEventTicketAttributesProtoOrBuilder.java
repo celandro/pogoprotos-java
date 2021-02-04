@@ -61,6 +61,122 @@ public interface GlobalEventTicketAttributesProtoOrBuilder extends
       getItemBagDescriptionKeyBytes();
 
   /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @return A list containing the eventVariantBadges.
+   */
+  java.util.List<POGOProtos.Rpc.HoloBadgeType> getEventVariantBadgesList();
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @return The count of eventVariantBadges.
+   */
+  int getEventVariantBadgesCount();
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantBadges at the given index.
+   */
+  POGOProtos.Rpc.HoloBadgeType getEventVariantBadges(int index);
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @return A list containing the enum numeric values on the wire for eventVariantBadges.
+   */
+  java.util.List<java.lang.Integer>
+  getEventVariantBadgesValueList();
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of eventVariantBadges at the given index.
+   */
+  int getEventVariantBadgesValue(int index);
+
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @return A list containing the eventVariantTitleStringKeys.
+   */
+  java.util.List<java.lang.String>
+      getEventVariantTitleStringKeysList();
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @return The count of eventVariantTitleStringKeys.
+   */
+  int getEventVariantTitleStringKeysCount();
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantTitleStringKeys at the given index.
+   */
+  java.lang.String getEventVariantTitleStringKeys(int index);
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventVariantTitleStringKeys at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventVariantTitleStringKeysBytes(int index);
+
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @return A list containing the eventVariantDescriptionStringKeys.
+   */
+  java.util.List<java.lang.String>
+      getEventVariantDescriptionStringKeysList();
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @return The count of eventVariantDescriptionStringKeys.
+   */
+  int getEventVariantDescriptionStringKeysCount();
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantDescriptionStringKeys at the given index.
+   */
+  java.lang.String getEventVariantDescriptionStringKeys(int index);
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventVariantDescriptionStringKeys at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventVariantDescriptionStringKeysBytes(int index);
+
+  /**
+   * <code>string item_bag_description_variant_selected = 10;</code>
+   * @return The itemBagDescriptionVariantSelected.
+   */
+  java.lang.String getItemBagDescriptionVariantSelected();
+  /**
+   * <code>string item_bag_description_variant_selected = 10;</code>
+   * @return The bytes for itemBagDescriptionVariantSelected.
+   */
+  com.google.protobuf.ByteString
+      getItemBagDescriptionVariantSelectedBytes();
+
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @return A list containing the eventVariantButtonStringKeys.
+   */
+  java.util.List<java.lang.String>
+      getEventVariantButtonStringKeysList();
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @return The count of eventVariantButtonStringKeys.
+   */
+  int getEventVariantButtonStringKeysCount();
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantButtonStringKeys at the given index.
+   */
+  java.lang.String getEventVariantButtonStringKeys(int index);
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventVariantButtonStringKeys at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventVariantButtonStringKeysBytes(int index);
+
+  /**
    * <code>int64 client_event_start_time_utc_ms = 100;</code>
    * @return The clientEventStartTimeUtcMs.
    */

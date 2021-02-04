@@ -204,6 +204,14 @@ public enum QuestType
    * <code>QUEST_CHARGE_ATTACK = 53;</code>
    */
   QUEST_CHARGE_ATTACK(53),
+  /**
+   * <code>QUEST_CHANGE_POKEMON_FORM = 54;</code>
+   */
+  QUEST_CHANGE_POKEMON_FORM(54),
+  /**
+   * <code>QUEST_BATTLE_EVENT_NPC = 55;</code>
+   */
+  QUEST_BATTLE_EVENT_NPC(55),
   UNRECOGNIZED(-1),
   ;
 
@@ -403,6 +411,14 @@ public enum QuestType
    * <code>QUEST_CHARGE_ATTACK = 53;</code>
    */
   public static final int QUEST_CHARGE_ATTACK_VALUE = 53;
+  /**
+   * <code>QUEST_CHANGE_POKEMON_FORM = 54;</code>
+   */
+  public static final int QUEST_CHANGE_POKEMON_FORM_VALUE = 54;
+  /**
+   * <code>QUEST_BATTLE_EVENT_NPC = 55;</code>
+   */
+  public static final int QUEST_BATTLE_EVENT_NPC_VALUE = 55;
 
 
   public final int getNumber() {
@@ -478,6 +494,8 @@ public enum QuestType
       case 50: return QUEST_BUDDY_EVOLUTION_WALK;
       case 51: return QUEST_GBL_RANK;
       case 53: return QUEST_CHARGE_ATTACK;
+      case 54: return QUEST_CHANGE_POKEMON_FORM;
+      case 55: return QUEST_BATTLE_EVENT_NPC;
       default: return null;
     }
   }

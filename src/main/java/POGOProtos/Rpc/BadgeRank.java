@@ -112,7 +112,7 @@ public enum BadgeRank
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(14);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(13);
   }
 
   private static final BadgeRank[] VALUES = values();

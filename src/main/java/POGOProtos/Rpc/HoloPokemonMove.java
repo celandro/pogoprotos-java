@@ -1152,6 +1152,10 @@ public enum HoloPokemonMove
    * <code>DARK_VOID = 347;</code>
    */
   DARK_VOID(347),
+  /**
+   * <code>FEATHER_DANCE = 348;</code>
+   */
+  FEATHER_DANCE(348),
   UNRECOGNIZED(-1),
   ;
 
@@ -2299,6 +2303,10 @@ public enum HoloPokemonMove
    * <code>DARK_VOID = 347;</code>
    */
   public static final int DARK_VOID_VALUE = 347;
+  /**
+   * <code>FEATHER_DANCE = 348;</code>
+   */
+  public static final int FEATHER_DANCE_VALUE = 348;
 
 
   public final int getNumber() {
@@ -2611,6 +2619,7 @@ public enum HoloPokemonMove
       case 345: return GUST_FAST;
       case 346: return INCINERATE_FAST;
       case 347: return DARK_VOID;
+      case 348: return FEATHER_DANCE;
       default: return null;
     }
   }
@@ -2641,7 +2650,7 @@ public enum HoloPokemonMove
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(63);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(62);
   }
 
   private static final HoloPokemonMove[] VALUES = values();

@@ -76,7 +76,7 @@ public enum ArMappingTutorialPage
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(7);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final ArMappingTutorialPage[] VALUES = values();

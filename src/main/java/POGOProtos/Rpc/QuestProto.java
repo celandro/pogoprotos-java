@@ -231,6 +231,20 @@ private static final long serialVersionUID = 0L;
             questCase_ = 13;
             break;
           }
+          case 114: {
+            POGOProtos.Rpc.BattleQuestProto.Builder subBuilder = null;
+            if (questCase_ == 14) {
+              subBuilder = ((POGOProtos.Rpc.BattleQuestProto) quest_).toBuilder();
+            }
+            quest_ =
+                input.readMessage(POGOProtos.Rpc.BattleQuestProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((POGOProtos.Rpc.BattleQuestProto) quest_);
+              quest_ = subBuilder.buildPartial();
+            }
+            questCase_ = 14;
+            break;
+          }
           case 786: {
             POGOProtos.Rpc.WithSingleDayProto.Builder subBuilder = null;
             if (withSingleDay_ != null) {
@@ -737,6 +751,7 @@ private static final long serialVersionUID = 0L;
     MINI_COLLECTION(11),
     GEOTARGETED_QUEST(12),
     BUDDY_EVOLUTION_WALK(13),
+    BATTLE(14),
     QUEST_NOT_SET(0);
     private final int value;
     private QuestCase(int value) {
@@ -766,6 +781,7 @@ private static final long serialVersionUID = 0L;
         case 11: return MINI_COLLECTION;
         case 12: return GEOTARGETED_QUEST;
         case 13: return BUDDY_EVOLUTION_WALK;
+        case 14: return BATTLE;
         case 0: return QUEST_NOT_SET;
         default: return null;
       }
@@ -1151,6 +1167,37 @@ private static final long serialVersionUID = 0L;
        return (POGOProtos.Rpc.BuddyEvolutionWalkQuestProto) quest_;
     }
     return POGOProtos.Rpc.BuddyEvolutionWalkQuestProto.getDefaultInstance();
+  }
+
+  public static final int BATTLE_FIELD_NUMBER = 14;
+  /**
+   * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+   * @return Whether the battle field is set.
+   */
+  @java.lang.Override
+  public boolean hasBattle() {
+    return questCase_ == 14;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+   * @return The battle.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.BattleQuestProto getBattle() {
+    if (questCase_ == 14) {
+       return (POGOProtos.Rpc.BattleQuestProto) quest_;
+    }
+    return POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
+  }
+  /**
+   * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.BattleQuestProtoOrBuilder getBattleOrBuilder() {
+    if (questCase_ == 14) {
+       return (POGOProtos.Rpc.BattleQuestProto) quest_;
+    }
+    return POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
   }
 
   public static final int QUEST_TYPE_FIELD_NUMBER = 1;
@@ -1691,6 +1738,9 @@ private static final long serialVersionUID = 0L;
     if (questCase_ == 13) {
       output.writeMessage(13, (POGOProtos.Rpc.BuddyEvolutionWalkQuestProto) quest_);
     }
+    if (questCase_ == 14) {
+      output.writeMessage(14, (POGOProtos.Rpc.BattleQuestProto) quest_);
+    }
     if (withSingleDay_ != null) {
       output.writeMessage(98, getWithSingleDay());
     }
@@ -1820,6 +1870,10 @@ private static final long serialVersionUID = 0L;
     if (questCase_ == 13) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, (POGOProtos.Rpc.BuddyEvolutionWalkQuestProto) quest_);
+    }
+    if (questCase_ == 14) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, (POGOProtos.Rpc.BattleQuestProto) quest_);
     }
     if (withSingleDay_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -2031,6 +2085,10 @@ private static final long serialVersionUID = 0L;
         if (!getBuddyEvolutionWalk()
             .equals(other.getBuddyEvolutionWalk())) return false;
         break;
+      case 14:
+        if (!getBattle()
+            .equals(other.getBattle())) return false;
+        break;
       case 0:
       default:
     }
@@ -2160,6 +2218,10 @@ private static final long serialVersionUID = 0L;
       case 13:
         hash = (37 * hash) + BUDDY_EVOLUTION_WALK_FIELD_NUMBER;
         hash = (53 * hash) + getBuddyEvolutionWalk().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + BATTLE_FIELD_NUMBER;
+        hash = (53 * hash) + getBattle().hashCode();
         break;
       case 0:
       default:
@@ -2479,6 +2541,13 @@ private static final long serialVersionUID = 0L;
           result.quest_ = buddyEvolutionWalkBuilder_.build();
         }
       }
+      if (questCase_ == 14) {
+        if (battleBuilder_ == null) {
+          result.quest_ = quest_;
+        } else {
+          result.quest_ = battleBuilder_.build();
+        }
+      }
       result.questType_ = questType_;
       if (withSingleDayBuilder_ == null) {
         result.withSingleDay_ = withSingleDay_;
@@ -2722,6 +2791,10 @@ private static final long serialVersionUID = 0L;
         }
         case BUDDY_EVOLUTION_WALK: {
           mergeBuddyEvolutionWalk(other.getBuddyEvolutionWalk());
+          break;
+        }
+        case BATTLE: {
+          mergeBattle(other.getBattle());
           break;
         }
         case QUEST_NOT_SET: {
@@ -4463,6 +4536,147 @@ private static final long serialVersionUID = 0L;
       questCase_ = 13;
       onChanged();;
       return buddyEvolutionWalkBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.BattleQuestProto, POGOProtos.Rpc.BattleQuestProto.Builder, POGOProtos.Rpc.BattleQuestProtoOrBuilder> battleBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     * @return Whether the battle field is set.
+     */
+    @java.lang.Override
+    public boolean hasBattle() {
+      return questCase_ == 14;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     * @return The battle.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.BattleQuestProto getBattle() {
+      if (battleBuilder_ == null) {
+        if (questCase_ == 14) {
+          return (POGOProtos.Rpc.BattleQuestProto) quest_;
+        }
+        return POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
+      } else {
+        if (questCase_ == 14) {
+          return battleBuilder_.getMessage();
+        }
+        return POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    public Builder setBattle(POGOProtos.Rpc.BattleQuestProto value) {
+      if (battleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        quest_ = value;
+        onChanged();
+      } else {
+        battleBuilder_.setMessage(value);
+      }
+      questCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    public Builder setBattle(
+        POGOProtos.Rpc.BattleQuestProto.Builder builderForValue) {
+      if (battleBuilder_ == null) {
+        quest_ = builderForValue.build();
+        onChanged();
+      } else {
+        battleBuilder_.setMessage(builderForValue.build());
+      }
+      questCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    public Builder mergeBattle(POGOProtos.Rpc.BattleQuestProto value) {
+      if (battleBuilder_ == null) {
+        if (questCase_ == 14 &&
+            quest_ != POGOProtos.Rpc.BattleQuestProto.getDefaultInstance()) {
+          quest_ = POGOProtos.Rpc.BattleQuestProto.newBuilder((POGOProtos.Rpc.BattleQuestProto) quest_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          quest_ = value;
+        }
+        onChanged();
+      } else {
+        if (questCase_ == 14) {
+          battleBuilder_.mergeFrom(value);
+        }
+        battleBuilder_.setMessage(value);
+      }
+      questCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    public Builder clearBattle() {
+      if (battleBuilder_ == null) {
+        if (questCase_ == 14) {
+          questCase_ = 0;
+          quest_ = null;
+          onChanged();
+        }
+      } else {
+        if (questCase_ == 14) {
+          questCase_ = 0;
+          quest_ = null;
+        }
+        battleBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    public POGOProtos.Rpc.BattleQuestProto.Builder getBattleBuilder() {
+      return getBattleFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.BattleQuestProtoOrBuilder getBattleOrBuilder() {
+      if ((questCase_ == 14) && (battleBuilder_ != null)) {
+        return battleBuilder_.getMessageOrBuilder();
+      } else {
+        if (questCase_ == 14) {
+          return (POGOProtos.Rpc.BattleQuestProto) quest_;
+        }
+        return POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.BattleQuestProto, POGOProtos.Rpc.BattleQuestProto.Builder, POGOProtos.Rpc.BattleQuestProtoOrBuilder> 
+        getBattleFieldBuilder() {
+      if (battleBuilder_ == null) {
+        if (!(questCase_ == 14)) {
+          quest_ = POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
+        }
+        battleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.BattleQuestProto, POGOProtos.Rpc.BattleQuestProto.Builder, POGOProtos.Rpc.BattleQuestProtoOrBuilder>(
+                (POGOProtos.Rpc.BattleQuestProto) quest_,
+                getParentForChildren(),
+                isClean());
+        quest_ = null;
+      }
+      questCase_ = 14;
+      onChanged();;
+      return battleBuilder_;
     }
 
     private int questType_ = 0;

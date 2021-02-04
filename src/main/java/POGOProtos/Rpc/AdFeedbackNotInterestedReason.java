@@ -94,7 +94,7 @@ public enum AdFeedbackNotInterestedReason
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(4);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final AdFeedbackNotInterestedReason[] VALUES = values();

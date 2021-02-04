@@ -4,25 +4,26 @@
 package POGOProtos.Rpc;
 
 /**
- * Protobuf type {@code POGOProtos.Rpc.PortalCurationImageResult}
+ * Protobuf type {@code POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto}
  */
-public final class PortalCurationImageResult extends
+public final class ChooseGlobalTicketedEventVariantProto extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.PortalCurationImageResult)
-    PortalCurationImageResultOrBuilder {
+    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto)
+    ChooseGlobalTicketedEventVariantProtoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PortalCurationImageResult.newBuilder() to construct.
-  private PortalCurationImageResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ChooseGlobalTicketedEventVariantProto.newBuilder() to construct.
+  private ChooseGlobalTicketedEventVariantProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PortalCurationImageResult() {
+  private ChooseGlobalTicketedEventVariantProto() {
+    targetVariant_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PortalCurationImageResult();
+    return new ChooseGlobalTicketedEventVariantProto();
   }
 
   @java.lang.Override
@@ -30,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PortalCurationImageResult(
+  private ChooseGlobalTicketedEventVariantProto(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,6 +49,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+            int rawValue = input.readEnum();
+
+            targetVariant_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -69,177 +76,34 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_PortalCurationImageResult_descriptor;
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ChooseGlobalTicketedEventVariantProto_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_PortalCurationImageResult_fieldAccessorTable
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ChooseGlobalTicketedEventVariantProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            POGOProtos.Rpc.PortalCurationImageResult.class, POGOProtos.Rpc.PortalCurationImageResult.Builder.class);
+            POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.class, POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.Builder.class);
   }
 
+  public static final int TARGET_VARIANT_FIELD_NUMBER = 1;
+  private int targetVariant_;
   /**
-   * Protobuf enum {@code POGOProtos.Rpc.PortalCurationImageResult.Result}
+   * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+   * @return The enum numeric value on the wire for targetVariant.
    */
-  public enum Result
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNSET = 0;</code>
-     */
-    UNSET(0),
-    /**
-     * <code>SUCCESS = 1;</code>
-     */
-    SUCCESS(1),
-    /**
-     * <code>FEATURE_DISABLED = 2;</code>
-     */
-    FEATURE_DISABLED(2),
-    /**
-     * <code>ALREADY_UPLOADED = 3;</code>
-     */
-    ALREADY_UPLOADED(3),
-    /**
-     * <code>IMAGE_NOT_FOUND = 4;</code>
-     */
-    IMAGE_NOT_FOUND(4),
-    /**
-     * <code>IMAGE_TOO_BIG = 5;</code>
-     */
-    IMAGE_TOO_BIG(5),
-    /**
-     * <code>IMAGE_NOT_SERVABLE = 6;</code>
-     */
-    IMAGE_NOT_SERVABLE(6),
-    /**
-     * <code>PORTAL_NOT_FOUND = 7;</code>
-     */
-    PORTAL_NOT_FOUND(7),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNSET = 0;</code>
-     */
-    public static final int UNSET_VALUE = 0;
-    /**
-     * <code>SUCCESS = 1;</code>
-     */
-    public static final int SUCCESS_VALUE = 1;
-    /**
-     * <code>FEATURE_DISABLED = 2;</code>
-     */
-    public static final int FEATURE_DISABLED_VALUE = 2;
-    /**
-     * <code>ALREADY_UPLOADED = 3;</code>
-     */
-    public static final int ALREADY_UPLOADED_VALUE = 3;
-    /**
-     * <code>IMAGE_NOT_FOUND = 4;</code>
-     */
-    public static final int IMAGE_NOT_FOUND_VALUE = 4;
-    /**
-     * <code>IMAGE_TOO_BIG = 5;</code>
-     */
-    public static final int IMAGE_TOO_BIG_VALUE = 5;
-    /**
-     * <code>IMAGE_NOT_SERVABLE = 6;</code>
-     */
-    public static final int IMAGE_NOT_SERVABLE_VALUE = 6;
-    /**
-     * <code>PORTAL_NOT_FOUND = 7;</code>
-     */
-    public static final int PORTAL_NOT_FOUND_VALUE = 7;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Result valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Result forNumber(int value) {
-      switch (value) {
-        case 0: return UNSET;
-        case 1: return SUCCESS;
-        case 2: return FEATURE_DISABLED;
-        case 3: return ALREADY_UPLOADED;
-        case 4: return IMAGE_NOT_FOUND;
-        case 5: return IMAGE_TOO_BIG;
-        case 6: return IMAGE_NOT_SERVABLE;
-        case 7: return PORTAL_NOT_FOUND;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Result>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Result> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Result>() {
-            public Result findValueByNumber(int number) {
-              return Result.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return POGOProtos.Rpc.PortalCurationImageResult.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Result[] VALUES = values();
-
-    public static Result valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Result(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.PortalCurationImageResult.Result)
+  @java.lang.Override public int getTargetVariantValue() {
+    return targetVariant_;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+   * @return The targetVariant.
+   */
+  @java.lang.Override public POGOProtos.Rpc.HoloBadgeType getTargetVariant() {
+    @SuppressWarnings("deprecation")
+    POGOProtos.Rpc.HoloBadgeType result = POGOProtos.Rpc.HoloBadgeType.valueOf(targetVariant_);
+    return result == null ? POGOProtos.Rpc.HoloBadgeType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -256,6 +120,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (targetVariant_ != POGOProtos.Rpc.HoloBadgeType.BADGE_UNSET.getNumber()) {
+      output.writeEnum(1, targetVariant_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +132,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (targetVariant_ != POGOProtos.Rpc.HoloBadgeType.BADGE_UNSET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, targetVariant_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -275,11 +146,12 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof POGOProtos.Rpc.PortalCurationImageResult)) {
+    if (!(obj instanceof POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto)) {
       return super.equals(obj);
     }
-    POGOProtos.Rpc.PortalCurationImageResult other = (POGOProtos.Rpc.PortalCurationImageResult) obj;
+    POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto other = (POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto) obj;
 
+    if (targetVariant_ != other.targetVariant_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -291,74 +163,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TARGET_VARIANT_FIELD_NUMBER;
+    hash = (53 * hash) + targetVariant_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(byte[] data)
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseDelimitedFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseDelimitedFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.PortalCurationImageResult parseFrom(
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -371,7 +245,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(POGOProtos.Rpc.PortalCurationImageResult prototype) {
+  public static Builder newBuilder(POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -387,26 +261,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code POGOProtos.Rpc.PortalCurationImageResult}
+   * Protobuf type {@code POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.PortalCurationImageResult)
-      POGOProtos.Rpc.PortalCurationImageResultOrBuilder {
+      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto)
+      POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_PortalCurationImageResult_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ChooseGlobalTicketedEventVariantProto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_PortalCurationImageResult_fieldAccessorTable
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ChooseGlobalTicketedEventVariantProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              POGOProtos.Rpc.PortalCurationImageResult.class, POGOProtos.Rpc.PortalCurationImageResult.Builder.class);
+              POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.class, POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.Builder.class);
     }
 
-    // Construct using POGOProtos.Rpc.PortalCurationImageResult.newBuilder()
+    // Construct using POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -424,23 +298,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      targetVariant_ = 0;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_PortalCurationImageResult_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ChooseGlobalTicketedEventVariantProto_descriptor;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.PortalCurationImageResult getDefaultInstanceForType() {
-      return POGOProtos.Rpc.PortalCurationImageResult.getDefaultInstance();
+    public POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto getDefaultInstanceForType() {
+      return POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.getDefaultInstance();
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.PortalCurationImageResult build() {
-      POGOProtos.Rpc.PortalCurationImageResult result = buildPartial();
+    public POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto build() {
+      POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -448,8 +324,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.PortalCurationImageResult buildPartial() {
-      POGOProtos.Rpc.PortalCurationImageResult result = new POGOProtos.Rpc.PortalCurationImageResult(this);
+    public POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto buildPartial() {
+      POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto result = new POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto(this);
+      result.targetVariant_ = targetVariant_;
       onBuilt();
       return result;
     }
@@ -488,16 +365,19 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof POGOProtos.Rpc.PortalCurationImageResult) {
-        return mergeFrom((POGOProtos.Rpc.PortalCurationImageResult)other);
+      if (other instanceof POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto) {
+        return mergeFrom((POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(POGOProtos.Rpc.PortalCurationImageResult other) {
-      if (other == POGOProtos.Rpc.PortalCurationImageResult.getDefaultInstance()) return this;
+    public Builder mergeFrom(POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto other) {
+      if (other == POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto.getDefaultInstance()) return this;
+      if (other.targetVariant_ != 0) {
+        setTargetVariantValue(other.getTargetVariantValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -513,17 +393,71 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      POGOProtos.Rpc.PortalCurationImageResult parsedMessage = null;
+      POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (POGOProtos.Rpc.PortalCurationImageResult) e.getUnfinishedMessage();
+        parsedMessage = (POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int targetVariant_ = 0;
+    /**
+     * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+     * @return The enum numeric value on the wire for targetVariant.
+     */
+    @java.lang.Override public int getTargetVariantValue() {
+      return targetVariant_;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+     * @param value The enum numeric value on the wire for targetVariant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetVariantValue(int value) {
+      
+      targetVariant_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+     * @return The targetVariant.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.HoloBadgeType getTargetVariant() {
+      @SuppressWarnings("deprecation")
+      POGOProtos.Rpc.HoloBadgeType result = POGOProtos.Rpc.HoloBadgeType.valueOf(targetVariant_);
+      return result == null ? POGOProtos.Rpc.HoloBadgeType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+     * @param value The targetVariant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetVariant(POGOProtos.Rpc.HoloBadgeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      targetVariant_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.HoloBadgeType target_variant = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetVariant() {
+      
+      targetVariant_ = 0;
+      onChanged();
       return this;
     }
     @java.lang.Override
@@ -539,41 +473,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.PortalCurationImageResult)
+    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto)
   }
 
-  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.PortalCurationImageResult)
-  private static final POGOProtos.Rpc.PortalCurationImageResult DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto)
+  private static final POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new POGOProtos.Rpc.PortalCurationImageResult();
+    DEFAULT_INSTANCE = new POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto();
   }
 
-  public static POGOProtos.Rpc.PortalCurationImageResult getDefaultInstance() {
+  public static POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PortalCurationImageResult>
-      PARSER = new com.google.protobuf.AbstractParser<PortalCurationImageResult>() {
+  private static final com.google.protobuf.Parser<ChooseGlobalTicketedEventVariantProto>
+      PARSER = new com.google.protobuf.AbstractParser<ChooseGlobalTicketedEventVariantProto>() {
     @java.lang.Override
-    public PortalCurationImageResult parsePartialFrom(
+    public ChooseGlobalTicketedEventVariantProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PortalCurationImageResult(input, extensionRegistry);
+      return new ChooseGlobalTicketedEventVariantProto(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<PortalCurationImageResult> parser() {
+  public static com.google.protobuf.Parser<ChooseGlobalTicketedEventVariantProto> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PortalCurationImageResult> getParserForType() {
+  public com.google.protobuf.Parser<ChooseGlobalTicketedEventVariantProto> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public POGOProtos.Rpc.PortalCurationImageResult getDefaultInstanceForType() {
+  public POGOProtos.Rpc.ChooseGlobalTicketedEventVariantProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

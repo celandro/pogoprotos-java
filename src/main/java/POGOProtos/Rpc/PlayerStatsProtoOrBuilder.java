@@ -387,6 +387,12 @@ public interface PlayerStatsProtoOrBuilder extends
   int getNumMiniCollectionEventCompleted();
 
   /**
+   * <code>int32 num_pokemon_form_changes = 61;</code>
+   * @return The numPokemonFormChanges.
+   */
+  int getNumPokemonFormChanges();
+
+  /**
    * <code>int32 num_rocket_balloon_battles_won = 62;</code>
    * @return The numRocketBalloonBattlesWon.
    */

@@ -8,34 +8,12 @@ public interface AsyncFileUploadCompleteOutProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-   * @return The enum numeric value on the wire for error.
-   */
-  int getErrorValue();
-  /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-   * @return The error.
-   */
-  POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus getError();
-
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-   * @return The enum numeric value on the wire for submissionType.
-   */
-  int getSubmissionTypeValue();
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-   * @return The submissionType.
-   */
-  POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType();
-
-  /**
-   * <code>string poi_id = 3;</code>
+   * <code>string poi_id = 1;</code>
    * @return The poiId.
    */
   java.lang.String getPoiId();
   /**
-   * <code>string poi_id = 3;</code>
+   * <code>string poi_id = 1;</code>
    * @return The bytes for poiId.
    */
   com.google.protobuf.ByteString

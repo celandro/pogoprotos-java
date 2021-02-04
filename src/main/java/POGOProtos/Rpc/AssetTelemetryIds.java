@@ -121,7 +121,7 @@ public enum AssetTelemetryIds
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(11);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(10);
   }
 
   private static final AssetTelemetryIds[] VALUES = values();

@@ -103,7 +103,7 @@ public enum BannedPlayerReason
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(15);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(14);
   }
 
   private static final BannedPlayerReason[] VALUES = values();

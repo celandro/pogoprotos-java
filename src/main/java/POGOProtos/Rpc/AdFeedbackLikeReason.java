@@ -112,7 +112,7 @@ public enum AdFeedbackLikeReason
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(3);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final AdFeedbackLikeReason[] VALUES = values();

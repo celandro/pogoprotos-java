@@ -76,7 +76,7 @@ public enum ArToggleContext
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(9);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final ArToggleContext[] VALUES = values();

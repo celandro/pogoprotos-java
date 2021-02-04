@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
             submissionId_ = s;
             break;
           }
-          case 24: {
+          case 16: {
             int rawValue = input.readEnum();
 
             uploadStatus_ = rawValue;
@@ -249,17 +249,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPLOAD_STATUS_FIELD_NUMBER = 3;
+  public static final int UPLOAD_STATUS_FIELD_NUMBER = 2;
   private int uploadStatus_;
   /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
    * @return The enum numeric value on the wire for uploadStatus.
    */
   @java.lang.Override public int getUploadStatusValue() {
     return uploadStatus_;
   }
   /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
    * @return The uploadStatus.
    */
   @java.lang.Override public POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status getUploadStatus() {
@@ -286,7 +286,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, submissionId_);
     }
     if (uploadStatus_ != POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status.UNSET.getNumber()) {
-      output.writeEnum(3, uploadStatus_);
+      output.writeEnum(2, uploadStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
     }
     if (uploadStatus_ != POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status.UNSET.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, uploadStatus_);
+        .computeEnumSize(2, uploadStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -664,14 +664,14 @@ private static final long serialVersionUID = 0L;
 
     private int uploadStatus_ = 0;
     /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
      * @return The enum numeric value on the wire for uploadStatus.
      */
     @java.lang.Override public int getUploadStatusValue() {
       return uploadStatus_;
     }
     /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
      * @param value The enum numeric value on the wire for uploadStatus to set.
      * @return This builder for chaining.
      */
@@ -682,7 +682,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
      * @return The uploadStatus.
      */
     @java.lang.Override
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status.UNRECOGNIZED : result;
     }
     /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
      * @param value The uploadStatus to set.
      * @return This builder for chaining.
      */
@@ -706,7 +706,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 3;</code>
+     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteProto.Status upload_status = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearUploadStatus() {

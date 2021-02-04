@@ -119,4 +119,10 @@ public interface PokemonEncounterAttributesProtoOrBuilder extends
    * @return The maxPokemonActionFrequencyS.
    */
   float getMaxPokemonActionFrequencyS();
+
+  /**
+   * <code>int32 bonus_xl_candy_capture_reward = 19;</code>
+   * @return The bonusXlCandyCaptureReward.
+   */
+  int getBonusXlCandyCaptureReward();
 }

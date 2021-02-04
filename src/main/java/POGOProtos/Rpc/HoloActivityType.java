@@ -224,6 +224,14 @@ public enum HoloActivityType
    * <code>ACTIVITY_REMOTE_RAID_LEVEL_5_ADDITIONAL_XP = 54;</code>
    */
   ACTIVITY_REMOTE_RAID_LEVEL_5_ADDITIONAL_XP(54),
+  /**
+   * <code>ACTIVITY_CHANGE_POKEMON_FORM = 55;</code>
+   */
+  ACTIVITY_CHANGE_POKEMON_FORM(55),
+  /**
+   * <code>ACTIVITY_EARN_BUDDY_WALKED_CANDY = 56;</code>
+   */
+  ACTIVITY_EARN_BUDDY_WALKED_CANDY(56),
   UNRECOGNIZED(-1),
   ;
 
@@ -443,6 +451,14 @@ public enum HoloActivityType
    * <code>ACTIVITY_REMOTE_RAID_LEVEL_5_ADDITIONAL_XP = 54;</code>
    */
   public static final int ACTIVITY_REMOTE_RAID_LEVEL_5_ADDITIONAL_XP_VALUE = 54;
+  /**
+   * <code>ACTIVITY_CHANGE_POKEMON_FORM = 55;</code>
+   */
+  public static final int ACTIVITY_CHANGE_POKEMON_FORM_VALUE = 55;
+  /**
+   * <code>ACTIVITY_EARN_BUDDY_WALKED_CANDY = 56;</code>
+   */
+  public static final int ACTIVITY_EARN_BUDDY_WALKED_CANDY_VALUE = 56;
 
 
   public final int getNumber() {
@@ -523,6 +539,8 @@ public enum HoloActivityType
       case 52: return ACTIVITY_REMOTE_RAID_LEVEL_3_ADDITIONAL_XP;
       case 53: return ACTIVITY_REMOTE_RAID_LEVEL_4_ADDITIONAL_XP;
       case 54: return ACTIVITY_REMOTE_RAID_LEVEL_5_ADDITIONAL_XP;
+      case 55: return ACTIVITY_CHANGE_POKEMON_FORM;
+      case 56: return ACTIVITY_EARN_BUDDY_WALKED_CANDY;
       default: return null;
     }
   }
@@ -553,7 +571,7 @@ public enum HoloActivityType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(53);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(52);
   }
 
   private static final HoloActivityType[] VALUES = values();

@@ -112,7 +112,7 @@ public enum CombatRewardStatus
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(35);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(34);
   }
 
   private static final CombatRewardStatus[] VALUES = values();

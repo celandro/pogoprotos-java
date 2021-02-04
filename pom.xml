@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pokebattler</groupId>
     <artifactId>POGOProtos</artifactId>
-    <version>2.53.5</version>
+    <version>2.53.6</version>
     <packaging>jar</packaging>
     <name>POGOProtos Java</name>
     <description>Java bindings for Pokemon Go Protocol Buffers</description>

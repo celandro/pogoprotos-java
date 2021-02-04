@@ -16,8 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AsyncFileUploadCompleteOutProto() {
-    error_ = 0;
-    submissionType_ = 0;
     poiId_ = "";
   }
 
@@ -51,19 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            error_ = rawValue;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            submissionType_ = rawValue;
-            break;
-          }
-          case 26: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             poiId_ = s;
@@ -236,48 +222,10 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus)
   }
 
-  public static final int ERROR_FIELD_NUMBER = 1;
-  private int error_;
-  /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-   * @return The enum numeric value on the wire for error.
-   */
-  @java.lang.Override public int getErrorValue() {
-    return error_;
-  }
-  /**
-   * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-   * @return The error.
-   */
-  @java.lang.Override public POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus getError() {
-    @SuppressWarnings("deprecation")
-    POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus result = POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus.valueOf(error_);
-    return result == null ? POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus.UNRECOGNIZED : result;
-  }
-
-  public static final int SUBMISSION_TYPE_FIELD_NUMBER = 2;
-  private int submissionType_;
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-   * @return The enum numeric value on the wire for submissionType.
-   */
-  @java.lang.Override public int getSubmissionTypeValue() {
-    return submissionType_;
-  }
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-   * @return The submissionType.
-   */
-  @java.lang.Override public POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType() {
-    @SuppressWarnings("deprecation")
-    POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(submissionType_);
-    return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-  }
-
-  public static final int POI_ID_FIELD_NUMBER = 3;
+  public static final int POI_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object poiId_;
   /**
-   * <code>string poi_id = 3;</code>
+   * <code>string poi_id = 1;</code>
    * @return The poiId.
    */
   @java.lang.Override
@@ -294,7 +242,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string poi_id = 3;</code>
+   * <code>string poi_id = 1;</code>
    * @return The bytes for poiId.
    */
   @java.lang.Override
@@ -326,14 +274,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (error_ != POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus.UNSET.getNumber()) {
-      output.writeEnum(1, error_);
-    }
-    if (submissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, submissionType_);
-    }
     if (!getPoiIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, poiId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, poiId_);
     }
     unknownFields.writeTo(output);
   }
@@ -344,16 +286,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (error_ != POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus.UNSET.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, error_);
-    }
-    if (submissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, submissionType_);
-    }
     if (!getPoiIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, poiId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, poiId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -370,8 +304,6 @@ private static final long serialVersionUID = 0L;
     }
     POGOProtos.Rpc.AsyncFileUploadCompleteOutProto other = (POGOProtos.Rpc.AsyncFileUploadCompleteOutProto) obj;
 
-    if (error_ != other.error_) return false;
-    if (submissionType_ != other.submissionType_) return false;
     if (!getPoiId()
         .equals(other.getPoiId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -385,10 +317,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ERROR_FIELD_NUMBER;
-    hash = (53 * hash) + error_;
-    hash = (37 * hash) + SUBMISSION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + submissionType_;
     hash = (37 * hash) + POI_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPoiId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -524,10 +452,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      error_ = 0;
-
-      submissionType_ = 0;
-
       poiId_ = "";
 
       return this;
@@ -556,8 +480,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public POGOProtos.Rpc.AsyncFileUploadCompleteOutProto buildPartial() {
       POGOProtos.Rpc.AsyncFileUploadCompleteOutProto result = new POGOProtos.Rpc.AsyncFileUploadCompleteOutProto(this);
-      result.error_ = error_;
-      result.submissionType_ = submissionType_;
       result.poiId_ = poiId_;
       onBuilt();
       return result;
@@ -607,12 +529,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(POGOProtos.Rpc.AsyncFileUploadCompleteOutProto other) {
       if (other == POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.getDefaultInstance()) return this;
-      if (other.error_ != 0) {
-        setErrorValue(other.getErrorValue());
-      }
-      if (other.submissionType_ != 0) {
-        setSubmissionTypeValue(other.getSubmissionTypeValue());
-      }
       if (!other.getPoiId().isEmpty()) {
         poiId_ = other.poiId_;
         onChanged();
@@ -646,117 +562,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int error_ = 0;
-    /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-     * @return The enum numeric value on the wire for error.
-     */
-    @java.lang.Override public int getErrorValue() {
-      return error_;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-     * @param value The enum numeric value on the wire for error to set.
-     * @return This builder for chaining.
-     */
-    public Builder setErrorValue(int value) {
-      
-      error_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-     * @return The error.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus getError() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus result = POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus.valueOf(error_);
-      return result == null ? POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-     * @param value The error to set.
-     * @return This builder for chaining.
-     */
-    public Builder setError(POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      error_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.AsyncFileUploadCompleteOutProto.ErrorStatus error = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearError() {
-      
-      error_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int submissionType_ = 0;
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-     * @return The enum numeric value on the wire for submissionType.
-     */
-    @java.lang.Override public int getSubmissionTypeValue() {
-      return submissionType_;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-     * @param value The enum numeric value on the wire for submissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubmissionTypeValue(int value) {
-      
-      submissionType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-     * @return The submissionType.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(submissionType_);
-      return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-     * @param value The submissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubmissionType(POGOProtos.Rpc.PlayerSubmissionTypeProto value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      submissionType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSubmissionType() {
-      
-      submissionType_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object poiId_ = "";
     /**
-     * <code>string poi_id = 3;</code>
+     * <code>string poi_id = 1;</code>
      * @return The poiId.
      */
     public java.lang.String getPoiId() {
@@ -772,7 +580,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string poi_id = 3;</code>
+     * <code>string poi_id = 1;</code>
      * @return The bytes for poiId.
      */
     public com.google.protobuf.ByteString
@@ -789,7 +597,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string poi_id = 3;</code>
+     * <code>string poi_id = 1;</code>
      * @param value The poiId to set.
      * @return This builder for chaining.
      */
@@ -804,7 +612,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string poi_id = 3;</code>
+     * <code>string poi_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearPoiId() {
@@ -814,7 +622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string poi_id = 3;</code>
+     * <code>string poi_id = 1;</code>
      * @param value The bytes for poiId to set.
      * @return This builder for chaining.
      */

@@ -384,9 +384,29 @@ private static final long serialVersionUID = 0L;
        */
       ONLINE_STATUS(2),
       /**
-       * <code>FRIEND_LIST = 3;</code>
+       * <code>CROSS_GAME_FRIEND_LIST = 3;</code>
        */
-      FRIEND_LIST(3),
+      CROSS_GAME_FRIEND_LIST(3),
+      /**
+       * <code>GAME_INVITE_SENDER = 4;</code>
+       */
+      GAME_INVITE_SENDER(4),
+      /**
+       * <code>SHARED_FRIEND_GRAPH = 5;</code>
+       */
+      SHARED_FRIEND_GRAPH(5),
+      /**
+       * <code>NICKNAME = 6;</code>
+       */
+      NICKNAME(6),
+      /**
+       * <code>CROSS_GAME_ONLINE_STATUS = 7;</code>
+       */
+      CROSS_GAME_ONLINE_STATUS(7),
+      /**
+       * <code>GAME_INVITE_RECEIVER = 8;</code>
+       */
+      GAME_INVITE_RECEIVER(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -403,9 +423,29 @@ private static final long serialVersionUID = 0L;
        */
       public static final int ONLINE_STATUS_VALUE = 2;
       /**
-       * <code>FRIEND_LIST = 3;</code>
+       * <code>CROSS_GAME_FRIEND_LIST = 3;</code>
        */
-      public static final int FRIEND_LIST_VALUE = 3;
+      public static final int CROSS_GAME_FRIEND_LIST_VALUE = 3;
+      /**
+       * <code>GAME_INVITE_SENDER = 4;</code>
+       */
+      public static final int GAME_INVITE_SENDER_VALUE = 4;
+      /**
+       * <code>SHARED_FRIEND_GRAPH = 5;</code>
+       */
+      public static final int SHARED_FRIEND_GRAPH_VALUE = 5;
+      /**
+       * <code>NICKNAME = 6;</code>
+       */
+      public static final int NICKNAME_VALUE = 6;
+      /**
+       * <code>CROSS_GAME_ONLINE_STATUS = 7;</code>
+       */
+      public static final int CROSS_GAME_ONLINE_STATUS_VALUE = 7;
+      /**
+       * <code>GAME_INVITE_RECEIVER = 8;</code>
+       */
+      public static final int GAME_INVITE_RECEIVER_VALUE = 8;
 
 
       public final int getNumber() {
@@ -435,7 +475,12 @@ private static final long serialVersionUID = 0L;
           case 0: return UNSET;
           case 1: return NIANTIC_PROFILE;
           case 2: return ONLINE_STATUS;
-          case 3: return FRIEND_LIST;
+          case 3: return CROSS_GAME_FRIEND_LIST;
+          case 4: return GAME_INVITE_SENDER;
+          case 5: return SHARED_FRIEND_GRAPH;
+          case 6: return NICKNAME;
+          case 7: return CROSS_GAME_ONLINE_STATUS;
+          case 8: return GAME_INVITE_RECEIVER;
           default: return null;
         }
       }

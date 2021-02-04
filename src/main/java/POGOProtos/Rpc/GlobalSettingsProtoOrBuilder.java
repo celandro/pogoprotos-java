@@ -926,6 +926,21 @@ public interface GlobalSettingsProtoOrBuilder extends
   POGOProtos.Rpc.IdfaSettingsProtoOrBuilder getIdfaSettingsOrBuilder();
 
   /**
+   * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+   * @return Whether the formChangeSettings field is set.
+   */
+  boolean hasFormChangeSettings();
+  /**
+   * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+   * @return The formChangeSettings.
+   */
+  POGOProtos.Rpc.FormChangeSettingsProto getFormChangeSettings();
+  /**
+   * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+   */
+  POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder getFormChangeSettingsOrBuilder();
+
+  /**
    * <code>repeated .POGOProtos.Rpc.StoreIapSettingsProto iap_settings = 69;</code>
    */
   java.util.List<POGOProtos.Rpc.StoreIapSettingsProto> 

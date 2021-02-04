@@ -122,6 +122,10 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;</code>
      */
     ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY(3),
+    /**
+     * <code>ERROR_FEATURE_DISABLED = 4;</code>
+     */
+    ERROR_FEATURE_DISABLED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -141,6 +145,10 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;</code>
      */
     public static final int ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY_VALUE = 3;
+    /**
+     * <code>ERROR_FEATURE_DISABLED = 4;</code>
+     */
+    public static final int ERROR_FEATURE_DISABLED_VALUE = 4;
 
 
     public final int getNumber() {
@@ -171,6 +179,7 @@ private static final long serialVersionUID = 0L;
         case 1: return SUCCESS;
         case 2: return ERROR_UNKNOWN;
         case 3: return ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY;
+        case 4: return ERROR_FEATURE_DISABLED;
         default: return null;
       }
     }
@@ -289,15 +298,53 @@ private static final long serialVersionUID = 0L;
     POGOProtos.Rpc.FriendDetailsProtoOrBuilder getCallingGameDataOrBuilder();
 
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-     * @return The enum numeric value on the wire for invitationStatus.
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
      */
-    int getInvitationStatusValue();
+    java.util.List<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus> 
+        getOutgoingGameInviteStatusList();
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-     * @return The invitationStatus.
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
      */
-    POGOProtos.Rpc.SocialV2Enum.InvitationStatus getInvitationStatus();
+    POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus getOutgoingGameInviteStatus(int index);
+    /**
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+     */
+    int getOutgoingGameInviteStatusCount();
+    /**
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+     */
+    java.util.List<? extends POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder> 
+        getOutgoingGameInviteStatusOrBuilderList();
+    /**
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+     */
+    POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder getOutgoingGameInviteStatusOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @return A list containing the dismissedOutgoingGameInviteAppKeys.
+     */
+    java.util.List<java.lang.String>
+        getDismissedOutgoingGameInviteAppKeysList();
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @return The count of dismissedOutgoingGameInviteAppKeys.
+     */
+    int getDismissedOutgoingGameInviteAppKeysCount();
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @param index The index of the element to return.
+     * @return The dismissedOutgoingGameInviteAppKeys at the given index.
+     */
+    java.lang.String getDismissedOutgoingGameInviteAppKeys(int index);
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the dismissedOutgoingGameInviteAppKeys at the given index.
+     */
+    com.google.protobuf.ByteString
+        getDismissedOutgoingGameInviteAppKeysBytes(int index);
   }
   /**
    * Protobuf type {@code POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto}
@@ -313,7 +360,8 @@ private static final long serialVersionUID = 0L;
     }
     private FriendDetailsEntryProto() {
       playerId_ = "";
-      invitationStatus_ = 0;
+      outgoingGameInviteStatus_ = java.util.Collections.emptyList();
+      dismissedOutgoingGameInviteAppKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -336,6 +384,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -391,10 +440,22 @@ private static final long serialVersionUID = 0L;
 
               break;
             }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              invitationStatus_ = rawValue;
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                outgoingGameInviteStatus_ = new java.util.ArrayList<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              outgoingGameInviteStatus_.add(
+                  input.readMessage(POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dismissedOutgoingGameInviteAppKeys_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dismissedOutgoingGameInviteAppKeys_.add(s);
               break;
             }
             default: {
@@ -412,6 +473,12 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          outgoingGameInviteStatus_ = java.util.Collections.unmodifiableList(outgoingGameInviteStatus_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          dismissedOutgoingGameInviteAppKeys_ = dismissedOutgoingGameInviteAppKeys_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -427,6 +494,681 @@ private static final long serialVersionUID = 0L;
       return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_GetFriendDetailsResponse_FriendDetailsEntryProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.class, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.Builder.class);
+    }
+
+    public interface OutgoingGameInviteStatusOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string app_key = 1;</code>
+       * @return The appKey.
+       */
+      java.lang.String getAppKey();
+      /**
+       * <code>string app_key = 1;</code>
+       * @return The bytes for appKey.
+       */
+      com.google.protobuf.ByteString
+          getAppKeyBytes();
+
+      /**
+       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+       * @return The enum numeric value on the wire for invitationStatus.
+       */
+      int getInvitationStatusValue();
+      /**
+       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+       * @return The invitationStatus.
+       */
+      POGOProtos.Rpc.SocialV2Enum.InvitationStatus getInvitationStatus();
+    }
+    /**
+     * Protobuf type {@code POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus}
+     */
+    public static final class OutgoingGameInviteStatus extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)
+        OutgoingGameInviteStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use OutgoingGameInviteStatus.newBuilder() to construct.
+      private OutgoingGameInviteStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private OutgoingGameInviteStatus() {
+        appKey_ = "";
+        invitationStatus_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new OutgoingGameInviteStatus();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private OutgoingGameInviteStatus(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                appKey_ = s;
+                break;
+              }
+              case 16: {
+                int rawValue = input.readEnum();
+
+                invitationStatus_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_GetFriendDetailsResponse_FriendDetailsEntryProto_OutgoingGameInviteStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_GetFriendDetailsResponse_FriendDetailsEntryProto_OutgoingGameInviteStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.class, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder.class);
+      }
+
+      public static final int APP_KEY_FIELD_NUMBER = 1;
+      private volatile java.lang.Object appKey_;
+      /**
+       * <code>string app_key = 1;</code>
+       * @return The appKey.
+       */
+      @java.lang.Override
+      public java.lang.String getAppKey() {
+        java.lang.Object ref = appKey_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appKey_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string app_key = 1;</code>
+       * @return The bytes for appKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAppKeyBytes() {
+        java.lang.Object ref = appKey_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INVITATION_STATUS_FIELD_NUMBER = 2;
+      private int invitationStatus_;
+      /**
+       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+       * @return The enum numeric value on the wire for invitationStatus.
+       */
+      @java.lang.Override public int getInvitationStatusValue() {
+        return invitationStatus_;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+       * @return The invitationStatus.
+       */
+      @java.lang.Override public POGOProtos.Rpc.SocialV2Enum.InvitationStatus getInvitationStatus() {
+        @SuppressWarnings("deprecation")
+        POGOProtos.Rpc.SocialV2Enum.InvitationStatus result = POGOProtos.Rpc.SocialV2Enum.InvitationStatus.valueOf(invitationStatus_);
+        return result == null ? POGOProtos.Rpc.SocialV2Enum.InvitationStatus.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getAppKeyBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, appKey_);
+        }
+        if (invitationStatus_ != POGOProtos.Rpc.SocialV2Enum.InvitationStatus.INVITATION_STATUS_UNSET.getNumber()) {
+          output.writeEnum(2, invitationStatus_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getAppKeyBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, appKey_);
+        }
+        if (invitationStatus_ != POGOProtos.Rpc.SocialV2Enum.InvitationStatus.INVITATION_STATUS_UNSET.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(2, invitationStatus_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)) {
+          return super.equals(obj);
+        }
+        POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus other = (POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus) obj;
+
+        if (!getAppKey()
+            .equals(other.getAppKey())) return false;
+        if (invitationStatus_ != other.invitationStatus_) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + APP_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getAppKey().hashCode();
+        hash = (37 * hash) + INVITATION_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + invitationStatus_;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_GetFriendDetailsResponse_FriendDetailsEntryProto_OutgoingGameInviteStatus_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_GetFriendDetailsResponse_FriendDetailsEntryProto_OutgoingGameInviteStatus_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.class, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder.class);
+        }
+
+        // Construct using POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          appKey_ = "";
+
+          invitationStatus_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_GetFriendDetailsResponse_FriendDetailsEntryProto_OutgoingGameInviteStatus_descriptor;
+        }
+
+        @java.lang.Override
+        public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus getDefaultInstanceForType() {
+          return POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus build() {
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus buildPartial() {
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus result = new POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus(this);
+          result.appKey_ = appKey_;
+          result.invitationStatus_ = invitationStatus_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus) {
+            return mergeFrom((POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus other) {
+          if (other == POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.getDefaultInstance()) return this;
+          if (!other.getAppKey().isEmpty()) {
+            appKey_ = other.appKey_;
+            onChanged();
+          }
+          if (other.invitationStatus_ != 0) {
+            setInvitationStatusValue(other.getInvitationStatusValue());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object appKey_ = "";
+        /**
+         * <code>string app_key = 1;</code>
+         * @return The appKey.
+         */
+        public java.lang.String getAppKey() {
+          java.lang.Object ref = appKey_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            appKey_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string app_key = 1;</code>
+         * @return The bytes for appKey.
+         */
+        public com.google.protobuf.ByteString
+            getAppKeyBytes() {
+          java.lang.Object ref = appKey_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            appKey_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string app_key = 1;</code>
+         * @param value The appKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAppKey(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          appKey_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string app_key = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAppKey() {
+          
+          appKey_ = getDefaultInstance().getAppKey();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string app_key = 1;</code>
+         * @param value The bytes for appKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAppKeyBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          appKey_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int invitationStatus_ = 0;
+        /**
+         * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+         * @return The enum numeric value on the wire for invitationStatus.
+         */
+        @java.lang.Override public int getInvitationStatusValue() {
+          return invitationStatus_;
+        }
+        /**
+         * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+         * @param value The enum numeric value on the wire for invitationStatus to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInvitationStatusValue(int value) {
+          
+          invitationStatus_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+         * @return The invitationStatus.
+         */
+        @java.lang.Override
+        public POGOProtos.Rpc.SocialV2Enum.InvitationStatus getInvitationStatus() {
+          @SuppressWarnings("deprecation")
+          POGOProtos.Rpc.SocialV2Enum.InvitationStatus result = POGOProtos.Rpc.SocialV2Enum.InvitationStatus.valueOf(invitationStatus_);
+          return result == null ? POGOProtos.Rpc.SocialV2Enum.InvitationStatus.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+         * @param value The invitationStatus to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInvitationStatus(POGOProtos.Rpc.SocialV2Enum.InvitationStatus value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          invitationStatus_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearInvitationStatus() {
+          
+          invitationStatus_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)
+      }
+
+      // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus)
+      private static final POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus();
+      }
+
+      public static POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<OutgoingGameInviteStatus>
+          PARSER = new com.google.protobuf.AbstractParser<OutgoingGameInviteStatus>() {
+        @java.lang.Override
+        public OutgoingGameInviteStatus parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OutgoingGameInviteStatus(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<OutgoingGameInviteStatus> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OutgoingGameInviteStatus> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     public static final int PLAYER_ID_FIELD_NUMBER = 1;
@@ -545,23 +1287,79 @@ private static final long serialVersionUID = 0L;
       return getCallingGameData();
     }
 
-    public static final int INVITATION_STATUS_FIELD_NUMBER = 5;
-    private int invitationStatus_;
+    public static final int OUTGOING_GAME_INVITE_STATUS_FIELD_NUMBER = 5;
+    private java.util.List<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus> outgoingGameInviteStatus_;
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-     * @return The enum numeric value on the wire for invitationStatus.
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
      */
-    @java.lang.Override public int getInvitationStatusValue() {
-      return invitationStatus_;
+    @java.lang.Override
+    public java.util.List<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus> getOutgoingGameInviteStatusList() {
+      return outgoingGameInviteStatus_;
     }
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-     * @return The invitationStatus.
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
      */
-    @java.lang.Override public POGOProtos.Rpc.SocialV2Enum.InvitationStatus getInvitationStatus() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.SocialV2Enum.InvitationStatus result = POGOProtos.Rpc.SocialV2Enum.InvitationStatus.valueOf(invitationStatus_);
-      return result == null ? POGOProtos.Rpc.SocialV2Enum.InvitationStatus.UNRECOGNIZED : result;
+    @java.lang.Override
+    public java.util.List<? extends POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder> 
+        getOutgoingGameInviteStatusOrBuilderList() {
+      return outgoingGameInviteStatus_;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+     */
+    @java.lang.Override
+    public int getOutgoingGameInviteStatusCount() {
+      return outgoingGameInviteStatus_.size();
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus getOutgoingGameInviteStatus(int index) {
+      return outgoingGameInviteStatus_.get(index);
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder getOutgoingGameInviteStatusOrBuilder(
+        int index) {
+      return outgoingGameInviteStatus_.get(index);
+    }
+
+    public static final int DISMISSED_OUTGOING_GAME_INVITE_APP_KEYS_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList dismissedOutgoingGameInviteAppKeys_;
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @return A list containing the dismissedOutgoingGameInviteAppKeys.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDismissedOutgoingGameInviteAppKeysList() {
+      return dismissedOutgoingGameInviteAppKeys_;
+    }
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @return The count of dismissedOutgoingGameInviteAppKeys.
+     */
+    public int getDismissedOutgoingGameInviteAppKeysCount() {
+      return dismissedOutgoingGameInviteAppKeys_.size();
+    }
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @param index The index of the element to return.
+     * @return The dismissedOutgoingGameInviteAppKeys at the given index.
+     */
+    public java.lang.String getDismissedOutgoingGameInviteAppKeys(int index) {
+      return dismissedOutgoingGameInviteAppKeys_.get(index);
+    }
+    /**
+     * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the dismissedOutgoingGameInviteAppKeys at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDismissedOutgoingGameInviteAppKeysBytes(int index) {
+      return dismissedOutgoingGameInviteAppKeys_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -590,8 +1388,11 @@ private static final long serialVersionUID = 0L;
       if (callingGameData_ != null) {
         output.writeMessage(4, getCallingGameData());
       }
-      if (invitationStatus_ != POGOProtos.Rpc.SocialV2Enum.InvitationStatus.INVITATION_STATUS_UNSET.getNumber()) {
-        output.writeEnum(5, invitationStatus_);
+      for (int i = 0; i < outgoingGameInviteStatus_.size(); i++) {
+        output.writeMessage(5, outgoingGameInviteStatus_.get(i));
+      }
+      for (int i = 0; i < dismissedOutgoingGameInviteAppKeys_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, dismissedOutgoingGameInviteAppKeys_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -617,9 +1418,17 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getCallingGameData());
       }
-      if (invitationStatus_ != POGOProtos.Rpc.SocialV2Enum.InvitationStatus.INVITATION_STATUS_UNSET.getNumber()) {
+      for (int i = 0; i < outgoingGameInviteStatus_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, invitationStatus_);
+          .computeMessageSize(5, outgoingGameInviteStatus_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dismissedOutgoingGameInviteAppKeys_.size(); i++) {
+          dataSize += computeStringSizeNoTag(dismissedOutgoingGameInviteAppKeys_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDismissedOutgoingGameInviteAppKeysList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -653,7 +1462,10 @@ private static final long serialVersionUID = 0L;
         if (!getCallingGameData()
             .equals(other.getCallingGameData())) return false;
       }
-      if (invitationStatus_ != other.invitationStatus_) return false;
+      if (!getOutgoingGameInviteStatusList()
+          .equals(other.getOutgoingGameInviteStatusList())) return false;
+      if (!getDismissedOutgoingGameInviteAppKeysList()
+          .equals(other.getDismissedOutgoingGameInviteAppKeysList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -679,8 +1491,14 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + CALLING_GAME_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getCallingGameData().hashCode();
       }
-      hash = (37 * hash) + INVITATION_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + invitationStatus_;
+      if (getOutgoingGameInviteStatusCount() > 0) {
+        hash = (37 * hash) + OUTGOING_GAME_INVITE_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getOutgoingGameInviteStatusList().hashCode();
+      }
+      if (getDismissedOutgoingGameInviteAppKeysCount() > 0) {
+        hash = (37 * hash) + DISMISSED_OUTGOING_GAME_INVITE_APP_KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getDismissedOutgoingGameInviteAppKeysList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -809,6 +1627,7 @@ private static final long serialVersionUID = 0L;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getOutgoingGameInviteStatusFieldBuilder();
         }
       }
       @java.lang.Override
@@ -834,8 +1653,14 @@ private static final long serialVersionUID = 0L;
           callingGameData_ = null;
           callingGameDataBuilder_ = null;
         }
-        invitationStatus_ = 0;
-
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          outgoingGameInviteStatus_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          outgoingGameInviteStatusBuilder_.clear();
+        }
+        dismissedOutgoingGameInviteAppKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -862,6 +1687,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto buildPartial() {
         POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto result = new POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto(this);
+        int from_bitField0_ = bitField0_;
         result.playerId_ = playerId_;
         if (profileBuilder_ == null) {
           result.profile_ = profile_;
@@ -878,7 +1704,20 @@ private static final long serialVersionUID = 0L;
         } else {
           result.callingGameData_ = callingGameDataBuilder_.build();
         }
-        result.invitationStatus_ = invitationStatus_;
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            outgoingGameInviteStatus_ = java.util.Collections.unmodifiableList(outgoingGameInviteStatus_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.outgoingGameInviteStatus_ = outgoingGameInviteStatus_;
+        } else {
+          result.outgoingGameInviteStatus_ = outgoingGameInviteStatusBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          dismissedOutgoingGameInviteAppKeys_ = dismissedOutgoingGameInviteAppKeys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.dismissedOutgoingGameInviteAppKeys_ = dismissedOutgoingGameInviteAppKeys_;
         onBuilt();
         return result;
       }
@@ -940,8 +1779,41 @@ private static final long serialVersionUID = 0L;
         if (other.hasCallingGameData()) {
           mergeCallingGameData(other.getCallingGameData());
         }
-        if (other.invitationStatus_ != 0) {
-          setInvitationStatusValue(other.getInvitationStatusValue());
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          if (!other.outgoingGameInviteStatus_.isEmpty()) {
+            if (outgoingGameInviteStatus_.isEmpty()) {
+              outgoingGameInviteStatus_ = other.outgoingGameInviteStatus_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureOutgoingGameInviteStatusIsMutable();
+              outgoingGameInviteStatus_.addAll(other.outgoingGameInviteStatus_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.outgoingGameInviteStatus_.isEmpty()) {
+            if (outgoingGameInviteStatusBuilder_.isEmpty()) {
+              outgoingGameInviteStatusBuilder_.dispose();
+              outgoingGameInviteStatusBuilder_ = null;
+              outgoingGameInviteStatus_ = other.outgoingGameInviteStatus_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              outgoingGameInviteStatusBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOutgoingGameInviteStatusFieldBuilder() : null;
+            } else {
+              outgoingGameInviteStatusBuilder_.addAllMessages(other.outgoingGameInviteStatus_);
+            }
+          }
+        }
+        if (!other.dismissedOutgoingGameInviteAppKeys_.isEmpty()) {
+          if (dismissedOutgoingGameInviteAppKeys_.isEmpty()) {
+            dismissedOutgoingGameInviteAppKeys_ = other.dismissedOutgoingGameInviteAppKeys_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDismissedOutgoingGameInviteAppKeysIsMutable();
+            dismissedOutgoingGameInviteAppKeys_.addAll(other.dismissedOutgoingGameInviteAppKeys_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -971,6 +1843,7 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object playerId_ = "";
       /**
@@ -1405,56 +2278,352 @@ private static final long serialVersionUID = 0L;
         return callingGameDataBuilder_;
       }
 
-      private int invitationStatus_ = 0;
-      /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-       * @return The enum numeric value on the wire for invitationStatus.
-       */
-      @java.lang.Override public int getInvitationStatusValue() {
-        return invitationStatus_;
+      private java.util.List<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus> outgoingGameInviteStatus_ =
+        java.util.Collections.emptyList();
+      private void ensureOutgoingGameInviteStatusIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          outgoingGameInviteStatus_ = new java.util.ArrayList<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus>(outgoingGameInviteStatus_);
+          bitField0_ |= 0x00000001;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder> outgoingGameInviteStatusBuilder_;
+
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-       * @param value The enum numeric value on the wire for invitationStatus to set.
-       * @return This builder for chaining.
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
        */
-      public Builder setInvitationStatusValue(int value) {
-        
-        invitationStatus_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-       * @return The invitationStatus.
-       */
-      @java.lang.Override
-      public POGOProtos.Rpc.SocialV2Enum.InvitationStatus getInvitationStatus() {
-        @SuppressWarnings("deprecation")
-        POGOProtos.Rpc.SocialV2Enum.InvitationStatus result = POGOProtos.Rpc.SocialV2Enum.InvitationStatus.valueOf(invitationStatus_);
-        return result == null ? POGOProtos.Rpc.SocialV2Enum.InvitationStatus.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
-       * @param value The invitationStatus to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInvitationStatus(POGOProtos.Rpc.SocialV2Enum.InvitationStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public java.util.List<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus> getOutgoingGameInviteStatusList() {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(outgoingGameInviteStatus_);
+        } else {
+          return outgoingGameInviteStatusBuilder_.getMessageList();
         }
-        
-        invitationStatus_ = value.getNumber();
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public int getOutgoingGameInviteStatusCount() {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          return outgoingGameInviteStatus_.size();
+        } else {
+          return outgoingGameInviteStatusBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus getOutgoingGameInviteStatus(int index) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          return outgoingGameInviteStatus_.get(index);
+        } else {
+          return outgoingGameInviteStatusBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder setOutgoingGameInviteStatus(
+          int index, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus value) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.set(index, value);
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder setOutgoingGameInviteStatus(
+          int index, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder builderForValue) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder addOutgoingGameInviteStatus(POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus value) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.add(value);
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder addOutgoingGameInviteStatus(
+          int index, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus value) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.add(index, value);
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder addOutgoingGameInviteStatus(
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder builderForValue) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.add(builderForValue.build());
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder addOutgoingGameInviteStatus(
+          int index, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder builderForValue) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder addAllOutgoingGameInviteStatus(
+          java.lang.Iterable<? extends POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus> values) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          ensureOutgoingGameInviteStatusIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, outgoingGameInviteStatus_);
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder clearOutgoingGameInviteStatus() {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          outgoingGameInviteStatus_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public Builder removeOutgoingGameInviteStatus(int index) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          ensureOutgoingGameInviteStatusIsMutable();
+          outgoingGameInviteStatus_.remove(index);
+          onChanged();
+        } else {
+          outgoingGameInviteStatusBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder getOutgoingGameInviteStatusBuilder(
+          int index) {
+        return getOutgoingGameInviteStatusFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder getOutgoingGameInviteStatusOrBuilder(
+          int index) {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          return outgoingGameInviteStatus_.get(index);  } else {
+          return outgoingGameInviteStatusBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public java.util.List<? extends POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder> 
+           getOutgoingGameInviteStatusOrBuilderList() {
+        if (outgoingGameInviteStatusBuilder_ != null) {
+          return outgoingGameInviteStatusBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(outgoingGameInviteStatus_);
+        }
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder addOutgoingGameInviteStatusBuilder() {
+        return getOutgoingGameInviteStatusFieldBuilder().addBuilder(
+            POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder addOutgoingGameInviteStatusBuilder(
+          int index) {
+        return getOutgoingGameInviteStatusFieldBuilder().addBuilder(
+            index, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus outgoing_game_invite_status = 5;</code>
+       */
+      public java.util.List<POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder> 
+           getOutgoingGameInviteStatusBuilderList() {
+        return getOutgoingGameInviteStatusFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder> 
+          getOutgoingGameInviteStatusFieldBuilder() {
+        if (outgoingGameInviteStatusBuilder_ == null) {
+          outgoingGameInviteStatusBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatus.Builder, POGOProtos.Rpc.GetFriendDetailsResponse.FriendDetailsEntryProto.OutgoingGameInviteStatusOrBuilder>(
+                  outgoingGameInviteStatus_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          outgoingGameInviteStatus_ = null;
+        }
+        return outgoingGameInviteStatusBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList dismissedOutgoingGameInviteAppKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDismissedOutgoingGameInviteAppKeysIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          dismissedOutgoingGameInviteAppKeys_ = new com.google.protobuf.LazyStringArrayList(dismissedOutgoingGameInviteAppKeys_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @return A list containing the dismissedOutgoingGameInviteAppKeys.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDismissedOutgoingGameInviteAppKeysList() {
+        return dismissedOutgoingGameInviteAppKeys_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @return The count of dismissedOutgoingGameInviteAppKeys.
+       */
+      public int getDismissedOutgoingGameInviteAppKeysCount() {
+        return dismissedOutgoingGameInviteAppKeys_.size();
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @param index The index of the element to return.
+       * @return The dismissedOutgoingGameInviteAppKeys at the given index.
+       */
+      public java.lang.String getDismissedOutgoingGameInviteAppKeys(int index) {
+        return dismissedOutgoingGameInviteAppKeys_.get(index);
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the dismissedOutgoingGameInviteAppKeys at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getDismissedOutgoingGameInviteAppKeysBytes(int index) {
+        return dismissedOutgoingGameInviteAppKeys_.getByteString(index);
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The dismissedOutgoingGameInviteAppKeys to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDismissedOutgoingGameInviteAppKeys(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDismissedOutgoingGameInviteAppKeysIsMutable();
+        dismissedOutgoingGameInviteAppKeys_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.InvitationStatus invitation_status = 5;</code>
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @param value The dismissedOutgoingGameInviteAppKeys to add.
        * @return This builder for chaining.
        */
-      public Builder clearInvitationStatus() {
-        
-        invitationStatus_ = 0;
+      public Builder addDismissedOutgoingGameInviteAppKeys(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDismissedOutgoingGameInviteAppKeysIsMutable();
+        dismissedOutgoingGameInviteAppKeys_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @param values The dismissedOutgoingGameInviteAppKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDismissedOutgoingGameInviteAppKeys(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureDismissedOutgoingGameInviteAppKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dismissedOutgoingGameInviteAppKeys_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDismissedOutgoingGameInviteAppKeys() {
+        dismissedOutgoingGameInviteAppKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string dismissed_outgoing_game_invite_app_keys = 6;</code>
+       * @param value The bytes of the dismissedOutgoingGameInviteAppKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDismissedOutgoingGameInviteAppKeysBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureDismissedOutgoingGameInviteAppKeysIsMutable();
+        dismissedOutgoingGameInviteAppKeys_.add(value);
         onChanged();
         return this;
       }
@@ -1527,38 +2696,23 @@ private static final long serialVersionUID = 0L;
     POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto.Result getResult();
 
     /**
-     * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-     * @return Whether the locale field is set.
-     */
-    boolean hasLocale();
-    /**
-     * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-     * @return The locale.
-     */
-    POGOProtos.Rpc.PlayerLocaleProto getLocale();
-    /**
-     * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-     */
-    POGOProtos.Rpc.PlayerLocaleProtoOrBuilder getLocaleOrBuilder();
-
-    /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
      * @return The enum numeric value on the wire for onlineStatus.
      */
     int getOnlineStatusValue();
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
      * @return The onlineStatus.
      */
     POGOProtos.Rpc.SocialV2Enum.OnlineStatus getOnlineStatus();
 
     /**
-     * <code>string last_played_app_key = 4;</code>
+     * <code>string last_played_app_key = 3;</code>
      * @return The lastPlayedAppKey.
      */
     java.lang.String getLastPlayedAppKey();
     /**
-     * <code>string last_played_app_key = 4;</code>
+     * <code>string last_played_app_key = 3;</code>
      * @return The bytes for lastPlayedAppKey.
      */
     com.google.protobuf.ByteString
@@ -1618,26 +2772,13 @@ private static final long serialVersionUID = 0L;
               result_ = rawValue;
               break;
             }
-            case 18: {
-              POGOProtos.Rpc.PlayerLocaleProto.Builder subBuilder = null;
-              if (locale_ != null) {
-                subBuilder = locale_.toBuilder();
-              }
-              locale_ = input.readMessage(POGOProtos.Rpc.PlayerLocaleProto.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(locale_);
-                locale_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
+            case 16: {
               int rawValue = input.readEnum();
 
               onlineStatus_ = rawValue;
               break;
             }
-            case 34: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               lastPlayedAppKey_ = s;
@@ -1829,43 +2970,17 @@ private static final long serialVersionUID = 0L;
       return result == null ? POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto.Result.UNRECOGNIZED : result;
     }
 
-    public static final int LOCALE_FIELD_NUMBER = 2;
-    private POGOProtos.Rpc.PlayerLocaleProto locale_;
-    /**
-     * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-     * @return Whether the locale field is set.
-     */
-    @java.lang.Override
-    public boolean hasLocale() {
-      return locale_ != null;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-     * @return The locale.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PlayerLocaleProto getLocale() {
-      return locale_ == null ? POGOProtos.Rpc.PlayerLocaleProto.getDefaultInstance() : locale_;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PlayerLocaleProtoOrBuilder getLocaleOrBuilder() {
-      return getLocale();
-    }
-
-    public static final int ONLINE_STATUS_FIELD_NUMBER = 3;
+    public static final int ONLINE_STATUS_FIELD_NUMBER = 2;
     private int onlineStatus_;
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
      * @return The enum numeric value on the wire for onlineStatus.
      */
     @java.lang.Override public int getOnlineStatusValue() {
       return onlineStatus_;
     }
     /**
-     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+     * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
      * @return The onlineStatus.
      */
     @java.lang.Override public POGOProtos.Rpc.SocialV2Enum.OnlineStatus getOnlineStatus() {
@@ -1874,10 +2989,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? POGOProtos.Rpc.SocialV2Enum.OnlineStatus.UNRECOGNIZED : result;
     }
 
-    public static final int LAST_PLAYED_APP_KEY_FIELD_NUMBER = 4;
+    public static final int LAST_PLAYED_APP_KEY_FIELD_NUMBER = 3;
     private volatile java.lang.Object lastPlayedAppKey_;
     /**
-     * <code>string last_played_app_key = 4;</code>
+     * <code>string last_played_app_key = 3;</code>
      * @return The lastPlayedAppKey.
      */
     @java.lang.Override
@@ -1894,7 +3009,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string last_played_app_key = 4;</code>
+     * <code>string last_played_app_key = 3;</code>
      * @return The bytes for lastPlayedAppKey.
      */
     @java.lang.Override
@@ -1929,14 +3044,11 @@ private static final long serialVersionUID = 0L;
       if (result_ != POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto.Result.UNSET.getNumber()) {
         output.writeEnum(1, result_);
       }
-      if (locale_ != null) {
-        output.writeMessage(2, getLocale());
-      }
       if (onlineStatus_ != POGOProtos.Rpc.SocialV2Enum.OnlineStatus.STATUS_UNSET.getNumber()) {
-        output.writeEnum(3, onlineStatus_);
+        output.writeEnum(2, onlineStatus_);
       }
       if (!getLastPlayedAppKeyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastPlayedAppKey_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastPlayedAppKey_);
       }
       unknownFields.writeTo(output);
     }
@@ -1951,16 +3063,12 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, result_);
       }
-      if (locale_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getLocale());
-      }
       if (onlineStatus_ != POGOProtos.Rpc.SocialV2Enum.OnlineStatus.STATUS_UNSET.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, onlineStatus_);
+          .computeEnumSize(2, onlineStatus_);
       }
       if (!getLastPlayedAppKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastPlayedAppKey_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastPlayedAppKey_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1978,11 +3086,6 @@ private static final long serialVersionUID = 0L;
       POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto other = (POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto) obj;
 
       if (result_ != other.result_) return false;
-      if (hasLocale() != other.hasLocale()) return false;
-      if (hasLocale()) {
-        if (!getLocale()
-            .equals(other.getLocale())) return false;
-      }
       if (onlineStatus_ != other.onlineStatus_) return false;
       if (!getLastPlayedAppKey()
           .equals(other.getLastPlayedAppKey())) return false;
@@ -1999,10 +3102,6 @@ private static final long serialVersionUID = 0L;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
       hash = (53 * hash) + result_;
-      if (hasLocale()) {
-        hash = (37 * hash) + LOCALE_FIELD_NUMBER;
-        hash = (53 * hash) + getLocale().hashCode();
-      }
       hash = (37 * hash) + ONLINE_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + onlineStatus_;
       hash = (37 * hash) + LAST_PLAYED_APP_KEY_FIELD_NUMBER;
@@ -2142,12 +3241,6 @@ private static final long serialVersionUID = 0L;
         super.clear();
         result_ = 0;
 
-        if (localeBuilder_ == null) {
-          locale_ = null;
-        } else {
-          locale_ = null;
-          localeBuilder_ = null;
-        }
         onlineStatus_ = 0;
 
         lastPlayedAppKey_ = "";
@@ -2179,11 +3272,6 @@ private static final long serialVersionUID = 0L;
       public POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto buildPartial() {
         POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto result = new POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto(this);
         result.result_ = result_;
-        if (localeBuilder_ == null) {
-          result.locale_ = locale_;
-        } else {
-          result.locale_ = localeBuilder_.build();
-        }
         result.onlineStatus_ = onlineStatus_;
         result.lastPlayedAppKey_ = lastPlayedAppKey_;
         onBuilt();
@@ -2236,9 +3324,6 @@ private static final long serialVersionUID = 0L;
         if (other == POGOProtos.Rpc.GetFriendDetailsResponse.PlayerStatusDetailsProto.getDefaultInstance()) return this;
         if (other.result_ != 0) {
           setResultValue(other.getResultValue());
-        }
-        if (other.hasLocale()) {
-          mergeLocale(other.getLocale());
         }
         if (other.onlineStatus_ != 0) {
           setOnlineStatusValue(other.getOnlineStatusValue());
@@ -2330,135 +3415,16 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private POGOProtos.Rpc.PlayerLocaleProto locale_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          POGOProtos.Rpc.PlayerLocaleProto, POGOProtos.Rpc.PlayerLocaleProto.Builder, POGOProtos.Rpc.PlayerLocaleProtoOrBuilder> localeBuilder_;
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       * @return Whether the locale field is set.
-       */
-      public boolean hasLocale() {
-        return localeBuilder_ != null || locale_ != null;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       * @return The locale.
-       */
-      public POGOProtos.Rpc.PlayerLocaleProto getLocale() {
-        if (localeBuilder_ == null) {
-          return locale_ == null ? POGOProtos.Rpc.PlayerLocaleProto.getDefaultInstance() : locale_;
-        } else {
-          return localeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      public Builder setLocale(POGOProtos.Rpc.PlayerLocaleProto value) {
-        if (localeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          locale_ = value;
-          onChanged();
-        } else {
-          localeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      public Builder setLocale(
-          POGOProtos.Rpc.PlayerLocaleProto.Builder builderForValue) {
-        if (localeBuilder_ == null) {
-          locale_ = builderForValue.build();
-          onChanged();
-        } else {
-          localeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      public Builder mergeLocale(POGOProtos.Rpc.PlayerLocaleProto value) {
-        if (localeBuilder_ == null) {
-          if (locale_ != null) {
-            locale_ =
-              POGOProtos.Rpc.PlayerLocaleProto.newBuilder(locale_).mergeFrom(value).buildPartial();
-          } else {
-            locale_ = value;
-          }
-          onChanged();
-        } else {
-          localeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      public Builder clearLocale() {
-        if (localeBuilder_ == null) {
-          locale_ = null;
-          onChanged();
-        } else {
-          locale_ = null;
-          localeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      public POGOProtos.Rpc.PlayerLocaleProto.Builder getLocaleBuilder() {
-        
-        onChanged();
-        return getLocaleFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      public POGOProtos.Rpc.PlayerLocaleProtoOrBuilder getLocaleOrBuilder() {
-        if (localeBuilder_ != null) {
-          return localeBuilder_.getMessageOrBuilder();
-        } else {
-          return locale_ == null ?
-              POGOProtos.Rpc.PlayerLocaleProto.getDefaultInstance() : locale_;
-        }
-      }
-      /**
-       * <code>.POGOProtos.Rpc.PlayerLocaleProto locale = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          POGOProtos.Rpc.PlayerLocaleProto, POGOProtos.Rpc.PlayerLocaleProto.Builder, POGOProtos.Rpc.PlayerLocaleProtoOrBuilder> 
-          getLocaleFieldBuilder() {
-        if (localeBuilder_ == null) {
-          localeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              POGOProtos.Rpc.PlayerLocaleProto, POGOProtos.Rpc.PlayerLocaleProto.Builder, POGOProtos.Rpc.PlayerLocaleProtoOrBuilder>(
-                  getLocale(),
-                  getParentForChildren(),
-                  isClean());
-          locale_ = null;
-        }
-        return localeBuilder_;
-      }
-
       private int onlineStatus_ = 0;
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
        * @return The enum numeric value on the wire for onlineStatus.
        */
       @java.lang.Override public int getOnlineStatusValue() {
         return onlineStatus_;
       }
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
        * @param value The enum numeric value on the wire for onlineStatus to set.
        * @return This builder for chaining.
        */
@@ -2469,7 +3435,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
        * @return The onlineStatus.
        */
       @java.lang.Override
@@ -2479,7 +3445,7 @@ private static final long serialVersionUID = 0L;
         return result == null ? POGOProtos.Rpc.SocialV2Enum.OnlineStatus.UNRECOGNIZED : result;
       }
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
        * @param value The onlineStatus to set.
        * @return This builder for chaining.
        */
@@ -2493,7 +3459,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 3;</code>
+       * <code>.POGOProtos.Rpc.SocialV2Enum.OnlineStatus online_status = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOnlineStatus() {
@@ -2505,7 +3471,7 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object lastPlayedAppKey_ = "";
       /**
-       * <code>string last_played_app_key = 4;</code>
+       * <code>string last_played_app_key = 3;</code>
        * @return The lastPlayedAppKey.
        */
       public java.lang.String getLastPlayedAppKey() {
@@ -2521,7 +3487,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <code>string last_played_app_key = 4;</code>
+       * <code>string last_played_app_key = 3;</code>
        * @return The bytes for lastPlayedAppKey.
        */
       public com.google.protobuf.ByteString
@@ -2538,7 +3504,7 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <code>string last_played_app_key = 4;</code>
+       * <code>string last_played_app_key = 3;</code>
        * @param value The lastPlayedAppKey to set.
        * @return This builder for chaining.
        */
@@ -2553,7 +3519,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>string last_played_app_key = 4;</code>
+       * <code>string last_played_app_key = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastPlayedAppKey() {
@@ -2563,7 +3529,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>string last_played_app_key = 4;</code>
+       * <code>string last_played_app_key = 3;</code>
        * @param value The bytes for lastPlayedAppKey to set.
        * @return This builder for chaining.
        */

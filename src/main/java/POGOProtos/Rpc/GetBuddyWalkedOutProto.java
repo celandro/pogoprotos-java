@@ -87,6 +87,11 @@ private static final long serialVersionUID = 0L;
             megaPokemonId_ = rawValue;
             break;
           }
+          case 64: {
+
+            xlCandy_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -212,6 +217,17 @@ private static final long serialVersionUID = 0L;
     return result == null ? POGOProtos.Rpc.HoloPokemonId.UNRECOGNIZED : result;
   }
 
+  public static final int XL_CANDY_FIELD_NUMBER = 8;
+  private int xlCandy_;
+  /**
+   * <code>int32 xl_candy = 8;</code>
+   * @return The xlCandy.
+   */
+  @java.lang.Override
+  public int getXlCandy() {
+    return xlCandy_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -246,6 +262,9 @@ private static final long serialVersionUID = 0L;
     }
     if (megaPokemonId_ != POGOProtos.Rpc.HoloPokemonId.MISSINGNO.getNumber()) {
       output.writeEnum(7, megaPokemonId_);
+    }
+    if (xlCandy_ != 0) {
+      output.writeInt32(8, xlCandy_);
     }
     unknownFields.writeTo(output);
   }
@@ -284,6 +303,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, megaPokemonId_);
     }
+    if (xlCandy_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, xlCandy_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -313,6 +336,8 @@ private static final long serialVersionUID = 0L;
     if (getMegaEnergyEarnedCount()
         != other.getMegaEnergyEarnedCount()) return false;
     if (megaPokemonId_ != other.megaPokemonId_) return false;
+    if (getXlCandy()
+        != other.getXlCandy()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -341,6 +366,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMegaEnergyEarnedCount();
     hash = (37 * hash) + MEGA_POKEMON_ID_FIELD_NUMBER;
     hash = (53 * hash) + megaPokemonId_;
+    hash = (37 * hash) + XL_CANDY_FIELD_NUMBER;
+    hash = (53 * hash) + getXlCandy();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -488,6 +515,8 @@ private static final long serialVersionUID = 0L;
 
       megaPokemonId_ = 0;
 
+      xlCandy_ = 0;
+
       return this;
     }
 
@@ -521,6 +550,7 @@ private static final long serialVersionUID = 0L;
       result.lastKmAwarded_ = lastKmAwarded_;
       result.megaEnergyEarnedCount_ = megaEnergyEarnedCount_;
       result.megaPokemonId_ = megaPokemonId_;
+      result.xlCandy_ = xlCandy_;
       onBuilt();
       return result;
     }
@@ -589,6 +619,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.megaPokemonId_ != 0) {
         setMegaPokemonIdValue(other.getMegaPokemonIdValue());
+      }
+      if (other.getXlCandy() != 0) {
+        setXlCandy(other.getXlCandy());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -878,6 +911,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearMegaPokemonId() {
       
       megaPokemonId_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int xlCandy_ ;
+    /**
+     * <code>int32 xl_candy = 8;</code>
+     * @return The xlCandy.
+     */
+    @java.lang.Override
+    public int getXlCandy() {
+      return xlCandy_;
+    }
+    /**
+     * <code>int32 xl_candy = 8;</code>
+     * @param value The xlCandy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setXlCandy(int value) {
+      
+      xlCandy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 xl_candy = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearXlCandy() {
+      
+      xlCandy_ = 0;
       onChanged();
       return this;
     }

@@ -85,7 +85,7 @@ public enum EggSlotType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(41);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(40);
   }
 
   private static final EggSlotType[] VALUES = values();

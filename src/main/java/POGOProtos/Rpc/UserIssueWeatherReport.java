@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private UserIssueWeatherReport() {
     gameplayerWeather_ = "";
+    severity_ = 0;
   }
 
   @java.lang.Override
@@ -61,8 +62,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 24: {
+            int rawValue = input.readEnum();
 
-            severity_ = input.readInt32();
+            severity_ = rawValue;
             break;
           }
           case 32: {
@@ -154,12 +156,20 @@ private static final long serialVersionUID = 0L;
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private int severity_;
   /**
-   * <code>int32 severity = 3;</code>
+   * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
+   * @return The enum numeric value on the wire for severity.
+   */
+  @java.lang.Override public int getSeverityValue() {
+    return severity_;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
    * @return The severity.
    */
-  @java.lang.Override
-  public int getSeverity() {
-    return severity_;
+  @java.lang.Override public POGOProtos.Rpc.WeatherAlertProto.Severity getSeverity() {
+    @SuppressWarnings("deprecation")
+    POGOProtos.Rpc.WeatherAlertProto.Severity result = POGOProtos.Rpc.WeatherAlertProto.Severity.valueOf(severity_);
+    return result == null ? POGOProtos.Rpc.WeatherAlertProto.Severity.UNRECOGNIZED : result;
   }
 
   public static final int USER_REPORT_FIELD_NUMBER = 4;
@@ -193,8 +203,8 @@ private static final long serialVersionUID = 0L;
     if (alertActive_ != false) {
       output.writeBool(2, alertActive_);
     }
-    if (severity_ != 0) {
-      output.writeInt32(3, severity_);
+    if (severity_ != POGOProtos.Rpc.WeatherAlertProto.Severity.NONE.getNumber()) {
+      output.writeEnum(3, severity_);
     }
     if (userReport_ != 0) {
       output.writeInt32(4, userReport_);
@@ -215,9 +225,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, alertActive_);
     }
-    if (severity_ != 0) {
+    if (severity_ != POGOProtos.Rpc.WeatherAlertProto.Severity.NONE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, severity_);
+        .computeEnumSize(3, severity_);
     }
     if (userReport_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -242,8 +252,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGameplayerWeather())) return false;
     if (getAlertActive()
         != other.getAlertActive()) return false;
-    if (getSeverity()
-        != other.getSeverity()) return false;
+    if (severity_ != other.severity_) return false;
     if (getUserReport()
         != other.getUserReport()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -263,7 +272,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAlertActive());
     hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
-    hash = (53 * hash) + getSeverity();
+    hash = (53 * hash) + severity_;
     hash = (37 * hash) + USER_REPORT_FIELD_NUMBER;
     hash = (53 * hash) + getUserReport();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -492,8 +501,8 @@ private static final long serialVersionUID = 0L;
       if (other.getAlertActive() != false) {
         setAlertActive(other.getAlertActive());
       }
-      if (other.getSeverity() != 0) {
-        setSeverity(other.getSeverity());
+      if (other.severity_ != 0) {
+        setSeverityValue(other.getSeverityValue());
       }
       if (other.getUserReport() != 0) {
         setUserReport(other.getUserReport());
@@ -634,28 +643,51 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int severity_ ;
+    private int severity_ = 0;
     /**
-     * <code>int32 severity = 3;</code>
-     * @return The severity.
+     * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
+     * @return The enum numeric value on the wire for severity.
      */
-    @java.lang.Override
-    public int getSeverity() {
+    @java.lang.Override public int getSeverityValue() {
       return severity_;
     }
     /**
-     * <code>int32 severity = 3;</code>
-     * @param value The severity to set.
+     * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
+     * @param value The enum numeric value on the wire for severity to set.
      * @return This builder for chaining.
      */
-    public Builder setSeverity(int value) {
+    public Builder setSeverityValue(int value) {
       
       severity_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 severity = 3;</code>
+     * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
+     * @return The severity.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.WeatherAlertProto.Severity getSeverity() {
+      @SuppressWarnings("deprecation")
+      POGOProtos.Rpc.WeatherAlertProto.Severity result = POGOProtos.Rpc.WeatherAlertProto.Severity.valueOf(severity_);
+      return result == null ? POGOProtos.Rpc.WeatherAlertProto.Severity.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
+     * @param value The severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverity(POGOProtos.Rpc.WeatherAlertProto.Severity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      severity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {

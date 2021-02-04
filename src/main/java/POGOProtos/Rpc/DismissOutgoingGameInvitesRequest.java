@@ -4,27 +4,27 @@
 package POGOProtos.Rpc;
 
 /**
- * Protobuf type {@code POGOProtos.Rpc.UploadPoiPhotoByUrlProto}
+ * Protobuf type {@code POGOProtos.Rpc.DismissOutgoingGameInvitesRequest}
  */
-public final class UploadPoiPhotoByUrlProto extends
+public final class DismissOutgoingGameInvitesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.UploadPoiPhotoByUrlProto)
-    UploadPoiPhotoByUrlProtoOrBuilder {
+    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.DismissOutgoingGameInvitesRequest)
+    DismissOutgoingGameInvitesRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UploadPoiPhotoByUrlProto.newBuilder() to construct.
-  private UploadPoiPhotoByUrlProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DismissOutgoingGameInvitesRequest.newBuilder() to construct.
+  private DismissOutgoingGameInvitesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UploadPoiPhotoByUrlProto() {
-    requestId_ = "";
-    imageUrl_ = "";
+  private DismissOutgoingGameInvitesRequest() {
+    friendId_ = "";
+    appKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UploadPoiPhotoByUrlProto();
+    return new DismissOutgoingGameInvitesRequest();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UploadPoiPhotoByUrlProto(
+  private DismissOutgoingGameInvitesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -53,13 +54,16 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            requestId_ = s;
+            friendId_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            imageUrl_ = s;
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              appKey_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            appKey_.add(s);
             break;
           }
           default: {
@@ -77,97 +81,97 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        appKey_ = appKey_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlProto_descriptor;
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_DismissOutgoingGameInvitesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlProto_fieldAccessorTable
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_DismissOutgoingGameInvitesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            POGOProtos.Rpc.UploadPoiPhotoByUrlProto.class, POGOProtos.Rpc.UploadPoiPhotoByUrlProto.Builder.class);
+            POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.class, POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.Builder.class);
   }
 
-  public static final int REQUEST_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object requestId_;
+  public static final int FRIEND_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object friendId_;
   /**
-   * <code>string request_id = 1;</code>
-   * @return The requestId.
+   * <code>string friend_id = 1;</code>
+   * @return The friendId.
    */
   @java.lang.Override
-  public java.lang.String getRequestId() {
-    java.lang.Object ref = requestId_;
+  public java.lang.String getFriendId() {
+    java.lang.Object ref = friendId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      requestId_ = s;
+      friendId_ = s;
       return s;
     }
   }
   /**
-   * <code>string request_id = 1;</code>
-   * @return The bytes for requestId.
+   * <code>string friend_id = 1;</code>
+   * @return The bytes for friendId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getRequestIdBytes() {
-    java.lang.Object ref = requestId_;
+      getFriendIdBytes() {
+    java.lang.Object ref = friendId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      requestId_ = b;
+      friendId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int IMAGE_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object imageUrl_;
+  public static final int APP_KEY_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList appKey_;
   /**
-   * <code>string image_url = 2;</code>
-   * @return The imageUrl.
+   * <code>repeated string app_key = 2;</code>
+   * @return A list containing the appKey.
    */
-  @java.lang.Override
-  public java.lang.String getImageUrl() {
-    java.lang.Object ref = imageUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      imageUrl_ = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getAppKeyList() {
+    return appKey_;
   }
   /**
-   * <code>string image_url = 2;</code>
-   * @return The bytes for imageUrl.
+   * <code>repeated string app_key = 2;</code>
+   * @return The count of appKey.
    */
-  @java.lang.Override
+  public int getAppKeyCount() {
+    return appKey_.size();
+  }
+  /**
+   * <code>repeated string app_key = 2;</code>
+   * @param index The index of the element to return.
+   * @return The appKey at the given index.
+   */
+  public java.lang.String getAppKey(int index) {
+    return appKey_.get(index);
+  }
+  /**
+   * <code>repeated string app_key = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the appKey at the given index.
+   */
   public com.google.protobuf.ByteString
-      getImageUrlBytes() {
-    java.lang.Object ref = imageUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      imageUrl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getAppKeyBytes(int index) {
+    return appKey_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -184,11 +188,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
+    if (!getFriendIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, friendId_);
     }
-    if (!getImageUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageUrl_);
+    for (int i = 0; i < appKey_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appKey_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -199,11 +203,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
+    if (!getFriendIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, friendId_);
     }
-    if (!getImageUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageUrl_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < appKey_.size(); i++) {
+        dataSize += computeStringSizeNoTag(appKey_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAppKeyList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,15 +224,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof POGOProtos.Rpc.UploadPoiPhotoByUrlProto)) {
+    if (!(obj instanceof POGOProtos.Rpc.DismissOutgoingGameInvitesRequest)) {
       return super.equals(obj);
     }
-    POGOProtos.Rpc.UploadPoiPhotoByUrlProto other = (POGOProtos.Rpc.UploadPoiPhotoByUrlProto) obj;
+    POGOProtos.Rpc.DismissOutgoingGameInvitesRequest other = (POGOProtos.Rpc.DismissOutgoingGameInvitesRequest) obj;
 
-    if (!getRequestId()
-        .equals(other.getRequestId())) return false;
-    if (!getImageUrl()
-        .equals(other.getImageUrl())) return false;
+    if (!getFriendId()
+        .equals(other.getFriendId())) return false;
+    if (!getAppKeyList()
+        .equals(other.getAppKeyList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,78 +244,80 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
-    hash = (37 * hash) + IMAGE_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getImageUrl().hashCode();
+    hash = (37 * hash) + FRIEND_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getFriendId().hashCode();
+    if (getAppKeyCount() > 0) {
+      hash = (37 * hash) + APP_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getAppKeyList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(byte[] data)
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseDelimitedFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseDelimitedFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto parseFrom(
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +330,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(POGOProtos.Rpc.UploadPoiPhotoByUrlProto prototype) {
+  public static Builder newBuilder(POGOProtos.Rpc.DismissOutgoingGameInvitesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +346,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code POGOProtos.Rpc.UploadPoiPhotoByUrlProto}
+   * Protobuf type {@code POGOProtos.Rpc.DismissOutgoingGameInvitesRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.UploadPoiPhotoByUrlProto)
-      POGOProtos.Rpc.UploadPoiPhotoByUrlProtoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.DismissOutgoingGameInvitesRequest)
+      POGOProtos.Rpc.DismissOutgoingGameInvitesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlProto_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_DismissOutgoingGameInvitesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlProto_fieldAccessorTable
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_DismissOutgoingGameInvitesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              POGOProtos.Rpc.UploadPoiPhotoByUrlProto.class, POGOProtos.Rpc.UploadPoiPhotoByUrlProto.Builder.class);
+              POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.class, POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.Builder.class);
     }
 
-    // Construct using POGOProtos.Rpc.UploadPoiPhotoByUrlProto.newBuilder()
+    // Construct using POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -372,27 +383,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      requestId_ = "";
+      friendId_ = "";
 
-      imageUrl_ = "";
-
+      appKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlProto_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_DismissOutgoingGameInvitesRequest_descriptor;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.UploadPoiPhotoByUrlProto getDefaultInstanceForType() {
-      return POGOProtos.Rpc.UploadPoiPhotoByUrlProto.getDefaultInstance();
+    public POGOProtos.Rpc.DismissOutgoingGameInvitesRequest getDefaultInstanceForType() {
+      return POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.UploadPoiPhotoByUrlProto build() {
-      POGOProtos.Rpc.UploadPoiPhotoByUrlProto result = buildPartial();
+    public POGOProtos.Rpc.DismissOutgoingGameInvitesRequest build() {
+      POGOProtos.Rpc.DismissOutgoingGameInvitesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,10 +411,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.UploadPoiPhotoByUrlProto buildPartial() {
-      POGOProtos.Rpc.UploadPoiPhotoByUrlProto result = new POGOProtos.Rpc.UploadPoiPhotoByUrlProto(this);
-      result.requestId_ = requestId_;
-      result.imageUrl_ = imageUrl_;
+    public POGOProtos.Rpc.DismissOutgoingGameInvitesRequest buildPartial() {
+      POGOProtos.Rpc.DismissOutgoingGameInvitesRequest result = new POGOProtos.Rpc.DismissOutgoingGameInvitesRequest(this);
+      int from_bitField0_ = bitField0_;
+      result.friendId_ = friendId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        appKey_ = appKey_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.appKey_ = appKey_;
       onBuilt();
       return result;
     }
@@ -442,22 +458,28 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof POGOProtos.Rpc.UploadPoiPhotoByUrlProto) {
-        return mergeFrom((POGOProtos.Rpc.UploadPoiPhotoByUrlProto)other);
+      if (other instanceof POGOProtos.Rpc.DismissOutgoingGameInvitesRequest) {
+        return mergeFrom((POGOProtos.Rpc.DismissOutgoingGameInvitesRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(POGOProtos.Rpc.UploadPoiPhotoByUrlProto other) {
-      if (other == POGOProtos.Rpc.UploadPoiPhotoByUrlProto.getDefaultInstance()) return this;
-      if (!other.getRequestId().isEmpty()) {
-        requestId_ = other.requestId_;
+    public Builder mergeFrom(POGOProtos.Rpc.DismissOutgoingGameInvitesRequest other) {
+      if (other == POGOProtos.Rpc.DismissOutgoingGameInvitesRequest.getDefaultInstance()) return this;
+      if (!other.getFriendId().isEmpty()) {
+        friendId_ = other.friendId_;
         onChanged();
       }
-      if (!other.getImageUrl().isEmpty()) {
-        imageUrl_ = other.imageUrl_;
+      if (!other.appKey_.isEmpty()) {
+        if (appKey_.isEmpty()) {
+          appKey_ = other.appKey_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureAppKeyIsMutable();
+          appKey_.addAll(other.appKey_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -475,11 +497,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      POGOProtos.Rpc.UploadPoiPhotoByUrlProto parsedMessage = null;
+      POGOProtos.Rpc.DismissOutgoingGameInvitesRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (POGOProtos.Rpc.UploadPoiPhotoByUrlProto) e.getUnfinishedMessage();
+        parsedMessage = (POGOProtos.Rpc.DismissOutgoingGameInvitesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -488,155 +510,190 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
-    private java.lang.Object requestId_ = "";
+    private java.lang.Object friendId_ = "";
     /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
+     * <code>string friend_id = 1;</code>
+     * @return The friendId.
      */
-    public java.lang.String getRequestId() {
-      java.lang.Object ref = requestId_;
+    public java.lang.String getFriendId() {
+      java.lang.Object ref = friendId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        requestId_ = s;
+        friendId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
+     * <code>string friend_id = 1;</code>
+     * @return The bytes for friendId.
      */
     public com.google.protobuf.ByteString
-        getRequestIdBytes() {
-      java.lang.Object ref = requestId_;
+        getFriendIdBytes() {
+      java.lang.Object ref = friendId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        requestId_ = b;
+        friendId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string request_id = 1;</code>
-     * @param value The requestId to set.
+     * <code>string friend_id = 1;</code>
+     * @param value The friendId to set.
      * @return This builder for chaining.
      */
-    public Builder setRequestId(
+    public Builder setFriendId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      requestId_ = value;
+      friendId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string request_id = 1;</code>
+     * <code>string friend_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRequestId() {
+    public Builder clearFriendId() {
       
-      requestId_ = getDefaultInstance().getRequestId();
+      friendId_ = getDefaultInstance().getFriendId();
       onChanged();
       return this;
     }
     /**
-     * <code>string request_id = 1;</code>
-     * @param value The bytes for requestId to set.
+     * <code>string friend_id = 1;</code>
+     * @param value The bytes for friendId to set.
      * @return This builder for chaining.
      */
-    public Builder setRequestIdBytes(
+    public Builder setFriendIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      requestId_ = value;
+      friendId_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object imageUrl_ = "";
-    /**
-     * <code>string image_url = 2;</code>
-     * @return The imageUrl.
-     */
-    public java.lang.String getImageUrl() {
-      java.lang.Object ref = imageUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList appKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAppKeyIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        appKey_ = new com.google.protobuf.LazyStringArrayList(appKey_);
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>string image_url = 2;</code>
-     * @return The bytes for imageUrl.
+     * <code>repeated string app_key = 2;</code>
+     * @return A list containing the appKey.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAppKeyList() {
+      return appKey_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string app_key = 2;</code>
+     * @return The count of appKey.
+     */
+    public int getAppKeyCount() {
+      return appKey_.size();
+    }
+    /**
+     * <code>repeated string app_key = 2;</code>
+     * @param index The index of the element to return.
+     * @return The appKey at the given index.
+     */
+    public java.lang.String getAppKey(int index) {
+      return appKey_.get(index);
+    }
+    /**
+     * <code>repeated string app_key = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the appKey at the given index.
      */
     public com.google.protobuf.ByteString
-        getImageUrlBytes() {
-      java.lang.Object ref = imageUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        imageUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getAppKeyBytes(int index) {
+      return appKey_.getByteString(index);
     }
     /**
-     * <code>string image_url = 2;</code>
-     * @param value The imageUrl to set.
+     * <code>repeated string app_key = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The appKey to set.
      * @return This builder for chaining.
      */
-    public Builder setImageUrl(
+    public Builder setAppKey(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAppKeyIsMutable();
+      appKey_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string app_key = 2;</code>
+     * @param value The appKey to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppKey(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      imageUrl_ = value;
+  ensureAppKeyIsMutable();
+      appKey_.add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>string image_url = 2;</code>
+     * <code>repeated string app_key = 2;</code>
+     * @param values The appKey to add.
      * @return This builder for chaining.
      */
-    public Builder clearImageUrl() {
-      
-      imageUrl_ = getDefaultInstance().getImageUrl();
+    public Builder addAllAppKey(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAppKeyIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, appKey_);
       onChanged();
       return this;
     }
     /**
-     * <code>string image_url = 2;</code>
-     * @param value The bytes for imageUrl to set.
+     * <code>repeated string app_key = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder setImageUrlBytes(
+    public Builder clearAppKey() {
+      appKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string app_key = 2;</code>
+     * @param value The bytes of the appKey to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppKeyBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      imageUrl_ = value;
+      ensureAppKeyIsMutable();
+      appKey_.add(value);
       onChanged();
       return this;
     }
@@ -653,41 +710,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.UploadPoiPhotoByUrlProto)
+    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.DismissOutgoingGameInvitesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.UploadPoiPhotoByUrlProto)
-  private static final POGOProtos.Rpc.UploadPoiPhotoByUrlProto DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.DismissOutgoingGameInvitesRequest)
+  private static final POGOProtos.Rpc.DismissOutgoingGameInvitesRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new POGOProtos.Rpc.UploadPoiPhotoByUrlProto();
+    DEFAULT_INSTANCE = new POGOProtos.Rpc.DismissOutgoingGameInvitesRequest();
   }
 
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlProto getDefaultInstance() {
+  public static POGOProtos.Rpc.DismissOutgoingGameInvitesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UploadPoiPhotoByUrlProto>
-      PARSER = new com.google.protobuf.AbstractParser<UploadPoiPhotoByUrlProto>() {
+  private static final com.google.protobuf.Parser<DismissOutgoingGameInvitesRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DismissOutgoingGameInvitesRequest>() {
     @java.lang.Override
-    public UploadPoiPhotoByUrlProto parsePartialFrom(
+    public DismissOutgoingGameInvitesRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UploadPoiPhotoByUrlProto(input, extensionRegistry);
+      return new DismissOutgoingGameInvitesRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UploadPoiPhotoByUrlProto> parser() {
+  public static com.google.protobuf.Parser<DismissOutgoingGameInvitesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UploadPoiPhotoByUrlProto> getParserForType() {
+  public com.google.protobuf.Parser<DismissOutgoingGameInvitesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public POGOProtos.Rpc.UploadPoiPhotoByUrlProto getDefaultInstanceForType() {
+  public POGOProtos.Rpc.DismissOutgoingGameInvitesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

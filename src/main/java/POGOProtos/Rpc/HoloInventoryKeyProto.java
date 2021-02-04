@@ -175,6 +175,11 @@ private static final long serialVersionUID = 0L;
             type_ = input.readInt64();
             break;
           }
+          case 216: {
+            typeCase_ = 27;
+            type_ = input.readUInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -236,6 +241,7 @@ private static final long serialVersionUID = 0L;
     BADGE(24),
     PLAYER_STATS_SNAPSHOT(25),
     UNKNOWN_KEY(26),
+    DUMMY_DATA(27),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -277,6 +283,7 @@ private static final long serialVersionUID = 0L;
         case 24: return BADGE;
         case 25: return PLAYER_STATS_SNAPSHOT;
         case 26: return UNKNOWN_KEY;
+        case 27: return DUMMY_DATA;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -728,6 +735,19 @@ private static final long serialVersionUID = 0L;
     return 0L;
   }
 
+  public static final int DUMMY_DATA_FIELD_NUMBER = 27;
+  /**
+   * <code>uint64 dummy_data = 27;</code>
+   * @return The dummyData.
+   */
+  @java.lang.Override
+  public long getDummyData() {
+    if (typeCase_ == 27) {
+      return (java.lang.Long) type_;
+    }
+    return 0L;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -830,6 +850,10 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 26) {
       output.writeInt64(
           26, (long)((java.lang.Long) type_));
+    }
+    if (typeCase_ == 27) {
+      output.writeUInt64(
+          27, (long)((java.lang.Long) type_));
     }
     unknownFields.writeTo(output);
   }
@@ -951,6 +975,11 @@ private static final long serialVersionUID = 0L;
         .computeInt64Size(
             26, (long)((java.lang.Long) type_));
     }
+    if (typeCase_ == 27) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(
+            27, (long)((java.lang.Long) type_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1063,6 +1092,10 @@ private static final long serialVersionUID = 0L;
       case 26:
         if (getUnknownKey()
             != other.getUnknownKey()) return false;
+        break;
+      case 27:
+        if (getDummyData()
+            != other.getDummyData()) return false;
         break;
       case 0:
       default:
@@ -1190,6 +1223,11 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + UNKNOWN_KEY_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getUnknownKey());
+        break;
+      case 27:
+        hash = (37 * hash) + DUMMY_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDummyData());
         break;
       case 0:
       default:
@@ -1427,6 +1465,9 @@ private static final long serialVersionUID = 0L;
       if (typeCase_ == 26) {
         result.type_ = type_;
       }
+      if (typeCase_ == 27) {
+        result.type_ = type_;
+      }
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -1575,6 +1616,10 @@ private static final long serialVersionUID = 0L;
         }
         case UNKNOWN_KEY: {
           setUnknownKey(other.getUnknownKey());
+          break;
+        }
+        case DUMMY_DATA: {
+          setDummyData(other.getDummyData());
           break;
         }
         case TYPE_NOT_SET: {
@@ -2689,6 +2734,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUnknownKey() {
       if (typeCase_ == 26) {
+        typeCase_ = 0;
+        type_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>uint64 dummy_data = 27;</code>
+     * @return The dummyData.
+     */
+    public long getDummyData() {
+      if (typeCase_ == 27) {
+        return (java.lang.Long) type_;
+      }
+      return 0L;
+    }
+    /**
+     * <code>uint64 dummy_data = 27;</code>
+     * @param value The dummyData to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDummyData(long value) {
+      typeCase_ = 27;
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 dummy_data = 27;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDummyData() {
+      if (typeCase_ == 27) {
         typeCase_ = 0;
         type_ = null;
         onChanged();

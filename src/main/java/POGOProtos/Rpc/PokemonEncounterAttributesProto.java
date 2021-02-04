@@ -140,6 +140,11 @@ private static final long serialVersionUID = 0L;
             maxPokemonActionFrequencyS_ = input.readFloat();
             break;
           }
+          case 152: {
+
+            bonusXlCandyCaptureReward_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -378,6 +383,17 @@ private static final long serialVersionUID = 0L;
     return maxPokemonActionFrequencyS_;
   }
 
+  public static final int BONUS_XL_CANDY_CAPTURE_REWARD_FIELD_NUMBER = 19;
+  private int bonusXlCandyCaptureReward_;
+  /**
+   * <code>int32 bonus_xl_candy_capture_reward = 19;</code>
+   * @return The bonusXlCandyCaptureReward.
+   */
+  @java.lang.Override
+  public int getBonusXlCandyCaptureReward() {
+    return bonusXlCandyCaptureReward_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -445,6 +461,9 @@ private static final long serialVersionUID = 0L;
     }
     if (maxPokemonActionFrequencyS_ != 0F) {
       output.writeFloat(18, maxPokemonActionFrequencyS_);
+    }
+    if (bonusXlCandyCaptureReward_ != 0) {
+      output.writeInt32(19, bonusXlCandyCaptureReward_);
     }
     unknownFields.writeTo(output);
   }
@@ -527,6 +546,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(18, maxPokemonActionFrequencyS_);
     }
+    if (bonusXlCandyCaptureReward_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(19, bonusXlCandyCaptureReward_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -592,6 +615,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getMaxPokemonActionFrequencyS())
         != java.lang.Float.floatToIntBits(
             other.getMaxPokemonActionFrequencyS())) return false;
+    if (getBonusXlCandyCaptureReward()
+        != other.getBonusXlCandyCaptureReward()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -654,6 +679,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAX_POKEMON_ACTION_FREQUENCY_S_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getMaxPokemonActionFrequencyS());
+    hash = (37 * hash) + BONUS_XL_CANDY_CAPTURE_REWARD_FIELD_NUMBER;
+    hash = (53 * hash) + getBonusXlCandyCaptureReward();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -823,6 +850,8 @@ private static final long serialVersionUID = 0L;
 
       maxPokemonActionFrequencyS_ = 0F;
 
+      bonusXlCandyCaptureReward_ = 0;
+
       return this;
     }
 
@@ -867,6 +896,7 @@ private static final long serialVersionUID = 0L;
       result.cameraDistance_ = cameraDistance_;
       result.minPokemonActionFrequencyS_ = minPokemonActionFrequencyS_;
       result.maxPokemonActionFrequencyS_ = maxPokemonActionFrequencyS_;
+      result.bonusXlCandyCaptureReward_ = bonusXlCandyCaptureReward_;
       onBuilt();
       return result;
     }
@@ -968,6 +998,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaxPokemonActionFrequencyS() != 0F) {
         setMaxPokemonActionFrequencyS(other.getMaxPokemonActionFrequencyS());
+      }
+      if (other.getBonusXlCandyCaptureReward() != 0) {
+        setBonusXlCandyCaptureReward(other.getBonusXlCandyCaptureReward());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1575,6 +1608,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaxPokemonActionFrequencyS() {
       
       maxPokemonActionFrequencyS_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int bonusXlCandyCaptureReward_ ;
+    /**
+     * <code>int32 bonus_xl_candy_capture_reward = 19;</code>
+     * @return The bonusXlCandyCaptureReward.
+     */
+    @java.lang.Override
+    public int getBonusXlCandyCaptureReward() {
+      return bonusXlCandyCaptureReward_;
+    }
+    /**
+     * <code>int32 bonus_xl_candy_capture_reward = 19;</code>
+     * @param value The bonusXlCandyCaptureReward to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBonusXlCandyCaptureReward(int value) {
+      
+      bonusXlCandyCaptureReward_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 bonus_xl_candy_capture_reward = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBonusXlCandyCaptureReward() {
+      
+      bonusXlCandyCaptureReward_ = 0;
       onChanged();
       return this;
     }

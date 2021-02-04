@@ -692,4 +692,28 @@ public interface PokemonSettingsProtoOrBuilder extends
    * @return The raidBossDistanceOffset.
    */
   float getRaidBossDistanceOffset();
+
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  java.util.List<POGOProtos.Rpc.FormChangeProto> 
+      getFormChangeList();
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  POGOProtos.Rpc.FormChangeProto getFormChange(int index);
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  int getFormChangeCount();
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  java.util.List<? extends POGOProtos.Rpc.FormChangeProtoOrBuilder> 
+      getFormChangeOrBuilderList();
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  POGOProtos.Rpc.FormChangeProtoOrBuilder getFormChangeOrBuilder(
+      int index);
 }

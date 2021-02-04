@@ -59,4 +59,38 @@ public interface BelugaTransactionCompleteOutProtoOrBuilder extends
    * @return The bucketsUntilWeeklyAward.
    */
   int getBucketsUntilWeeklyAward();
+
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+  int getXlCandyAwardedPerIdCount();
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+  boolean containsXlCandyAwardedPerId(
+      int key);
+  /**
+   * Use {@link #getXlCandyAwardedPerIdMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.Integer, java.lang.Integer>
+  getXlCandyAwardedPerId();
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+  java.util.Map<java.lang.Integer, java.lang.Integer>
+  getXlCandyAwardedPerIdMap();
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+
+  int getXlCandyAwardedPerIdOrDefault(
+      int key,
+      int defaultValue);
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+
+  int getXlCandyAwardedPerIdOrThrow(
+      int key);
 }

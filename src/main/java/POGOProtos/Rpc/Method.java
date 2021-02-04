@@ -808,6 +808,14 @@ public enum Method
    * <code>METHOD_GET_POKEMON_TAGS = 1721;</code>
    */
   METHOD_GET_POKEMON_TAGS(1721),
+  /**
+   * <code>METHOD_CHANGE_POKEMON_FORM = 1722;</code>
+   */
+  METHOD_CHANGE_POKEMON_FORM(1722),
+  /**
+   * <code>METHOD_CHOOSE_EVENT_VARIANT = 1723;</code>
+   */
+  METHOD_CHOOSE_EVENT_VARIANT(1723),
   UNRECOGNIZED(-1),
   ;
 
@@ -1611,6 +1619,14 @@ public enum Method
    * <code>METHOD_GET_POKEMON_TAGS = 1721;</code>
    */
   public static final int METHOD_GET_POKEMON_TAGS_VALUE = 1721;
+  /**
+   * <code>METHOD_CHANGE_POKEMON_FORM = 1722;</code>
+   */
+  public static final int METHOD_CHANGE_POKEMON_FORM_VALUE = 1722;
+  /**
+   * <code>METHOD_CHOOSE_EVENT_VARIANT = 1723;</code>
+   */
+  public static final int METHOD_CHOOSE_EVENT_VARIANT_VALUE = 1723;
 
 
   public final int getNumber() {
@@ -1837,6 +1853,8 @@ public enum Method
       case 1719: return METHOD_EDIT_POKEMON_TAG;
       case 1720: return METHOD_SET_POKEMON_TAGS_FOR_POKEMON;
       case 1721: return METHOD_GET_POKEMON_TAGS;
+      case 1722: return METHOD_CHANGE_POKEMON_FORM;
+      case 1723: return METHOD_CHOOSE_EVENT_VARIANT;
       default: return null;
     }
   }

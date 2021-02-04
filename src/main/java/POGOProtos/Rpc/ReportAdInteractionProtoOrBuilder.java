@@ -68,6 +68,36 @@ public interface ReportAdInteractionProtoOrBuilder extends
   POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteractionOrBuilder getCtaClickedOrBuilder();
 
   /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+   * @return Whether the adSpawned field is set.
+   */
+  boolean hasAdSpawned();
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+   * @return The adSpawned.
+   */
+  POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction getAdSpawned();
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+   */
+  POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder getAdSpawnedOrBuilder();
+
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+   * @return Whether the adDismissed field is set.
+   */
+  boolean hasAdDismissed();
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+   * @return The adDismissed.
+   */
+  POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction getAdDismissed();
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+   */
+  POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder getAdDismissedOrBuilder();
+
+  /**
    * <code>string game_id = 1;</code>
    * @return The gameId.
    */
@@ -108,6 +138,17 @@ public interface ReportAdInteractionProtoOrBuilder extends
    * @return The encryptedAdToken.
    */
   com.google.protobuf.ByteString getEncryptedAdToken();
+
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+   * @return The enum numeric value on the wire for adType.
+   */
+  int getAdTypeValue();
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+   * @return The adType.
+   */
+  POGOProtos.Rpc.ReportAdInteractionProto.AdType getAdType();
 
   public POGOProtos.Rpc.ReportAdInteractionProto.InteractionTypeCase getInteractionTypeCase();
 }

@@ -1251,6 +1251,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 866: {
+            POGOProtos.Rpc.IncidentPrioritySettingsProto.Builder subBuilder = null;
+            if (incidentPrioritySettings_ != null) {
+              subBuilder = incidentPrioritySettings_.toBuilder();
+            }
+            incidentPrioritySettings_ = input.readMessage(POGOProtos.Rpc.IncidentPrioritySettingsProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(incidentPrioritySettings_);
+              incidentPrioritySettings_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -3713,6 +3726,32 @@ private static final long serialVersionUID = 0L;
     return getInventorySettings();
   }
 
+  public static final int INCIDENT_PRIORITY_SETTINGS_FIELD_NUMBER = 108;
+  private POGOProtos.Rpc.IncidentPrioritySettingsProto incidentPrioritySettings_;
+  /**
+   * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+   * @return Whether the incidentPrioritySettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncidentPrioritySettings() {
+    return incidentPrioritySettings_ != null;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+   * @return The incidentPrioritySettings.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.IncidentPrioritySettingsProto getIncidentPrioritySettings() {
+    return incidentPrioritySettings_ == null ? POGOProtos.Rpc.IncidentPrioritySettingsProto.getDefaultInstance() : incidentPrioritySettings_;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.IncidentPrioritySettingsProtoOrBuilder getIncidentPrioritySettingsOrBuilder() {
+    return getIncidentPrioritySettings();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -4005,6 +4044,9 @@ private static final long serialVersionUID = 0L;
     }
     if (inventorySettings_ != null) {
       output.writeMessage(103, getInventorySettings());
+    }
+    if (incidentPrioritySettings_ != null) {
+      output.writeMessage(108, getIncidentPrioritySettings());
     }
     unknownFields.writeTo(output);
   }
@@ -4385,6 +4427,10 @@ private static final long serialVersionUID = 0L;
     if (inventorySettings_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(103, getInventorySettings());
+    }
+    if (incidentPrioritySettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(108, getIncidentPrioritySettings());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4863,6 +4909,11 @@ private static final long serialVersionUID = 0L;
       if (!getInventorySettings()
           .equals(other.getInventorySettings())) return false;
     }
+    if (hasIncidentPrioritySettings() != other.hasIncidentPrioritySettings()) return false;
+    if (hasIncidentPrioritySettings()) {
+      if (!getIncidentPrioritySettings()
+          .equals(other.getIncidentPrioritySettings())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -5243,6 +5294,10 @@ private static final long serialVersionUID = 0L;
     if (hasInventorySettings()) {
       hash = (37 * hash) + INVENTORY_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getInventorySettings().hashCode();
+    }
+    if (hasIncidentPrioritySettings()) {
+      hash = (37 * hash) + INCIDENT_PRIORITY_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncidentPrioritySettings().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -5931,6 +5986,12 @@ private static final long serialVersionUID = 0L;
         inventorySettings_ = null;
         inventorySettingsBuilder_ = null;
       }
+      if (incidentPrioritySettingsBuilder_ == null) {
+        incidentPrioritySettings_ = null;
+      } else {
+        incidentPrioritySettings_ = null;
+        incidentPrioritySettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -6418,6 +6479,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.inventorySettings_ = inventorySettingsBuilder_.build();
       }
+      if (incidentPrioritySettingsBuilder_ == null) {
+        result.incidentPrioritySettings_ = incidentPrioritySettings_;
+      } else {
+        result.incidentPrioritySettings_ = incidentPrioritySettingsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -6745,6 +6811,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasInventorySettings()) {
         mergeInventorySettings(other.getInventorySettings());
+      }
+      if (other.hasIncidentPrioritySettings()) {
+        mergeIncidentPrioritySettings(other.getIncidentPrioritySettings());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -17797,6 +17866,125 @@ private static final long serialVersionUID = 0L;
         inventorySettings_ = null;
       }
       return inventorySettingsBuilder_;
+    }
+
+    private POGOProtos.Rpc.IncidentPrioritySettingsProto incidentPrioritySettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.IncidentPrioritySettingsProto, POGOProtos.Rpc.IncidentPrioritySettingsProto.Builder, POGOProtos.Rpc.IncidentPrioritySettingsProtoOrBuilder> incidentPrioritySettingsBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     * @return Whether the incidentPrioritySettings field is set.
+     */
+    public boolean hasIncidentPrioritySettings() {
+      return incidentPrioritySettingsBuilder_ != null || incidentPrioritySettings_ != null;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     * @return The incidentPrioritySettings.
+     */
+    public POGOProtos.Rpc.IncidentPrioritySettingsProto getIncidentPrioritySettings() {
+      if (incidentPrioritySettingsBuilder_ == null) {
+        return incidentPrioritySettings_ == null ? POGOProtos.Rpc.IncidentPrioritySettingsProto.getDefaultInstance() : incidentPrioritySettings_;
+      } else {
+        return incidentPrioritySettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    public Builder setIncidentPrioritySettings(POGOProtos.Rpc.IncidentPrioritySettingsProto value) {
+      if (incidentPrioritySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        incidentPrioritySettings_ = value;
+        onChanged();
+      } else {
+        incidentPrioritySettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    public Builder setIncidentPrioritySettings(
+        POGOProtos.Rpc.IncidentPrioritySettingsProto.Builder builderForValue) {
+      if (incidentPrioritySettingsBuilder_ == null) {
+        incidentPrioritySettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        incidentPrioritySettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    public Builder mergeIncidentPrioritySettings(POGOProtos.Rpc.IncidentPrioritySettingsProto value) {
+      if (incidentPrioritySettingsBuilder_ == null) {
+        if (incidentPrioritySettings_ != null) {
+          incidentPrioritySettings_ =
+            POGOProtos.Rpc.IncidentPrioritySettingsProto.newBuilder(incidentPrioritySettings_).mergeFrom(value).buildPartial();
+        } else {
+          incidentPrioritySettings_ = value;
+        }
+        onChanged();
+      } else {
+        incidentPrioritySettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    public Builder clearIncidentPrioritySettings() {
+      if (incidentPrioritySettingsBuilder_ == null) {
+        incidentPrioritySettings_ = null;
+        onChanged();
+      } else {
+        incidentPrioritySettings_ = null;
+        incidentPrioritySettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    public POGOProtos.Rpc.IncidentPrioritySettingsProto.Builder getIncidentPrioritySettingsBuilder() {
+      
+      onChanged();
+      return getIncidentPrioritySettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    public POGOProtos.Rpc.IncidentPrioritySettingsProtoOrBuilder getIncidentPrioritySettingsOrBuilder() {
+      if (incidentPrioritySettingsBuilder_ != null) {
+        return incidentPrioritySettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return incidentPrioritySettings_ == null ?
+            POGOProtos.Rpc.IncidentPrioritySettingsProto.getDefaultInstance() : incidentPrioritySettings_;
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.IncidentPrioritySettingsProto, POGOProtos.Rpc.IncidentPrioritySettingsProto.Builder, POGOProtos.Rpc.IncidentPrioritySettingsProtoOrBuilder> 
+        getIncidentPrioritySettingsFieldBuilder() {
+      if (incidentPrioritySettingsBuilder_ == null) {
+        incidentPrioritySettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.IncidentPrioritySettingsProto, POGOProtos.Rpc.IncidentPrioritySettingsProto.Builder, POGOProtos.Rpc.IncidentPrioritySettingsProtoOrBuilder>(
+                getIncidentPrioritySettings(),
+                getParentForChildren(),
+                isClean());
+        incidentPrioritySettings_ = null;
+      }
+      return incidentPrioritySettingsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

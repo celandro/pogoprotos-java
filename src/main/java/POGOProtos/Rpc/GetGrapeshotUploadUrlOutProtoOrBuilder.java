@@ -19,11 +19,11 @@ public interface GetGrapeshotUploadUrlOutProtoOrBuilder extends
   POGOProtos.Rpc.GetGrapeshotUploadUrlOutProto.Status getStatus();
 
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
   int getFileContextToGrapeshotDataCount();
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
   boolean containsFileContextToGrapeshotData(
       java.lang.String key);
@@ -34,19 +34,19 @@ public interface GetGrapeshotUploadUrlOutProtoOrBuilder extends
   java.util.Map<java.lang.String, POGOProtos.Rpc.GrapeshotUploadingDataProto>
   getFileContextToGrapeshotData();
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
   java.util.Map<java.lang.String, POGOProtos.Rpc.GrapeshotUploadingDataProto>
   getFileContextToGrapeshotDataMap();
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
 
   POGOProtos.Rpc.GrapeshotUploadingDataProto getFileContextToGrapeshotDataOrDefault(
       java.lang.String key,
       POGOProtos.Rpc.GrapeshotUploadingDataProto defaultValue);
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
 
   POGOProtos.Rpc.GrapeshotUploadingDataProto getFileContextToGrapeshotDataOrThrow(

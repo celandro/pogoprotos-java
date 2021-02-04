@@ -5721,6 +5721,35 @@ private static final long serialVersionUID = 0L;
      * @return The form.
      */
     POGOProtos.Rpc.PokemonDisplayProto.Form getForm();
+
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @return A list containing the forms.
+     */
+    java.util.List<POGOProtos.Rpc.PokemonDisplayProto.Form> getFormsList();
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @return The count of forms.
+     */
+    int getFormsCount();
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @param index The index of the element to return.
+     * @return The forms at the given index.
+     */
+    POGOProtos.Rpc.PokemonDisplayProto.Form getForms(int index);
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @return A list containing the enum numeric values on the wire for forms.
+     */
+    java.util.List<java.lang.Integer>
+    getFormsValueList();
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of forms at the given index.
+     */
+    int getFormsValue(int index);
   }
   /**
    * Protobuf type {@code POGOProtos.Rpc.CombatLeagueProto.PokemonWithForm}
@@ -5737,6 +5766,7 @@ private static final long serialVersionUID = 0L;
     private PokemonWithForm() {
       id_ = 0;
       form_ = 0;
+      forms_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5759,6 +5789,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5781,6 +5812,29 @@ private static final long serialVersionUID = 0L;
               form_ = rawValue;
               break;
             }
+            case 24: {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                forms_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              forms_.add(rawValue);
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  forms_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                forms_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5796,6 +5850,9 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          forms_ = java.util.Collections.unmodifiableList(forms_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -5851,6 +5908,64 @@ private static final long serialVersionUID = 0L;
       return result == null ? POGOProtos.Rpc.PokemonDisplayProto.Form.UNRECOGNIZED : result;
     }
 
+    public static final int FORMS_FIELD_NUMBER = 3;
+    private java.util.List<java.lang.Integer> forms_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, POGOProtos.Rpc.PokemonDisplayProto.Form> forms_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, POGOProtos.Rpc.PokemonDisplayProto.Form>() {
+              public POGOProtos.Rpc.PokemonDisplayProto.Form convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
+                POGOProtos.Rpc.PokemonDisplayProto.Form result = POGOProtos.Rpc.PokemonDisplayProto.Form.valueOf(from);
+                return result == null ? POGOProtos.Rpc.PokemonDisplayProto.Form.UNRECOGNIZED : result;
+              }
+            };
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @return A list containing the forms.
+     */
+    @java.lang.Override
+    public java.util.List<POGOProtos.Rpc.PokemonDisplayProto.Form> getFormsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, POGOProtos.Rpc.PokemonDisplayProto.Form>(forms_, forms_converter_);
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @return The count of forms.
+     */
+    @java.lang.Override
+    public int getFormsCount() {
+      return forms_.size();
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @param index The index of the element to return.
+     * @return The forms at the given index.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.PokemonDisplayProto.Form getForms(int index) {
+      return forms_converter_.convert(forms_.get(index));
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @return A list containing the enum numeric values on the wire for forms.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+    getFormsValueList() {
+      return forms_;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of forms at the given index.
+     */
+    @java.lang.Override
+    public int getFormsValue(int index) {
+      return forms_.get(index);
+    }
+    private int formsMemoizedSerializedSize;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5865,11 +5980,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       if (id_ != POGOProtos.Rpc.HoloPokemonId.MISSINGNO.getNumber()) {
         output.writeEnum(1, id_);
       }
       if (form_ != POGOProtos.Rpc.PokemonDisplayProto.Form.FORM_UNSET.getNumber()) {
         output.writeEnum(2, form_);
+      }
+      if (getFormsList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(formsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < forms_.size(); i++) {
+        output.writeEnumNoTag(forms_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -5888,6 +6011,18 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, form_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < forms_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeEnumSizeNoTag(forms_.get(i));
+        }
+        size += dataSize;
+        if (!getFormsList().isEmpty()) {  size += 1;
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dataSize);
+        }formsMemoizedSerializedSize = dataSize;
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5905,6 +6040,7 @@ private static final long serialVersionUID = 0L;
 
       if (id_ != other.id_) return false;
       if (form_ != other.form_) return false;
+      if (!forms_.equals(other.forms_)) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5920,6 +6056,10 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + id_;
       hash = (37 * hash) + FORM_FIELD_NUMBER;
       hash = (53 * hash) + form_;
+      if (getFormsCount() > 0) {
+        hash = (37 * hash) + FORMS_FIELD_NUMBER;
+        hash = (53 * hash) + forms_.hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6057,6 +6197,8 @@ private static final long serialVersionUID = 0L;
 
         form_ = 0;
 
+        forms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -6083,8 +6225,14 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public POGOProtos.Rpc.CombatLeagueProto.PokemonWithForm buildPartial() {
         POGOProtos.Rpc.CombatLeagueProto.PokemonWithForm result = new POGOProtos.Rpc.CombatLeagueProto.PokemonWithForm(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.form_ = form_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          forms_ = java.util.Collections.unmodifiableList(forms_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.forms_ = forms_;
         onBuilt();
         return result;
       }
@@ -6139,6 +6287,16 @@ private static final long serialVersionUID = 0L;
         if (other.form_ != 0) {
           setFormValue(other.getFormValue());
         }
+        if (!other.forms_.isEmpty()) {
+          if (forms_.isEmpty()) {
+            forms_ = other.forms_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFormsIsMutable();
+            forms_.addAll(other.forms_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6167,6 +6325,7 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+      private int bitField0_;
 
       private int id_ = 0;
       /**
@@ -6272,6 +6431,146 @@ private static final long serialVersionUID = 0L;
       public Builder clearForm() {
         
         form_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> forms_ =
+        java.util.Collections.emptyList();
+      private void ensureFormsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          forms_ = new java.util.ArrayList<java.lang.Integer>(forms_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @return A list containing the forms.
+       */
+      public java.util.List<POGOProtos.Rpc.PokemonDisplayProto.Form> getFormsList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, POGOProtos.Rpc.PokemonDisplayProto.Form>(forms_, forms_converter_);
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @return The count of forms.
+       */
+      public int getFormsCount() {
+        return forms_.size();
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param index The index of the element to return.
+       * @return The forms at the given index.
+       */
+      public POGOProtos.Rpc.PokemonDisplayProto.Form getForms(int index) {
+        return forms_converter_.convert(forms_.get(index));
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The forms to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForms(
+          int index, POGOProtos.Rpc.PokemonDisplayProto.Form value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFormsIsMutable();
+        forms_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param value The forms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addForms(POGOProtos.Rpc.PokemonDisplayProto.Form value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFormsIsMutable();
+        forms_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param values The forms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllForms(
+          java.lang.Iterable<? extends POGOProtos.Rpc.PokemonDisplayProto.Form> values) {
+        ensureFormsIsMutable();
+        for (POGOProtos.Rpc.PokemonDisplayProto.Form value : values) {
+          forms_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForms() {
+        forms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @return A list containing the enum numeric values on the wire for forms.
+       */
+      public java.util.List<java.lang.Integer>
+      getFormsValueList() {
+        return java.util.Collections.unmodifiableList(forms_);
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of forms at the given index.
+       */
+      public int getFormsValue(int index) {
+        return forms_.get(index);
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of forms at the given index.
+       * @return This builder for chaining.
+       */
+      public Builder setFormsValue(
+          int index, int value) {
+        ensureFormsIsMutable();
+        forms_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param value The enum numeric value on the wire for forms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFormsValue(int value) {
+        ensureFormsIsMutable();
+        forms_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .POGOProtos.Rpc.PokemonDisplayProto.Form forms = 3;</code>
+       * @param values The enum numeric values on the wire for forms to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFormsValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureFormsIsMutable();
+        for (int value : values) {
+          forms_.add(value);
+        }
         onChanged();
         return this;
       }

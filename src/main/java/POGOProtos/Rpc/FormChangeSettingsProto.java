@@ -4,25 +4,25 @@
 package POGOProtos.Rpc;
 
 /**
- * Protobuf type {@code POGOProtos.Rpc.ARMappingValidationStatusProto}
+ * Protobuf type {@code POGOProtos.Rpc.FormChangeSettingsProto}
  */
-public final class ARMappingValidationStatusProto extends
+public final class FormChangeSettingsProto extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ARMappingValidationStatusProto)
-    ARMappingValidationStatusProtoOrBuilder {
+    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.FormChangeSettingsProto)
+    FormChangeSettingsProtoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ARMappingValidationStatusProto.newBuilder() to construct.
-  private ARMappingValidationStatusProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FormChangeSettingsProto.newBuilder() to construct.
+  private FormChangeSettingsProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ARMappingValidationStatusProto() {
+  private FormChangeSettingsProto() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ARMappingValidationStatusProto();
+    return new FormChangeSettingsProto();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ARMappingValidationStatusProto(
+  private FormChangeSettingsProto(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,6 +48,11 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+
+            enabled_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -69,150 +74,26 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ARMappingValidationStatusProto_descriptor;
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_FormChangeSettingsProto_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ARMappingValidationStatusProto_fieldAccessorTable
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_FormChangeSettingsProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            POGOProtos.Rpc.ARMappingValidationStatusProto.class, POGOProtos.Rpc.ARMappingValidationStatusProto.Builder.class);
+            POGOProtos.Rpc.FormChangeSettingsProto.class, POGOProtos.Rpc.FormChangeSettingsProto.Builder.class);
   }
 
+  public static final int ENABLED_FIELD_NUMBER = 1;
+  private boolean enabled_;
   /**
-   * Protobuf enum {@code POGOProtos.Rpc.ARMappingValidationStatusProto.Status}
+   * <code>bool enabled = 1;</code>
+   * @return The enabled.
    */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNKNOWN = 0;</code>
-     */
-    UNKNOWN(0),
-    /**
-     * <code>VALID = 1;</code>
-     */
-    VALID(1),
-    /**
-     * <code>TOO_DARK = 2;</code>
-     */
-    TOO_DARK(2),
-    /**
-     * <code>TOO_BLUR = 3;</code>
-     */
-    TOO_BLUR(3),
-    /**
-     * <code>TOO_LITTLE_MOTION = 4;</code>
-     */
-    TOO_LITTLE_MOTION(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNKNOWN = 0;</code>
-     */
-    public static final int UNKNOWN_VALUE = 0;
-    /**
-     * <code>VALID = 1;</code>
-     */
-    public static final int VALID_VALUE = 1;
-    /**
-     * <code>TOO_DARK = 2;</code>
-     */
-    public static final int TOO_DARK_VALUE = 2;
-    /**
-     * <code>TOO_BLUR = 3;</code>
-     */
-    public static final int TOO_BLUR_VALUE = 3;
-    /**
-     * <code>TOO_LITTLE_MOTION = 4;</code>
-     */
-    public static final int TOO_LITTLE_MOTION_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Status valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Status forNumber(int value) {
-      switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return VALID;
-        case 2: return TOO_DARK;
-        case 3: return TOO_BLUR;
-        case 4: return TOO_LITTLE_MOTION;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return POGOProtos.Rpc.ARMappingValidationStatusProto.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Status[] VALUES = values();
-
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Status(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.ARMappingValidationStatusProto.Status)
+  @java.lang.Override
+  public boolean getEnabled() {
+    return enabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -229,6 +110,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (enabled_ != false) {
+      output.writeBool(1, enabled_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -238,6 +122,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (enabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(1, enabled_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -248,11 +136,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof POGOProtos.Rpc.ARMappingValidationStatusProto)) {
+    if (!(obj instanceof POGOProtos.Rpc.FormChangeSettingsProto)) {
       return super.equals(obj);
     }
-    POGOProtos.Rpc.ARMappingValidationStatusProto other = (POGOProtos.Rpc.ARMappingValidationStatusProto) obj;
+    POGOProtos.Rpc.FormChangeSettingsProto other = (POGOProtos.Rpc.FormChangeSettingsProto) obj;
 
+    if (getEnabled()
+        != other.getEnabled()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -264,74 +154,77 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnabled());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(byte[] data)
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseDelimitedFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseDelimitedFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto parseFrom(
+  public static POGOProtos.Rpc.FormChangeSettingsProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -344,7 +237,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(POGOProtos.Rpc.ARMappingValidationStatusProto prototype) {
+  public static Builder newBuilder(POGOProtos.Rpc.FormChangeSettingsProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -360,26 +253,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code POGOProtos.Rpc.ARMappingValidationStatusProto}
+   * Protobuf type {@code POGOProtos.Rpc.FormChangeSettingsProto}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ARMappingValidationStatusProto)
-      POGOProtos.Rpc.ARMappingValidationStatusProtoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.FormChangeSettingsProto)
+      POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ARMappingValidationStatusProto_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_FormChangeSettingsProto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ARMappingValidationStatusProto_fieldAccessorTable
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_FormChangeSettingsProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              POGOProtos.Rpc.ARMappingValidationStatusProto.class, POGOProtos.Rpc.ARMappingValidationStatusProto.Builder.class);
+              POGOProtos.Rpc.FormChangeSettingsProto.class, POGOProtos.Rpc.FormChangeSettingsProto.Builder.class);
     }
 
-    // Construct using POGOProtos.Rpc.ARMappingValidationStatusProto.newBuilder()
+    // Construct using POGOProtos.Rpc.FormChangeSettingsProto.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -397,23 +290,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      enabled_ = false;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ARMappingValidationStatusProto_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_FormChangeSettingsProto_descriptor;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.ARMappingValidationStatusProto getDefaultInstanceForType() {
-      return POGOProtos.Rpc.ARMappingValidationStatusProto.getDefaultInstance();
+    public POGOProtos.Rpc.FormChangeSettingsProto getDefaultInstanceForType() {
+      return POGOProtos.Rpc.FormChangeSettingsProto.getDefaultInstance();
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.ARMappingValidationStatusProto build() {
-      POGOProtos.Rpc.ARMappingValidationStatusProto result = buildPartial();
+    public POGOProtos.Rpc.FormChangeSettingsProto build() {
+      POGOProtos.Rpc.FormChangeSettingsProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -421,8 +316,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.ARMappingValidationStatusProto buildPartial() {
-      POGOProtos.Rpc.ARMappingValidationStatusProto result = new POGOProtos.Rpc.ARMappingValidationStatusProto(this);
+    public POGOProtos.Rpc.FormChangeSettingsProto buildPartial() {
+      POGOProtos.Rpc.FormChangeSettingsProto result = new POGOProtos.Rpc.FormChangeSettingsProto(this);
+      result.enabled_ = enabled_;
       onBuilt();
       return result;
     }
@@ -461,16 +357,19 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof POGOProtos.Rpc.ARMappingValidationStatusProto) {
-        return mergeFrom((POGOProtos.Rpc.ARMappingValidationStatusProto)other);
+      if (other instanceof POGOProtos.Rpc.FormChangeSettingsProto) {
+        return mergeFrom((POGOProtos.Rpc.FormChangeSettingsProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(POGOProtos.Rpc.ARMappingValidationStatusProto other) {
-      if (other == POGOProtos.Rpc.ARMappingValidationStatusProto.getDefaultInstance()) return this;
+    public Builder mergeFrom(POGOProtos.Rpc.FormChangeSettingsProto other) {
+      if (other == POGOProtos.Rpc.FormChangeSettingsProto.getDefaultInstance()) return this;
+      if (other.getEnabled() != false) {
+        setEnabled(other.getEnabled());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -486,17 +385,48 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      POGOProtos.Rpc.ARMappingValidationStatusProto parsedMessage = null;
+      POGOProtos.Rpc.FormChangeSettingsProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (POGOProtos.Rpc.ARMappingValidationStatusProto) e.getUnfinishedMessage();
+        parsedMessage = (POGOProtos.Rpc.FormChangeSettingsProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private boolean enabled_ ;
+    /**
+     * <code>bool enabled = 1;</code>
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+    /**
+     * <code>bool enabled = 1;</code>
+     * @param value The enabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnabled(boolean value) {
+      
+      enabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool enabled = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnabled() {
+      
+      enabled_ = false;
+      onChanged();
       return this;
     }
     @java.lang.Override
@@ -512,41 +442,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ARMappingValidationStatusProto)
+    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.FormChangeSettingsProto)
   }
 
-  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ARMappingValidationStatusProto)
-  private static final POGOProtos.Rpc.ARMappingValidationStatusProto DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.FormChangeSettingsProto)
+  private static final POGOProtos.Rpc.FormChangeSettingsProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new POGOProtos.Rpc.ARMappingValidationStatusProto();
+    DEFAULT_INSTANCE = new POGOProtos.Rpc.FormChangeSettingsProto();
   }
 
-  public static POGOProtos.Rpc.ARMappingValidationStatusProto getDefaultInstance() {
+  public static POGOProtos.Rpc.FormChangeSettingsProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ARMappingValidationStatusProto>
-      PARSER = new com.google.protobuf.AbstractParser<ARMappingValidationStatusProto>() {
+  private static final com.google.protobuf.Parser<FormChangeSettingsProto>
+      PARSER = new com.google.protobuf.AbstractParser<FormChangeSettingsProto>() {
     @java.lang.Override
-    public ARMappingValidationStatusProto parsePartialFrom(
+    public FormChangeSettingsProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ARMappingValidationStatusProto(input, extensionRegistry);
+      return new FormChangeSettingsProto(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ARMappingValidationStatusProto> parser() {
+  public static com.google.protobuf.Parser<FormChangeSettingsProto> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ARMappingValidationStatusProto> getParserForType() {
+  public com.google.protobuf.Parser<FormChangeSettingsProto> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public POGOProtos.Rpc.ARMappingValidationStatusProto getDefaultInstanceForType() {
+  public POGOProtos.Rpc.FormChangeSettingsProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

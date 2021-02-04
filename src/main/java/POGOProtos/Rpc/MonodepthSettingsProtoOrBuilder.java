@@ -42,4 +42,16 @@ public interface MonodepthSettingsProtoOrBuilder extends
    * @return The suppressionChannelId.
    */
   int getSuppressionChannelId();
+
+  /**
+   * <code>string suppression_channel_name = 7;</code>
+   * @return The suppressionChannelName.
+   */
+  java.lang.String getSuppressionChannelName();
+  /**
+   * <code>string suppression_channel_name = 7;</code>
+   * @return The bytes for suppressionChannelName.
+   */
+  com.google.protobuf.ByteString
+      getSuppressionChannelNameBytes();
 }

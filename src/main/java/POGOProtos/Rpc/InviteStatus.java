@@ -4,37 +4,45 @@
 package POGOProtos.Rpc;
 
 /**
- * Protobuf enum {@code POGOProtos.Rpc.AA_NEW_ENUM_1}
+ * Protobuf enum {@code POGOProtos.Rpc.InviteStatus}
  */
-public enum AA_NEW_ENUM_1
+public enum InviteStatus
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>AA_NEW_ENUM_1_POI = 0;</code>
+   * <code>PLATFORM_INVITE_STATUS_UNSET = 0;</code>
    */
-  AA_NEW_ENUM_1_POI(0),
+  PLATFORM_INVITE_STATUS_UNSET(0),
   /**
-   * <code>AA_NEW_ENUM_1_GIFT = 1;</code>
+   * <code>PLATFORM_INVITE_STATUS_NEW = 1;</code>
    */
-  AA_NEW_ENUM_1_GIFT(1),
+  PLATFORM_INVITE_STATUS_NEW(1),
   /**
-   * <code>AA_NEW_ENUM_1_NEARBY_POKEMON = 2;</code>
+   * <code>PLATFORM_INVITE_STATUS_SEEN = 2;</code>
    */
-  AA_NEW_ENUM_1_NEARBY_POKEMON(2),
+  PLATFORM_INVITE_STATUS_SEEN(2),
+  /**
+   * <code>PLATFORM_INVITE_STATUS_READ = 3;</code>
+   */
+  PLATFORM_INVITE_STATUS_READ(3),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>AA_NEW_ENUM_1_POI = 0;</code>
+   * <code>PLATFORM_INVITE_STATUS_UNSET = 0;</code>
    */
-  public static final int AA_NEW_ENUM_1_POI_VALUE = 0;
+  public static final int PLATFORM_INVITE_STATUS_UNSET_VALUE = 0;
   /**
-   * <code>AA_NEW_ENUM_1_GIFT = 1;</code>
+   * <code>PLATFORM_INVITE_STATUS_NEW = 1;</code>
    */
-  public static final int AA_NEW_ENUM_1_GIFT_VALUE = 1;
+  public static final int PLATFORM_INVITE_STATUS_NEW_VALUE = 1;
   /**
-   * <code>AA_NEW_ENUM_1_NEARBY_POKEMON = 2;</code>
+   * <code>PLATFORM_INVITE_STATUS_SEEN = 2;</code>
    */
-  public static final int AA_NEW_ENUM_1_NEARBY_POKEMON_VALUE = 2;
+  public static final int PLATFORM_INVITE_STATUS_SEEN_VALUE = 2;
+  /**
+   * <code>PLATFORM_INVITE_STATUS_READ = 3;</code>
+   */
+  public static final int PLATFORM_INVITE_STATUS_READ_VALUE = 3;
 
 
   public final int getNumber() {
@@ -51,7 +59,7 @@ public enum AA_NEW_ENUM_1
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AA_NEW_ENUM_1 valueOf(int value) {
+  public static InviteStatus valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +67,25 @@ public enum AA_NEW_ENUM_1
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AA_NEW_ENUM_1 forNumber(int value) {
+  public static InviteStatus forNumber(int value) {
     switch (value) {
-      case 0: return AA_NEW_ENUM_1_POI;
-      case 1: return AA_NEW_ENUM_1_GIFT;
-      case 2: return AA_NEW_ENUM_1_NEARBY_POKEMON;
+      case 0: return PLATFORM_INVITE_STATUS_UNSET;
+      case 1: return PLATFORM_INVITE_STATUS_NEW;
+      case 2: return PLATFORM_INVITE_STATUS_SEEN;
+      case 3: return PLATFORM_INVITE_STATUS_READ;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AA_NEW_ENUM_1>
+  public static com.google.protobuf.Internal.EnumLiteMap<InviteStatus>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      AA_NEW_ENUM_1> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AA_NEW_ENUM_1>() {
-          public AA_NEW_ENUM_1 findValueByNumber(int number) {
-            return AA_NEW_ENUM_1.forNumber(number);
+      InviteStatus> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<InviteStatus>() {
+          public InviteStatus findValueByNumber(int number) {
+            return InviteStatus.forNumber(number);
           }
         };
 
@@ -94,12 +103,12 @@ public enum AA_NEW_ENUM_1
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(1);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(80);
   }
 
-  private static final AA_NEW_ENUM_1[] VALUES = values();
+  private static final InviteStatus[] VALUES = values();
 
-  public static AA_NEW_ENUM_1 valueOf(
+  public static InviteStatus valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +122,10 @@ public enum AA_NEW_ENUM_1
 
   private final int value;
 
-  private AA_NEW_ENUM_1(int value) {
+  private InviteStatus(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.AA_NEW_ENUM_1)
+  // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.InviteStatus)
 }
 

@@ -499,7 +499,7 @@ public enum ClientAction
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(31);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(30);
   }
 
   private static final ClientAction[] VALUES = values();

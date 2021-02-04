@@ -829,6 +829,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 546: {
+            POGOProtos.Rpc.FormChangeSettingsProto.Builder subBuilder = null;
+            if (formChangeSettings_ != null) {
+              subBuilder = formChangeSettings_.toBuilder();
+            }
+            formChangeSettings_ = input.readMessage(POGOProtos.Rpc.FormChangeSettingsProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(formChangeSettings_);
+              formChangeSettings_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 554: {
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               iapSettings_ = new java.util.ArrayList<POGOProtos.Rpc.StoreIapSettingsProto>();
@@ -2488,6 +2501,32 @@ private static final long serialVersionUID = 0L;
     return getIdfaSettings();
   }
 
+  public static final int FORM_CHANGE_SETTINGS_FIELD_NUMBER = 68;
+  private POGOProtos.Rpc.FormChangeSettingsProto formChangeSettings_;
+  /**
+   * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+   * @return Whether the formChangeSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasFormChangeSettings() {
+    return formChangeSettings_ != null;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+   * @return The formChangeSettings.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.FormChangeSettingsProto getFormChangeSettings() {
+    return formChangeSettings_ == null ? POGOProtos.Rpc.FormChangeSettingsProto.getDefaultInstance() : formChangeSettings_;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder getFormChangeSettingsOrBuilder() {
+    return getFormChangeSettings();
+  }
+
   public static final int IAP_SETTINGS_FIELD_NUMBER = 69;
   private java.util.List<POGOProtos.Rpc.StoreIapSettingsProto> iapSettings_;
   /**
@@ -2729,6 +2768,9 @@ private static final long serialVersionUID = 0L;
     }
     if (idfaSettings_ != null) {
       output.writeMessage(67, getIdfaSettings());
+    }
+    if (formChangeSettings_ != null) {
+      output.writeMessage(68, getFormChangeSettings());
     }
     for (int i = 0; i < iapSettings_.size(); i++) {
       output.writeMessage(69, iapSettings_.get(i));
@@ -2996,6 +3038,10 @@ private static final long serialVersionUID = 0L;
     if (idfaSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(67, getIdfaSettings());
+    }
+    if (formChangeSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(68, getFormChangeSettings());
     }
     for (int i = 0; i < iapSettings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -3305,6 +3351,11 @@ private static final long serialVersionUID = 0L;
       if (!getIdfaSettings()
           .equals(other.getIdfaSettings())) return false;
     }
+    if (hasFormChangeSettings() != other.hasFormChangeSettings()) return false;
+    if (hasFormChangeSettings()) {
+      if (!getFormChangeSettings()
+          .equals(other.getFormChangeSettings())) return false;
+    }
     if (!getIapSettingsList()
         .equals(other.getIapSettingsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3556,6 +3607,10 @@ private static final long serialVersionUID = 0L;
     if (hasIdfaSettings()) {
       hash = (37 * hash) + IDFA_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getIdfaSettings().hashCode();
+    }
+    if (hasFormChangeSettings()) {
+      hash = (37 * hash) + FORM_CHANGE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getFormChangeSettings().hashCode();
     }
     if (getIapSettingsCount() > 0) {
       hash = (37 * hash) + IAP_SETTINGS_FIELD_NUMBER;
@@ -4041,6 +4096,12 @@ private static final long serialVersionUID = 0L;
         idfaSettings_ = null;
         idfaSettingsBuilder_ = null;
       }
+      if (formChangeSettingsBuilder_ == null) {
+        formChangeSettings_ = null;
+      } else {
+        formChangeSettings_ = null;
+        formChangeSettingsBuilder_ = null;
+      }
       if (iapSettingsBuilder_ == null) {
         iapSettings_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4367,6 +4428,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.idfaSettings_ = idfaSettingsBuilder_.build();
       }
+      if (formChangeSettingsBuilder_ == null) {
+        result.formChangeSettings_ = formChangeSettings_;
+      } else {
+        result.formChangeSettings_ = formChangeSettingsBuilder_.build();
+      }
       if (iapSettingsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           iapSettings_ = java.util.Collections.unmodifiableList(iapSettings_);
@@ -4621,6 +4687,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasIdfaSettings()) {
         mergeIdfaSettings(other.getIdfaSettings());
+      }
+      if (other.hasFormChangeSettings()) {
+        mergeFormChangeSettings(other.getFormChangeSettings());
       }
       if (iapSettingsBuilder_ == null) {
         if (!other.iapSettings_.isEmpty()) {
@@ -11728,6 +11797,125 @@ private static final long serialVersionUID = 0L;
         idfaSettings_ = null;
       }
       return idfaSettingsBuilder_;
+    }
+
+    private POGOProtos.Rpc.FormChangeSettingsProto formChangeSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.FormChangeSettingsProto, POGOProtos.Rpc.FormChangeSettingsProto.Builder, POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder> formChangeSettingsBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     * @return Whether the formChangeSettings field is set.
+     */
+    public boolean hasFormChangeSettings() {
+      return formChangeSettingsBuilder_ != null || formChangeSettings_ != null;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     * @return The formChangeSettings.
+     */
+    public POGOProtos.Rpc.FormChangeSettingsProto getFormChangeSettings() {
+      if (formChangeSettingsBuilder_ == null) {
+        return formChangeSettings_ == null ? POGOProtos.Rpc.FormChangeSettingsProto.getDefaultInstance() : formChangeSettings_;
+      } else {
+        return formChangeSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    public Builder setFormChangeSettings(POGOProtos.Rpc.FormChangeSettingsProto value) {
+      if (formChangeSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        formChangeSettings_ = value;
+        onChanged();
+      } else {
+        formChangeSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    public Builder setFormChangeSettings(
+        POGOProtos.Rpc.FormChangeSettingsProto.Builder builderForValue) {
+      if (formChangeSettingsBuilder_ == null) {
+        formChangeSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        formChangeSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    public Builder mergeFormChangeSettings(POGOProtos.Rpc.FormChangeSettingsProto value) {
+      if (formChangeSettingsBuilder_ == null) {
+        if (formChangeSettings_ != null) {
+          formChangeSettings_ =
+            POGOProtos.Rpc.FormChangeSettingsProto.newBuilder(formChangeSettings_).mergeFrom(value).buildPartial();
+        } else {
+          formChangeSettings_ = value;
+        }
+        onChanged();
+      } else {
+        formChangeSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    public Builder clearFormChangeSettings() {
+      if (formChangeSettingsBuilder_ == null) {
+        formChangeSettings_ = null;
+        onChanged();
+      } else {
+        formChangeSettings_ = null;
+        formChangeSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    public POGOProtos.Rpc.FormChangeSettingsProto.Builder getFormChangeSettingsBuilder() {
+      
+      onChanged();
+      return getFormChangeSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    public POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder getFormChangeSettingsOrBuilder() {
+      if (formChangeSettingsBuilder_ != null) {
+        return formChangeSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return formChangeSettings_ == null ?
+            POGOProtos.Rpc.FormChangeSettingsProto.getDefaultInstance() : formChangeSettings_;
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.FormChangeSettingsProto form_change_settings = 68;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.FormChangeSettingsProto, POGOProtos.Rpc.FormChangeSettingsProto.Builder, POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder> 
+        getFormChangeSettingsFieldBuilder() {
+      if (formChangeSettingsBuilder_ == null) {
+        formChangeSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.FormChangeSettingsProto, POGOProtos.Rpc.FormChangeSettingsProto.Builder, POGOProtos.Rpc.FormChangeSettingsProtoOrBuilder>(
+                getFormChangeSettings(),
+                getParentForChildren(),
+                isClean());
+        formChangeSettings_ = null;
+      }
+      return formChangeSettingsBuilder_;
     }
 
     private java.util.List<POGOProtos.Rpc.StoreIapSettingsProto> iapSettings_ =

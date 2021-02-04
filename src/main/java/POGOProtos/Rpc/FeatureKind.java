@@ -859,7 +859,7 @@ public enum FeatureKind
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(44);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(43);
   }
 
   private static final FeatureKind[] VALUES = values();

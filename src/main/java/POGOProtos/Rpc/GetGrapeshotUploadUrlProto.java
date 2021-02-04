@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetGrapeshotUploadUrlProto() {
-    submissionType_ = 0;
     submissionId_ = "";
     fileUploadContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -52,19 +51,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            submissionType_ = rawValue;
-            break;
-          }
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             submissionId_ = s;
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               fileUploadContext_ = new com.google.protobuf.LazyStringArrayList();
@@ -108,29 +101,10 @@ private static final long serialVersionUID = 0L;
             POGOProtos.Rpc.GetGrapeshotUploadUrlProto.class, POGOProtos.Rpc.GetGrapeshotUploadUrlProto.Builder.class);
   }
 
-  public static final int SUBMISSION_TYPE_FIELD_NUMBER = 1;
-  private int submissionType_;
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-   * @return The enum numeric value on the wire for submissionType.
-   */
-  @java.lang.Override public int getSubmissionTypeValue() {
-    return submissionType_;
-  }
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-   * @return The submissionType.
-   */
-  @java.lang.Override public POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType() {
-    @SuppressWarnings("deprecation")
-    POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(submissionType_);
-    return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-  }
-
-  public static final int SUBMISSION_ID_FIELD_NUMBER = 2;
+  public static final int SUBMISSION_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object submissionId_;
   /**
-   * <code>string submission_id = 2;</code>
+   * <code>string submission_id = 1;</code>
    * @return The submissionId.
    */
   @java.lang.Override
@@ -147,7 +121,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string submission_id = 2;</code>
+   * <code>string submission_id = 1;</code>
    * @return The bytes for submissionId.
    */
   @java.lang.Override
@@ -165,10 +139,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FILE_UPLOAD_CONTEXT_FIELD_NUMBER = 3;
+  public static final int FILE_UPLOAD_CONTEXT_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList fileUploadContext_;
   /**
-   * <code>repeated string file_upload_context = 3;</code>
+   * <code>repeated string file_upload_context = 2;</code>
    * @return A list containing the fileUploadContext.
    */
   public com.google.protobuf.ProtocolStringList
@@ -176,14 +150,14 @@ private static final long serialVersionUID = 0L;
     return fileUploadContext_;
   }
   /**
-   * <code>repeated string file_upload_context = 3;</code>
+   * <code>repeated string file_upload_context = 2;</code>
    * @return The count of fileUploadContext.
    */
   public int getFileUploadContextCount() {
     return fileUploadContext_.size();
   }
   /**
-   * <code>repeated string file_upload_context = 3;</code>
+   * <code>repeated string file_upload_context = 2;</code>
    * @param index The index of the element to return.
    * @return The fileUploadContext at the given index.
    */
@@ -191,7 +165,7 @@ private static final long serialVersionUID = 0L;
     return fileUploadContext_.get(index);
   }
   /**
-   * <code>repeated string file_upload_context = 3;</code>
+   * <code>repeated string file_upload_context = 2;</code>
    * @param index The index of the value to return.
    * @return The bytes of the fileUploadContext at the given index.
    */
@@ -214,14 +188,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (submissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(1, submissionType_);
-    }
     if (!getSubmissionIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, submissionId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, submissionId_);
     }
     for (int i = 0; i < fileUploadContext_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileUploadContext_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileUploadContext_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -232,12 +203,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (submissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, submissionType_);
-    }
     if (!getSubmissionIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, submissionId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, submissionId_);
     }
     {
       int dataSize = 0;
@@ -262,7 +229,6 @@ private static final long serialVersionUID = 0L;
     }
     POGOProtos.Rpc.GetGrapeshotUploadUrlProto other = (POGOProtos.Rpc.GetGrapeshotUploadUrlProto) obj;
 
-    if (submissionType_ != other.submissionType_) return false;
     if (!getSubmissionId()
         .equals(other.getSubmissionId())) return false;
     if (!getFileUploadContextList()
@@ -278,8 +244,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUBMISSION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + submissionType_;
     hash = (37 * hash) + SUBMISSION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSubmissionId().hashCode();
     if (getFileUploadContextCount() > 0) {
@@ -419,8 +383,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      submissionType_ = 0;
-
       submissionId_ = "";
 
       fileUploadContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -452,7 +414,6 @@ private static final long serialVersionUID = 0L;
     public POGOProtos.Rpc.GetGrapeshotUploadUrlProto buildPartial() {
       POGOProtos.Rpc.GetGrapeshotUploadUrlProto result = new POGOProtos.Rpc.GetGrapeshotUploadUrlProto(this);
       int from_bitField0_ = bitField0_;
-      result.submissionType_ = submissionType_;
       result.submissionId_ = submissionId_;
       if (((bitField0_ & 0x00000001) != 0)) {
         fileUploadContext_ = fileUploadContext_.getUnmodifiableView();
@@ -507,9 +468,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(POGOProtos.Rpc.GetGrapeshotUploadUrlProto other) {
       if (other == POGOProtos.Rpc.GetGrapeshotUploadUrlProto.getDefaultInstance()) return this;
-      if (other.submissionType_ != 0) {
-        setSubmissionTypeValue(other.getSubmissionTypeValue());
-      }
       if (!other.getSubmissionId().isEmpty()) {
         submissionId_ = other.submissionId_;
         onChanged();
@@ -554,63 +512,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int submissionType_ = 0;
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @return The enum numeric value on the wire for submissionType.
-     */
-    @java.lang.Override public int getSubmissionTypeValue() {
-      return submissionType_;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @param value The enum numeric value on the wire for submissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubmissionTypeValue(int value) {
-      
-      submissionType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @return The submissionType.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(submissionType_);
-      return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @param value The submissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubmissionType(POGOProtos.Rpc.PlayerSubmissionTypeProto value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      submissionType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSubmissionType() {
-      
-      submissionType_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object submissionId_ = "";
     /**
-     * <code>string submission_id = 2;</code>
+     * <code>string submission_id = 1;</code>
      * @return The submissionId.
      */
     public java.lang.String getSubmissionId() {
@@ -626,7 +530,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string submission_id = 2;</code>
+     * <code>string submission_id = 1;</code>
      * @return The bytes for submissionId.
      */
     public com.google.protobuf.ByteString
@@ -643,7 +547,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string submission_id = 2;</code>
+     * <code>string submission_id = 1;</code>
      * @param value The submissionId to set.
      * @return This builder for chaining.
      */
@@ -658,7 +562,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string submission_id = 2;</code>
+     * <code>string submission_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearSubmissionId() {
@@ -668,7 +572,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string submission_id = 2;</code>
+     * <code>string submission_id = 1;</code>
      * @param value The bytes for submissionId to set.
      * @return This builder for chaining.
      */
@@ -692,7 +596,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @return A list containing the fileUploadContext.
      */
     public com.google.protobuf.ProtocolStringList
@@ -700,14 +604,14 @@ private static final long serialVersionUID = 0L;
       return fileUploadContext_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @return The count of fileUploadContext.
      */
     public int getFileUploadContextCount() {
       return fileUploadContext_.size();
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @param index The index of the element to return.
      * @return The fileUploadContext at the given index.
      */
@@ -715,7 +619,7 @@ private static final long serialVersionUID = 0L;
       return fileUploadContext_.get(index);
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the fileUploadContext at the given index.
      */
@@ -724,7 +628,7 @@ private static final long serialVersionUID = 0L;
       return fileUploadContext_.getByteString(index);
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @param index The index to set the value at.
      * @param value The fileUploadContext to set.
      * @return This builder for chaining.
@@ -740,7 +644,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @param value The fileUploadContext to add.
      * @return This builder for chaining.
      */
@@ -755,7 +659,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @param values The fileUploadContext to add.
      * @return This builder for chaining.
      */
@@ -768,7 +672,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearFileUploadContext() {
@@ -778,7 +682,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string file_upload_context = 3;</code>
+     * <code>repeated string file_upload_context = 2;</code>
      * @param value The bytes of the fileUploadContext to add.
      * @return This builder for chaining.
      */

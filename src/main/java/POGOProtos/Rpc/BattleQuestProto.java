@@ -4,26 +4,26 @@
 package POGOProtos.Rpc;
 
 /**
- * Protobuf type {@code POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto}
+ * Protobuf type {@code POGOProtos.Rpc.BattleQuestProto}
  */
-public final class UploadPoiPhotoByUrlOutProto extends
+public final class BattleQuestProto extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto)
-    UploadPoiPhotoByUrlOutProtoOrBuilder {
+    // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.BattleQuestProto)
+    BattleQuestProtoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UploadPoiPhotoByUrlOutProto.newBuilder() to construct.
-  private UploadPoiPhotoByUrlOutProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use BattleQuestProto.newBuilder() to construct.
+  private BattleQuestProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UploadPoiPhotoByUrlOutProto() {
-    status_ = 0;
+  private BattleQuestProto() {
+    battleId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UploadPoiPhotoByUrlOutProto();
+    return new BattleQuestProto();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UploadPoiPhotoByUrlOutProto(
+  private BattleQuestProto(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -39,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -49,10 +50,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            status_ = rawValue;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              battleId_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            battleId_.add(s);
             break;
           }
           default: {
@@ -70,40 +74,59 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        battleId_ = battleId_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlOutProto_descriptor;
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BattleQuestProto_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlOutProto_fieldAccessorTable
+    return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BattleQuestProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.class, POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.Builder.class);
+            POGOProtos.Rpc.BattleQuestProto.class, POGOProtos.Rpc.BattleQuestProto.Builder.class);
   }
 
-  public static final int STATUS_FIELD_NUMBER = 1;
-  private int status_;
+  public static final int BATTLE_ID_FIELD_NUMBER = 1;
+  private com.google.protobuf.LazyStringList battleId_;
   /**
-   * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>repeated string battle_id = 1;</code>
+   * @return A list containing the battleId.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  public com.google.protobuf.ProtocolStringList
+      getBattleIdList() {
+    return battleId_;
   }
   /**
-   * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
-   * @return The status.
+   * <code>repeated string battle_id = 1;</code>
+   * @return The count of battleId.
    */
-  @java.lang.Override public POGOProtos.Rpc.PortalCurationImageResult.Result getStatus() {
-    @SuppressWarnings("deprecation")
-    POGOProtos.Rpc.PortalCurationImageResult.Result result = POGOProtos.Rpc.PortalCurationImageResult.Result.valueOf(status_);
-    return result == null ? POGOProtos.Rpc.PortalCurationImageResult.Result.UNRECOGNIZED : result;
+  public int getBattleIdCount() {
+    return battleId_.size();
+  }
+  /**
+   * <code>repeated string battle_id = 1;</code>
+   * @param index The index of the element to return.
+   * @return The battleId at the given index.
+   */
+  public java.lang.String getBattleId(int index) {
+    return battleId_.get(index);
+  }
+  /**
+   * <code>repeated string battle_id = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the battleId at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getBattleIdBytes(int index) {
+    return battleId_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -120,8 +143,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != POGOProtos.Rpc.PortalCurationImageResult.Result.UNSET.getNumber()) {
-      output.writeEnum(1, status_);
+    for (int i = 0; i < battleId_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, battleId_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -132,9 +155,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != POGOProtos.Rpc.PortalCurationImageResult.Result.UNSET.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, status_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < battleId_.size(); i++) {
+        dataSize += computeStringSizeNoTag(battleId_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getBattleIdList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -146,12 +173,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto)) {
+    if (!(obj instanceof POGOProtos.Rpc.BattleQuestProto)) {
       return super.equals(obj);
     }
-    POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto other = (POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto) obj;
+    POGOProtos.Rpc.BattleQuestProto other = (POGOProtos.Rpc.BattleQuestProto) obj;
 
-    if (status_ != other.status_) return false;
+    if (!getBattleIdList()
+        .equals(other.getBattleIdList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -163,76 +191,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (getBattleIdCount() > 0) {
+      hash = (37 * hash) + BATTLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBattleIdList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(byte[] data)
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseDelimitedFrom(java.io.InputStream input)
+  public static POGOProtos.Rpc.BattleQuestProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseDelimitedFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parseFrom(
+  public static POGOProtos.Rpc.BattleQuestProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -245,7 +275,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto prototype) {
+  public static Builder newBuilder(POGOProtos.Rpc.BattleQuestProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -261,26 +291,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto}
+   * Protobuf type {@code POGOProtos.Rpc.BattleQuestProto}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto)
-      POGOProtos.Rpc.UploadPoiPhotoByUrlOutProtoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.BattleQuestProto)
+      POGOProtos.Rpc.BattleQuestProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlOutProto_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BattleQuestProto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlOutProto_fieldAccessorTable
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BattleQuestProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.class, POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.Builder.class);
+              POGOProtos.Rpc.BattleQuestProto.class, POGOProtos.Rpc.BattleQuestProto.Builder.class);
     }
 
-    // Construct using POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.newBuilder()
+    // Construct using POGOProtos.Rpc.BattleQuestProto.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -298,25 +328,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      status_ = 0;
-
+      battleId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_UploadPoiPhotoByUrlOutProto_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BattleQuestProto_descriptor;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto getDefaultInstanceForType() {
-      return POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.getDefaultInstance();
+    public POGOProtos.Rpc.BattleQuestProto getDefaultInstanceForType() {
+      return POGOProtos.Rpc.BattleQuestProto.getDefaultInstance();
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto build() {
-      POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto result = buildPartial();
+    public POGOProtos.Rpc.BattleQuestProto build() {
+      POGOProtos.Rpc.BattleQuestProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -324,9 +354,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto buildPartial() {
-      POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto result = new POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto(this);
-      result.status_ = status_;
+    public POGOProtos.Rpc.BattleQuestProto buildPartial() {
+      POGOProtos.Rpc.BattleQuestProto result = new POGOProtos.Rpc.BattleQuestProto(this);
+      int from_bitField0_ = bitField0_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        battleId_ = battleId_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.battleId_ = battleId_;
       onBuilt();
       return result;
     }
@@ -365,18 +400,25 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto) {
-        return mergeFrom((POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto)other);
+      if (other instanceof POGOProtos.Rpc.BattleQuestProto) {
+        return mergeFrom((POGOProtos.Rpc.BattleQuestProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto other) {
-      if (other == POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto.getDefaultInstance()) return this;
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+    public Builder mergeFrom(POGOProtos.Rpc.BattleQuestProto other) {
+      if (other == POGOProtos.Rpc.BattleQuestProto.getDefaultInstance()) return this;
+      if (!other.battleId_.isEmpty()) {
+        if (battleId_.isEmpty()) {
+          battleId_ = other.battleId_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureBattleIdIsMutable();
+          battleId_.addAll(other.battleId_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -393,11 +435,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto parsedMessage = null;
+      POGOProtos.Rpc.BattleQuestProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto) e.getUnfinishedMessage();
+        parsedMessage = (POGOProtos.Rpc.BattleQuestProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -406,57 +448,114 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
-    private int status_ = 0;
-    /**
-     * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    private com.google.protobuf.LazyStringList battleId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureBattleIdIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        battleId_ = new com.google.protobuf.LazyStringArrayList(battleId_);
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>repeated string battle_id = 1;</code>
+     * @return A list containing the battleId.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getBattleIdList() {
+      return battleId_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @return The count of battleId.
+     */
+    public int getBattleIdCount() {
+      return battleId_.size();
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @param index The index of the element to return.
+     * @return The battleId at the given index.
+     */
+    public java.lang.String getBattleId(int index) {
+      return battleId_.get(index);
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the battleId at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getBattleIdBytes(int index) {
+      return battleId_.getByteString(index);
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The battleId to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PortalCurationImageResult.Result getStatus() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.PortalCurationImageResult.Result result = POGOProtos.Rpc.PortalCurationImageResult.Result.valueOf(status_);
-      return result == null ? POGOProtos.Rpc.PortalCurationImageResult.Result.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(POGOProtos.Rpc.PortalCurationImageResult.Result value) {
+    public Builder setBattleId(
+        int index, java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      status_ = value.getNumber();
+    throw new NullPointerException();
+  }
+  ensureBattleIdIsMutable();
+      battleId_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>.POGOProtos.Rpc.PortalCurationImageResult.Result status = 1;</code>
+     * <code>repeated string battle_id = 1;</code>
+     * @param value The battleId to add.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      
-      status_ = 0;
+    public Builder addBattleId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureBattleIdIsMutable();
+      battleId_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @param values The battleId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllBattleId(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureBattleIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, battleId_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBattleId() {
+      battleId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string battle_id = 1;</code>
+     * @param value The bytes of the battleId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addBattleIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureBattleIdIsMutable();
+      battleId_.add(value);
       onChanged();
       return this;
     }
@@ -473,41 +572,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto)
+    // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.BattleQuestProto)
   }
 
-  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto)
-  private static final POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.BattleQuestProto)
+  private static final POGOProtos.Rpc.BattleQuestProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto();
+    DEFAULT_INSTANCE = new POGOProtos.Rpc.BattleQuestProto();
   }
 
-  public static POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto getDefaultInstance() {
+  public static POGOProtos.Rpc.BattleQuestProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UploadPoiPhotoByUrlOutProto>
-      PARSER = new com.google.protobuf.AbstractParser<UploadPoiPhotoByUrlOutProto>() {
+  private static final com.google.protobuf.Parser<BattleQuestProto>
+      PARSER = new com.google.protobuf.AbstractParser<BattleQuestProto>() {
     @java.lang.Override
-    public UploadPoiPhotoByUrlOutProto parsePartialFrom(
+    public BattleQuestProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UploadPoiPhotoByUrlOutProto(input, extensionRegistry);
+      return new BattleQuestProto(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UploadPoiPhotoByUrlOutProto> parser() {
+  public static com.google.protobuf.Parser<BattleQuestProto> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UploadPoiPhotoByUrlOutProto> getParserForType() {
+  public com.google.protobuf.Parser<BattleQuestProto> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public POGOProtos.Rpc.UploadPoiPhotoByUrlOutProto getDefaultInstanceForType() {
+  public POGOProtos.Rpc.BattleQuestProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

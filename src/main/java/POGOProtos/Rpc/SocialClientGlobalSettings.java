@@ -102,6 +102,31 @@ private static final long serialVersionUID = 0L;
      * @return The nianticProfileCodenameOptOutEnabled.
      */
     boolean getNianticProfileCodenameOptOutEnabled();
+
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @return A list containing the disabledOutgoingGameInviteAppKey.
+     */
+    java.util.List<java.lang.String>
+        getDisabledOutgoingGameInviteAppKeyList();
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @return The count of disabledOutgoingGameInviteAppKey.
+     */
+    int getDisabledOutgoingGameInviteAppKeyCount();
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @param index The index of the element to return.
+     * @return The disabledOutgoingGameInviteAppKey at the given index.
+     */
+    java.lang.String getDisabledOutgoingGameInviteAppKey(int index);
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the disabledOutgoingGameInviteAppKey at the given index.
+     */
+    com.google.protobuf.ByteString
+        getDisabledOutgoingGameInviteAppKeyBytes(int index);
   }
   /**
    * Protobuf type {@code POGOProtos.Rpc.SocialClientGlobalSettings.CrossGameSocialSettingsProto}
@@ -116,6 +141,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private CrossGameSocialSettingsProto() {
+      disabledOutgoingGameInviteAppKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -138,6 +164,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -151,6 +178,15 @@ private static final long serialVersionUID = 0L;
             case 8: {
 
               nianticProfileCodenameOptOutEnabled_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                disabledOutgoingGameInviteAppKey_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              disabledOutgoingGameInviteAppKey_.add(s);
               break;
             }
             default: {
@@ -168,6 +204,9 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          disabledOutgoingGameInviteAppKey_ = disabledOutgoingGameInviteAppKey_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -196,6 +235,41 @@ private static final long serialVersionUID = 0L;
       return nianticProfileCodenameOptOutEnabled_;
     }
 
+    public static final int DISABLED_OUTGOING_GAME_INVITE_APP_KEY_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList disabledOutgoingGameInviteAppKey_;
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @return A list containing the disabledOutgoingGameInviteAppKey.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDisabledOutgoingGameInviteAppKeyList() {
+      return disabledOutgoingGameInviteAppKey_;
+    }
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @return The count of disabledOutgoingGameInviteAppKey.
+     */
+    public int getDisabledOutgoingGameInviteAppKeyCount() {
+      return disabledOutgoingGameInviteAppKey_.size();
+    }
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @param index The index of the element to return.
+     * @return The disabledOutgoingGameInviteAppKey at the given index.
+     */
+    public java.lang.String getDisabledOutgoingGameInviteAppKey(int index) {
+      return disabledOutgoingGameInviteAppKey_.get(index);
+    }
+    /**
+     * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the disabledOutgoingGameInviteAppKey at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDisabledOutgoingGameInviteAppKeyBytes(int index) {
+      return disabledOutgoingGameInviteAppKey_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -213,6 +287,9 @@ private static final long serialVersionUID = 0L;
       if (nianticProfileCodenameOptOutEnabled_ != false) {
         output.writeBool(1, nianticProfileCodenameOptOutEnabled_);
       }
+      for (int i = 0; i < disabledOutgoingGameInviteAppKey_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, disabledOutgoingGameInviteAppKey_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -225,6 +302,14 @@ private static final long serialVersionUID = 0L;
       if (nianticProfileCodenameOptOutEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, nianticProfileCodenameOptOutEnabled_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < disabledOutgoingGameInviteAppKey_.size(); i++) {
+          dataSize += computeStringSizeNoTag(disabledOutgoingGameInviteAppKey_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDisabledOutgoingGameInviteAppKeyList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -243,6 +328,8 @@ private static final long serialVersionUID = 0L;
 
       if (getNianticProfileCodenameOptOutEnabled()
           != other.getNianticProfileCodenameOptOutEnabled()) return false;
+      if (!getDisabledOutgoingGameInviteAppKeyList()
+          .equals(other.getDisabledOutgoingGameInviteAppKeyList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -257,6 +344,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NIANTIC_PROFILE_CODENAME_OPT_OUT_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNianticProfileCodenameOptOutEnabled());
+      if (getDisabledOutgoingGameInviteAppKeyCount() > 0) {
+        hash = (37 * hash) + DISABLED_OUTGOING_GAME_INVITE_APP_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getDisabledOutgoingGameInviteAppKeyList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -392,6 +483,8 @@ private static final long serialVersionUID = 0L;
         super.clear();
         nianticProfileCodenameOptOutEnabled_ = false;
 
+        disabledOutgoingGameInviteAppKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -418,7 +511,13 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public POGOProtos.Rpc.SocialClientGlobalSettings.CrossGameSocialSettingsProto buildPartial() {
         POGOProtos.Rpc.SocialClientGlobalSettings.CrossGameSocialSettingsProto result = new POGOProtos.Rpc.SocialClientGlobalSettings.CrossGameSocialSettingsProto(this);
+        int from_bitField0_ = bitField0_;
         result.nianticProfileCodenameOptOutEnabled_ = nianticProfileCodenameOptOutEnabled_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          disabledOutgoingGameInviteAppKey_ = disabledOutgoingGameInviteAppKey_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.disabledOutgoingGameInviteAppKey_ = disabledOutgoingGameInviteAppKey_;
         onBuilt();
         return result;
       }
@@ -470,6 +569,16 @@ private static final long serialVersionUID = 0L;
         if (other.getNianticProfileCodenameOptOutEnabled() != false) {
           setNianticProfileCodenameOptOutEnabled(other.getNianticProfileCodenameOptOutEnabled());
         }
+        if (!other.disabledOutgoingGameInviteAppKey_.isEmpty()) {
+          if (disabledOutgoingGameInviteAppKey_.isEmpty()) {
+            disabledOutgoingGameInviteAppKey_ = other.disabledOutgoingGameInviteAppKey_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDisabledOutgoingGameInviteAppKeyIsMutable();
+            disabledOutgoingGameInviteAppKey_.addAll(other.disabledOutgoingGameInviteAppKey_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -498,6 +607,7 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+      private int bitField0_;
 
       private boolean nianticProfileCodenameOptOutEnabled_ ;
       /**
@@ -526,6 +636,116 @@ private static final long serialVersionUID = 0L;
       public Builder clearNianticProfileCodenameOptOutEnabled() {
         
         nianticProfileCodenameOptOutEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList disabledOutgoingGameInviteAppKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDisabledOutgoingGameInviteAppKeyIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          disabledOutgoingGameInviteAppKey_ = new com.google.protobuf.LazyStringArrayList(disabledOutgoingGameInviteAppKey_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @return A list containing the disabledOutgoingGameInviteAppKey.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDisabledOutgoingGameInviteAppKeyList() {
+        return disabledOutgoingGameInviteAppKey_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @return The count of disabledOutgoingGameInviteAppKey.
+       */
+      public int getDisabledOutgoingGameInviteAppKeyCount() {
+        return disabledOutgoingGameInviteAppKey_.size();
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @param index The index of the element to return.
+       * @return The disabledOutgoingGameInviteAppKey at the given index.
+       */
+      public java.lang.String getDisabledOutgoingGameInviteAppKey(int index) {
+        return disabledOutgoingGameInviteAppKey_.get(index);
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the disabledOutgoingGameInviteAppKey at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getDisabledOutgoingGameInviteAppKeyBytes(int index) {
+        return disabledOutgoingGameInviteAppKey_.getByteString(index);
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The disabledOutgoingGameInviteAppKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisabledOutgoingGameInviteAppKey(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDisabledOutgoingGameInviteAppKeyIsMutable();
+        disabledOutgoingGameInviteAppKey_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @param value The disabledOutgoingGameInviteAppKey to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDisabledOutgoingGameInviteAppKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDisabledOutgoingGameInviteAppKeyIsMutable();
+        disabledOutgoingGameInviteAppKey_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @param values The disabledOutgoingGameInviteAppKey to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDisabledOutgoingGameInviteAppKey(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureDisabledOutgoingGameInviteAppKeyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, disabledOutgoingGameInviteAppKey_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisabledOutgoingGameInviteAppKey() {
+        disabledOutgoingGameInviteAppKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string disabled_outgoing_game_invite_app_key = 2;</code>
+       * @param value The bytes of the disabledOutgoingGameInviteAppKey to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDisabledOutgoingGameInviteAppKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureDisabledOutgoingGameInviteAppKeyIsMutable();
+        disabledOutgoingGameInviteAppKey_.add(value);
         onChanged();
         return this;
       }

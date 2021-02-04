@@ -211,9 +211,9 @@ private static final long serialVersionUID = 0L;
      */
     PROFILE(1),
     /**
-     * <code>FRIEND_LIST_V2 = 2;</code>
+     * <code>CROSS_GAME_FRIEND_LIST = 2;</code>
      */
-    FRIEND_LIST_V2(2),
+    CROSS_GAME_FRIEND_LIST(2),
     /**
      * <code>ONLINE_STATUS_OVERVIEW = 3;</code>
      */
@@ -234,9 +234,9 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PROFILE_VALUE = 1;
     /**
-     * <code>FRIEND_LIST_V2 = 2;</code>
+     * <code>CROSS_GAME_FRIEND_LIST = 2;</code>
      */
-    public static final int FRIEND_LIST_V2_VALUE = 2;
+    public static final int CROSS_GAME_FRIEND_LIST_VALUE = 2;
     /**
      * <code>ONLINE_STATUS_OVERVIEW = 3;</code>
      */
@@ -273,7 +273,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return UNSET;
         case 1: return PROFILE;
-        case 2: return FRIEND_LIST_V2;
+        case 2: return CROSS_GAME_FRIEND_LIST;
         case 3: return ONLINE_STATUS_OVERVIEW;
         case 4: return ONLINE_STATUS_TOGGLE;
         default: return null;

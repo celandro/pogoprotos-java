@@ -28,6 +28,10 @@ public enum IncidentDisplayType
    * <code>INCIDENT_DISPLAY_TYPE_INVASION_GRUNTB = 4;</code>
    */
   INCIDENT_DISPLAY_TYPE_INVASION_GRUNTB(4),
+  /**
+   * <code>INCIDENT_DISPLAY_TYPE_INVASION_EVENT_NPC = 5;</code>
+   */
+  INCIDENT_DISPLAY_TYPE_INVASION_EVENT_NPC(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -51,6 +55,10 @@ public enum IncidentDisplayType
    * <code>INCIDENT_DISPLAY_TYPE_INVASION_GRUNTB = 4;</code>
    */
   public static final int INCIDENT_DISPLAY_TYPE_INVASION_GRUNTB_VALUE = 4;
+  /**
+   * <code>INCIDENT_DISPLAY_TYPE_INVASION_EVENT_NPC = 5;</code>
+   */
+  public static final int INCIDENT_DISPLAY_TYPE_INVASION_EVENT_NPC_VALUE = 5;
 
 
   public final int getNumber() {
@@ -82,6 +90,7 @@ public enum IncidentDisplayType
       case 2: return INCIDENT_DISPLAY_TYPE_INVASION_LEADER;
       case 3: return INCIDENT_DISPLAY_TYPE_INVASION_GIOVANNI;
       case 4: return INCIDENT_DISPLAY_TYPE_INVASION_GRUNTB;
+      case 5: return INCIDENT_DISPLAY_TYPE_INVASION_EVENT_NPC;
       default: return null;
     }
   }
@@ -112,7 +121,7 @@ public enum IncidentDisplayType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(71);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(70);
   }
 
   private static final IncidentDisplayType[] VALUES = values();

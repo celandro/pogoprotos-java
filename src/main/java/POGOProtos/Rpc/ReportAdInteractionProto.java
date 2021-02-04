@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     guid_ = "";
     encryptedAdToken_ = com.google.protobuf.ByteString.EMPTY;
+    adType_ = 0;
   }
 
   @java.lang.Override
@@ -131,6 +132,40 @@ private static final long serialVersionUID = 0L;
             interactionTypeCase_ = 8;
             break;
           }
+          case 74: {
+            POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder subBuilder = null;
+            if (interactionTypeCase_ == 9) {
+              subBuilder = ((POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_).toBuilder();
+            }
+            interactionType_ =
+                input.readMessage(POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_);
+              interactionType_ = subBuilder.buildPartial();
+            }
+            interactionTypeCase_ = 9;
+            break;
+          }
+          case 82: {
+            POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder subBuilder = null;
+            if (interactionTypeCase_ == 10) {
+              subBuilder = ((POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_).toBuilder();
+            }
+            interactionType_ =
+                input.readMessage(POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_);
+              interactionType_ = subBuilder.buildPartial();
+            }
+            interactionTypeCase_ = 10;
+            break;
+          }
+          case 800: {
+            int rawValue = input.readEnum();
+
+            adType_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -161,6 +196,2108 @@ private static final long serialVersionUID = 0L;
     return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             POGOProtos.Rpc.ReportAdInteractionProto.class, POGOProtos.Rpc.ReportAdInteractionProto.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code POGOProtos.Rpc.ReportAdInteractionProto.AdType}
+   */
+  public enum AdType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>AD_TYPE_UNKNOWN = 0;</code>
+     */
+    AD_TYPE_UNKNOWN(0),
+    /**
+     * <code>AD_TYPE_SPONSORED_GIFT = 1;</code>
+     */
+    AD_TYPE_SPONSORED_GIFT(1),
+    /**
+     * <code>AD_TYPE_SPONSORED_BALLOON = 2;</code>
+     */
+    AD_TYPE_SPONSORED_BALLOON(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>AD_TYPE_UNKNOWN = 0;</code>
+     */
+    public static final int AD_TYPE_UNKNOWN_VALUE = 0;
+    /**
+     * <code>AD_TYPE_SPONSORED_GIFT = 1;</code>
+     */
+    public static final int AD_TYPE_SPONSORED_GIFT_VALUE = 1;
+    /**
+     * <code>AD_TYPE_SPONSORED_BALLOON = 2;</code>
+     */
+    public static final int AD_TYPE_SPONSORED_BALLOON_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AdType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AdType forNumber(int value) {
+      switch (value) {
+        case 0: return AD_TYPE_UNKNOWN;
+        case 1: return AD_TYPE_SPONSORED_GIFT;
+        case 2: return AD_TYPE_SPONSORED_BALLOON;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AdType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AdType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AdType>() {
+            public AdType findValueByNumber(int number) {
+              return AdType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return POGOProtos.Rpc.ReportAdInteractionProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final AdType[] VALUES = values();
+
+    public static AdType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AdType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdType)
+  }
+
+  public interface AdSpawendInteractionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool ad_spawend_bool = 1;</code>
+     * @return The adSpawendBool.
+     */
+    boolean getAdSpawendBool();
+
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+     * @return The enum numeric value on the wire for adInhibition.
+     */
+    int getAdInhibitionValue();
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+     * @return The adInhibition.
+     */
+    POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition getAdInhibition();
+  }
+  /**
+   * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction}
+   */
+  public static final class AdSpawendInteraction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)
+      AdSpawendInteractionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AdSpawendInteraction.newBuilder() to construct.
+    private AdSpawendInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdSpawendInteraction() {
+      adInhibition_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AdSpawendInteraction();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AdSpawendInteraction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              adSpawendBool_ = input.readBool();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              adInhibition_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdSpawendInteraction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdSpawendInteraction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition}
+     */
+    public enum AdInhibition
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>AD_INHIBITION_UNKNOWN = 0;</code>
+       */
+      AD_INHIBITION_UNKNOWN(0),
+      /**
+       * <code>AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;</code>
+       */
+      AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN(1),
+      /**
+       * <code>AD_INHIBITION_CLIENT_ERROR = 2;</code>
+       */
+      AD_INHIBITION_CLIENT_ERROR(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>AD_INHIBITION_UNKNOWN = 0;</code>
+       */
+      public static final int AD_INHIBITION_UNKNOWN_VALUE = 0;
+      /**
+       * <code>AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;</code>
+       */
+      public static final int AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN_VALUE = 1;
+      /**
+       * <code>AD_INHIBITION_CLIENT_ERROR = 2;</code>
+       */
+      public static final int AD_INHIBITION_CLIENT_ERROR_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AdInhibition valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AdInhibition forNumber(int value) {
+        switch (value) {
+          case 0: return AD_INHIBITION_UNKNOWN;
+          case 1: return AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN;
+          case 2: return AD_INHIBITION_CLIENT_ERROR;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AdInhibition>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          AdInhibition> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AdInhibition>() {
+              public AdInhibition findValueByNumber(int number) {
+                return AdInhibition.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final AdInhibition[] VALUES = values();
+
+      public static AdInhibition valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AdInhibition(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition)
+    }
+
+    public static final int AD_SPAWEND_BOOL_FIELD_NUMBER = 1;
+    private boolean adSpawendBool_;
+    /**
+     * <code>bool ad_spawend_bool = 1;</code>
+     * @return The adSpawendBool.
+     */
+    @java.lang.Override
+    public boolean getAdSpawendBool() {
+      return adSpawendBool_;
+    }
+
+    public static final int AD_INHIBITION_FIELD_NUMBER = 2;
+    private int adInhibition_;
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+     * @return The enum numeric value on the wire for adInhibition.
+     */
+    @java.lang.Override public int getAdInhibitionValue() {
+      return adInhibition_;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+     * @return The adInhibition.
+     */
+    @java.lang.Override public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition getAdInhibition() {
+      @SuppressWarnings("deprecation")
+      POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition result = POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition.valueOf(adInhibition_);
+      return result == null ? POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (adSpawendBool_ != false) {
+        output.writeBool(1, adSpawendBool_);
+      }
+      if (adInhibition_ != POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition.AD_INHIBITION_UNKNOWN.getNumber()) {
+        output.writeEnum(2, adInhibition_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (adSpawendBool_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, adSpawendBool_);
+      }
+      if (adInhibition_ != POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition.AD_INHIBITION_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, adInhibition_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)) {
+        return super.equals(obj);
+      }
+      POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction other = (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) obj;
+
+      if (getAdSpawendBool()
+          != other.getAdSpawendBool()) return false;
+      if (adInhibition_ != other.adInhibition_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AD_SPAWEND_BOOL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAdSpawendBool());
+      hash = (37 * hash) + AD_INHIBITION_FIELD_NUMBER;
+      hash = (53 * hash) + adInhibition_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdSpawendInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdSpawendInteraction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder.class);
+      }
+
+      // Construct using POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        adSpawendBool_ = false;
+
+        adInhibition_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdSpawendInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction getDefaultInstanceForType() {
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction build() {
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction buildPartial() {
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction result = new POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction(this);
+        result.adSpawendBool_ = adSpawendBool_;
+        result.adInhibition_ = adInhibition_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) {
+          return mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction other) {
+        if (other == POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance()) return this;
+        if (other.getAdSpawendBool() != false) {
+          setAdSpawendBool(other.getAdSpawendBool());
+        }
+        if (other.adInhibition_ != 0) {
+          setAdInhibitionValue(other.getAdInhibitionValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean adSpawendBool_ ;
+      /**
+       * <code>bool ad_spawend_bool = 1;</code>
+       * @return The adSpawendBool.
+       */
+      @java.lang.Override
+      public boolean getAdSpawendBool() {
+        return adSpawendBool_;
+      }
+      /**
+       * <code>bool ad_spawend_bool = 1;</code>
+       * @param value The adSpawendBool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdSpawendBool(boolean value) {
+        
+        adSpawendBool_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ad_spawend_bool = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdSpawendBool() {
+        
+        adSpawendBool_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int adInhibition_ = 0;
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+       * @return The enum numeric value on the wire for adInhibition.
+       */
+      @java.lang.Override public int getAdInhibitionValue() {
+        return adInhibition_;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+       * @param value The enum numeric value on the wire for adInhibition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdInhibitionValue(int value) {
+        
+        adInhibition_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+       * @return The adInhibition.
+       */
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition getAdInhibition() {
+        @SuppressWarnings("deprecation")
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition result = POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition.valueOf(adInhibition_);
+        return result == null ? POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+       * @param value The adInhibition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdInhibition(POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        adInhibition_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition ad_inhibition = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdInhibition() {
+        
+        adInhibition_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)
+    }
+
+    // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction)
+    private static final POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction();
+    }
+
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdSpawendInteraction>
+        PARSER = new com.google.protobuf.AbstractParser<AdSpawendInteraction>() {
+      @java.lang.Override
+      public AdSpawendInteraction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AdSpawendInteraction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdSpawendInteraction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdSpawendInteraction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ViewImpressionInteractionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string preview_image_url = 1;</code>
+     * @return The previewImageUrl.
+     */
+    java.lang.String getPreviewImageUrl();
+    /**
+     * <code>string preview_image_url = 1;</code>
+     * @return The bytes for previewImageUrl.
+     */
+    com.google.protobuf.ByteString
+        getPreviewImageUrlBytes();
+
+    /**
+     * <code>bool is_persisted_gift = 2;</code>
+     * @return The isPersistedGift.
+     */
+    boolean getIsPersistedGift();
+  }
+  /**
+   * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction}
+   */
+  public static final class ViewImpressionInteraction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+      ViewImpressionInteractionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ViewImpressionInteraction.newBuilder() to construct.
+    private ViewImpressionInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ViewImpressionInteraction() {
+      previewImageUrl_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ViewImpressionInteraction();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ViewImpressionInteraction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              previewImageUrl_ = s;
+              break;
+            }
+            case 16: {
+
+              isPersistedGift_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.Builder.class);
+    }
+
+    public static final int PREVIEW_IMAGE_URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object previewImageUrl_;
+    /**
+     * <code>string preview_image_url = 1;</code>
+     * @return The previewImageUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getPreviewImageUrl() {
+      java.lang.Object ref = previewImageUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previewImageUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string preview_image_url = 1;</code>
+     * @return The bytes for previewImageUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPreviewImageUrlBytes() {
+      java.lang.Object ref = previewImageUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        previewImageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_PERSISTED_GIFT_FIELD_NUMBER = 2;
+    private boolean isPersistedGift_;
+    /**
+     * <code>bool is_persisted_gift = 2;</code>
+     * @return The isPersistedGift.
+     */
+    @java.lang.Override
+    public boolean getIsPersistedGift() {
+      return isPersistedGift_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPreviewImageUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, previewImageUrl_);
+      }
+      if (isPersistedGift_ != false) {
+        output.writeBool(2, isPersistedGift_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPreviewImageUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, previewImageUrl_);
+      }
+      if (isPersistedGift_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isPersistedGift_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)) {
+        return super.equals(obj);
+      }
+      POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction other = (POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction) obj;
+
+      if (!getPreviewImageUrl()
+          .equals(other.getPreviewImageUrl())) return false;
+      if (getIsPersistedGift()
+          != other.getIsPersistedGift()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PREVIEW_IMAGE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getPreviewImageUrl().hashCode();
+      hash = (37 * hash) + IS_PERSISTED_GIFT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPersistedGift());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteractionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.Builder.class);
+      }
+
+      // Construct using POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        previewImageUrl_ = "";
+
+        isPersistedGift_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction getDefaultInstanceForType() {
+        return POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction build() {
+        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction buildPartial() {
+        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction result = new POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction(this);
+        result.previewImageUrl_ = previewImageUrl_;
+        result.isPersistedGift_ = isPersistedGift_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction) {
+          return mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction other) {
+        if (other == POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.getDefaultInstance()) return this;
+        if (!other.getPreviewImageUrl().isEmpty()) {
+          previewImageUrl_ = other.previewImageUrl_;
+          onChanged();
+        }
+        if (other.getIsPersistedGift() != false) {
+          setIsPersistedGift(other.getIsPersistedGift());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object previewImageUrl_ = "";
+      /**
+       * <code>string preview_image_url = 1;</code>
+       * @return The previewImageUrl.
+       */
+      public java.lang.String getPreviewImageUrl() {
+        java.lang.Object ref = previewImageUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          previewImageUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string preview_image_url = 1;</code>
+       * @return The bytes for previewImageUrl.
+       */
+      public com.google.protobuf.ByteString
+          getPreviewImageUrlBytes() {
+        java.lang.Object ref = previewImageUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          previewImageUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string preview_image_url = 1;</code>
+       * @param value The previewImageUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviewImageUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        previewImageUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string preview_image_url = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPreviewImageUrl() {
+        
+        previewImageUrl_ = getDefaultInstance().getPreviewImageUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string preview_image_url = 1;</code>
+       * @param value The bytes for previewImageUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviewImageUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        previewImageUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isPersistedGift_ ;
+      /**
+       * <code>bool is_persisted_gift = 2;</code>
+       * @return The isPersistedGift.
+       */
+      @java.lang.Override
+      public boolean getIsPersistedGift() {
+        return isPersistedGift_;
+      }
+      /**
+       * <code>bool is_persisted_gift = 2;</code>
+       * @param value The isPersistedGift to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsPersistedGift(boolean value) {
+        
+        isPersistedGift_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_persisted_gift = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsPersistedGift() {
+        
+        isPersistedGift_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+    }
+
+    // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+    private static final POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction();
+    }
+
+    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ViewImpressionInteraction>
+        PARSER = new com.google.protobuf.AbstractParser<ViewImpressionInteraction>() {
+      @java.lang.Override
+      public ViewImpressionInteraction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ViewImpressionInteraction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ViewImpressionInteraction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ViewImpressionInteraction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdDismissedInteractionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+     * @return The enum numeric value on the wire for adDismissal.
+     */
+    int getAdDismissalValue();
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+     * @return The adDismissal.
+     */
+    POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal getAdDismissal();
+  }
+  /**
+   * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction}
+   */
+  public static final class AdDismissedInteraction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)
+      AdDismissedInteractionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AdDismissedInteraction.newBuilder() to construct.
+    private AdDismissedInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdDismissedInteraction() {
+      adDismissal_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AdDismissedInteraction();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AdDismissedInteraction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              adDismissal_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdDismissedInteraction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdDismissedInteraction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal}
+     */
+    public enum AdDismissal
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>AD_DISMISSAL_UNKNOWN = 0;</code>
+       */
+      AD_DISMISSAL_UNKNOWN(0),
+      /**
+       * <code>AD_DISMISSAL_TR_DISPLACES_AD_BALLOON = 1;</code>
+       */
+      AD_DISMISSAL_TR_DISPLACES_AD_BALLOON(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>AD_DISMISSAL_UNKNOWN = 0;</code>
+       */
+      public static final int AD_DISMISSAL_UNKNOWN_VALUE = 0;
+      /**
+       * <code>AD_DISMISSAL_TR_DISPLACES_AD_BALLOON = 1;</code>
+       */
+      public static final int AD_DISMISSAL_TR_DISPLACES_AD_BALLOON_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AdDismissal valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AdDismissal forNumber(int value) {
+        switch (value) {
+          case 0: return AD_DISMISSAL_UNKNOWN;
+          case 1: return AD_DISMISSAL_TR_DISPLACES_AD_BALLOON;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AdDismissal>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          AdDismissal> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AdDismissal>() {
+              public AdDismissal findValueByNumber(int number) {
+                return AdDismissal.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final AdDismissal[] VALUES = values();
+
+      public static AdDismissal valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AdDismissal(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal)
+    }
+
+    public static final int AD_DISMISSAL_FIELD_NUMBER = 1;
+    private int adDismissal_;
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+     * @return The enum numeric value on the wire for adDismissal.
+     */
+    @java.lang.Override public int getAdDismissalValue() {
+      return adDismissal_;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+     * @return The adDismissal.
+     */
+    @java.lang.Override public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal getAdDismissal() {
+      @SuppressWarnings("deprecation")
+      POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal result = POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal.valueOf(adDismissal_);
+      return result == null ? POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (adDismissal_ != POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal.AD_DISMISSAL_UNKNOWN.getNumber()) {
+        output.writeEnum(1, adDismissal_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (adDismissal_ != POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal.AD_DISMISSAL_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, adDismissal_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)) {
+        return super.equals(obj);
+      }
+      POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction other = (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) obj;
+
+      if (adDismissal_ != other.adDismissal_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AD_DISMISSAL_FIELD_NUMBER;
+      hash = (53 * hash) + adDismissal_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdDismissedInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdDismissedInteraction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder.class);
+      }
+
+      // Construct using POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        adDismissal_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_AdDismissedInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction getDefaultInstanceForType() {
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction build() {
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction buildPartial() {
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction result = new POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction(this);
+        result.adDismissal_ = adDismissal_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) {
+          return mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction other) {
+        if (other == POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance()) return this;
+        if (other.adDismissal_ != 0) {
+          setAdDismissalValue(other.getAdDismissalValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int adDismissal_ = 0;
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+       * @return The enum numeric value on the wire for adDismissal.
+       */
+      @java.lang.Override public int getAdDismissalValue() {
+        return adDismissal_;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+       * @param value The enum numeric value on the wire for adDismissal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdDismissalValue(int value) {
+        
+        adDismissal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+       * @return The adDismissal.
+       */
+      @java.lang.Override
+      public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal getAdDismissal() {
+        @SuppressWarnings("deprecation")
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal result = POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal.valueOf(adDismissal_);
+        return result == null ? POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+       * @param value The adDismissal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAdDismissal(POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        adDismissal_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal ad_dismissal = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAdDismissal() {
+        
+        adDismissal_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)
+    }
+
+    // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction)
+    private static final POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction();
+    }
+
+    public static POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdDismissedInteraction>
+        PARSER = new com.google.protobuf.AbstractParser<AdDismissedInteraction>() {
+      @java.lang.Override
+      public AdDismissedInteraction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AdDismissedInteraction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdDismissedInteraction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdDismissedInteraction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface FullScreenInteractionOrBuilder extends
@@ -944,574 +3081,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface CTAClickInteractionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string cta_url = 6;</code>
-     * @return The ctaUrl.
-     */
-    java.lang.String getCtaUrl();
-    /**
-     * <code>string cta_url = 6;</code>
-     * @return The bytes for ctaUrl.
-     */
-    com.google.protobuf.ByteString
-        getCtaUrlBytes();
-  }
-  /**
-   * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction}
-   */
-  public static final class CTAClickInteraction extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
-      CTAClickInteractionOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CTAClickInteraction.newBuilder() to construct.
-    private CTAClickInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CTAClickInteraction() {
-      ctaUrl_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CTAClickInteraction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CTAClickInteraction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ctaUrl_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.Builder.class);
-    }
-
-    public static final int CTA_URL_FIELD_NUMBER = 6;
-    private volatile java.lang.Object ctaUrl_;
-    /**
-     * <code>string cta_url = 6;</code>
-     * @return The ctaUrl.
-     */
-    @java.lang.Override
-    public java.lang.String getCtaUrl() {
-      java.lang.Object ref = ctaUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ctaUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string cta_url = 6;</code>
-     * @return The bytes for ctaUrl.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCtaUrlBytes() {
-      java.lang.Object ref = ctaUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ctaUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getCtaUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ctaUrl_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getCtaUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ctaUrl_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)) {
-        return super.equals(obj);
-      }
-      POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction other = (POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) obj;
-
-      if (!getCtaUrl()
-          .equals(other.getCtaUrl())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CTA_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getCtaUrl().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
-        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteractionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.Builder.class);
-      }
-
-      // Construct using POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        ctaUrl_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_descriptor;
-      }
-
-      @java.lang.Override
-      public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction getDefaultInstanceForType() {
-        return POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction build() {
-        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction buildPartial() {
-        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction result = new POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction(this);
-        result.ctaUrl_ = ctaUrl_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) {
-          return mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction other) {
-        if (other == POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.getDefaultInstance()) return this;
-        if (!other.getCtaUrl().isEmpty()) {
-          ctaUrl_ = other.ctaUrl_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object ctaUrl_ = "";
-      /**
-       * <code>string cta_url = 6;</code>
-       * @return The ctaUrl.
-       */
-      public java.lang.String getCtaUrl() {
-        java.lang.Object ref = ctaUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ctaUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string cta_url = 6;</code>
-       * @return The bytes for ctaUrl.
-       */
-      public com.google.protobuf.ByteString
-          getCtaUrlBytes() {
-        java.lang.Object ref = ctaUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ctaUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string cta_url = 6;</code>
-       * @param value The ctaUrl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCtaUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ctaUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cta_url = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCtaUrl() {
-        
-        ctaUrl_ = getDefaultInstance().getCtaUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cta_url = 6;</code>
-       * @param value The bytes for ctaUrl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCtaUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ctaUrl_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
-    }
-
-    // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
-    private static final POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction();
-    }
-
-    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CTAClickInteraction>
-        PARSER = new com.google.protobuf.AbstractParser<CTAClickInteraction>() {
-      @java.lang.Override
-      public CTAClickInteraction parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CTAClickInteraction(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CTAClickInteraction> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CTAClickInteraction> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface ViewFullscreenInteractionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction)
       com.google.protobuf.MessageOrBuilder {
@@ -2080,49 +3649,43 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface ViewImpressionInteractionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+  public interface CTAClickInteractionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string preview_image_url = 1;</code>
-     * @return The previewImageUrl.
+     * <code>string cta_url = 6;</code>
+     * @return The ctaUrl.
      */
-    java.lang.String getPreviewImageUrl();
+    java.lang.String getCtaUrl();
     /**
-     * <code>string preview_image_url = 1;</code>
-     * @return The bytes for previewImageUrl.
+     * <code>string cta_url = 6;</code>
+     * @return The bytes for ctaUrl.
      */
     com.google.protobuf.ByteString
-        getPreviewImageUrlBytes();
-
-    /**
-     * <code>bool is_persisted_gift = 2;</code>
-     * @return The isPersistedGift.
-     */
-    boolean getIsPersistedGift();
+        getCtaUrlBytes();
   }
   /**
-   * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction}
+   * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction}
    */
-  public static final class ViewImpressionInteraction extends
+  public static final class CTAClickInteraction extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
-      ViewImpressionInteractionOrBuilder {
+      // @@protoc_insertion_point(message_implements:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
+      CTAClickInteractionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ViewImpressionInteraction.newBuilder() to construct.
-    private ViewImpressionInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CTAClickInteraction.newBuilder() to construct.
+    private CTAClickInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ViewImpressionInteraction() {
-      previewImageUrl_ = "";
+    private CTAClickInteraction() {
+      ctaUrl_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ViewImpressionInteraction();
+      return new CTAClickInteraction();
     }
 
     @java.lang.Override
@@ -2130,7 +3693,7 @@ private static final long serialVersionUID = 0L;
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ViewImpressionInteraction(
+    private CTAClickInteraction(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2148,15 +3711,10 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              previewImageUrl_ = s;
-              break;
-            }
-            case 16: {
-
-              isPersistedGift_ = input.readBool();
+              ctaUrl_ = s;
               break;
             }
             default: {
@@ -2180,64 +3738,53 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_descriptor;
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_fieldAccessorTable
+      return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.Builder.class);
+              POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.Builder.class);
     }
 
-    public static final int PREVIEW_IMAGE_URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object previewImageUrl_;
+    public static final int CTA_URL_FIELD_NUMBER = 6;
+    private volatile java.lang.Object ctaUrl_;
     /**
-     * <code>string preview_image_url = 1;</code>
-     * @return The previewImageUrl.
+     * <code>string cta_url = 6;</code>
+     * @return The ctaUrl.
      */
     @java.lang.Override
-    public java.lang.String getPreviewImageUrl() {
-      java.lang.Object ref = previewImageUrl_;
+    public java.lang.String getCtaUrl() {
+      java.lang.Object ref = ctaUrl_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        previewImageUrl_ = s;
+        ctaUrl_ = s;
         return s;
       }
     }
     /**
-     * <code>string preview_image_url = 1;</code>
-     * @return The bytes for previewImageUrl.
+     * <code>string cta_url = 6;</code>
+     * @return The bytes for ctaUrl.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPreviewImageUrlBytes() {
-      java.lang.Object ref = previewImageUrl_;
+        getCtaUrlBytes() {
+      java.lang.Object ref = ctaUrl_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        previewImageUrl_ = b;
+        ctaUrl_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int IS_PERSISTED_GIFT_FIELD_NUMBER = 2;
-    private boolean isPersistedGift_;
-    /**
-     * <code>bool is_persisted_gift = 2;</code>
-     * @return The isPersistedGift.
-     */
-    @java.lang.Override
-    public boolean getIsPersistedGift() {
-      return isPersistedGift_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2254,11 +3801,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPreviewImageUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, previewImageUrl_);
-      }
-      if (isPersistedGift_ != false) {
-        output.writeBool(2, isPersistedGift_);
+      if (!getCtaUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ctaUrl_);
       }
       unknownFields.writeTo(output);
     }
@@ -2269,12 +3813,8 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getPreviewImageUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, previewImageUrl_);
-      }
-      if (isPersistedGift_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isPersistedGift_);
+      if (!getCtaUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ctaUrl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2286,15 +3826,13 @@ private static final long serialVersionUID = 0L;
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)) {
+      if (!(obj instanceof POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)) {
         return super.equals(obj);
       }
-      POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction other = (POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction) obj;
+      POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction other = (POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) obj;
 
-      if (!getPreviewImageUrl()
-          .equals(other.getPreviewImageUrl())) return false;
-      if (getIsPersistedGift()
-          != other.getIsPersistedGift()) return false;
+      if (!getCtaUrl()
+          .equals(other.getCtaUrl())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2306,79 +3844,76 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PREVIEW_IMAGE_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getPreviewImageUrl().hashCode();
-      hash = (37 * hash) + IS_PERSISTED_GIFT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsPersistedGift());
+      hash = (37 * hash) + CTA_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getCtaUrl().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(byte[] data)
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(java.io.InputStream input)
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseDelimitedFrom(java.io.InputStream input)
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseDelimitedFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parseFrom(
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2391,7 +3926,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction prototype) {
+    public static Builder newBuilder(POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2407,26 +3942,26 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
-     * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction}
+     * Protobuf type {@code POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
-        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteractionOrBuilder {
+        // @@protoc_insertion_point(builder_implements:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
+        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteractionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_descriptor;
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_fieldAccessorTable
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.Builder.class);
+                POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.class, POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.Builder.class);
       }
 
-      // Construct using POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.newBuilder()
+      // Construct using POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2444,9 +3979,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        previewImageUrl_ = "";
-
-        isPersistedGift_ = false;
+        ctaUrl_ = "";
 
         return this;
       }
@@ -2454,17 +3987,17 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_ViewImpressionInteraction_descriptor;
+        return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_ReportAdInteractionProto_CTAClickInteraction_descriptor;
       }
 
       @java.lang.Override
-      public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction getDefaultInstanceForType() {
-        return POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.getDefaultInstance();
+      public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction getDefaultInstanceForType() {
+        return POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.getDefaultInstance();
       }
 
       @java.lang.Override
-      public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction build() {
-        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction result = buildPartial();
+      public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction build() {
+        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2472,10 +4005,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction buildPartial() {
-        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction result = new POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction(this);
-        result.previewImageUrl_ = previewImageUrl_;
-        result.isPersistedGift_ = isPersistedGift_;
+      public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction buildPartial() {
+        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction result = new POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction(this);
+        result.ctaUrl_ = ctaUrl_;
         onBuilt();
         return result;
       }
@@ -2514,22 +4046,19 @@ private static final long serialVersionUID = 0L;
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction) {
-          return mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)other);
+        if (other instanceof POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) {
+          return mergeFrom((POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction other) {
-        if (other == POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction.getDefaultInstance()) return this;
-        if (!other.getPreviewImageUrl().isEmpty()) {
-          previewImageUrl_ = other.previewImageUrl_;
+      public Builder mergeFrom(POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction other) {
+        if (other == POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.getDefaultInstance()) return this;
+        if (!other.getCtaUrl().isEmpty()) {
+          ctaUrl_ = other.ctaUrl_;
           onChanged();
-        }
-        if (other.getIsPersistedGift() != false) {
-          setIsPersistedGift(other.getIsPersistedGift());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2546,11 +4075,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction parsedMessage = null;
+        POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction) e.getUnfinishedMessage();
+          parsedMessage = (POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2560,109 +4089,78 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private java.lang.Object previewImageUrl_ = "";
+      private java.lang.Object ctaUrl_ = "";
       /**
-       * <code>string preview_image_url = 1;</code>
-       * @return The previewImageUrl.
+       * <code>string cta_url = 6;</code>
+       * @return The ctaUrl.
        */
-      public java.lang.String getPreviewImageUrl() {
-        java.lang.Object ref = previewImageUrl_;
+      public java.lang.String getCtaUrl() {
+        java.lang.Object ref = ctaUrl_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          previewImageUrl_ = s;
+          ctaUrl_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string preview_image_url = 1;</code>
-       * @return The bytes for previewImageUrl.
+       * <code>string cta_url = 6;</code>
+       * @return The bytes for ctaUrl.
        */
       public com.google.protobuf.ByteString
-          getPreviewImageUrlBytes() {
-        java.lang.Object ref = previewImageUrl_;
+          getCtaUrlBytes() {
+        java.lang.Object ref = ctaUrl_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          previewImageUrl_ = b;
+          ctaUrl_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string preview_image_url = 1;</code>
-       * @param value The previewImageUrl to set.
+       * <code>string cta_url = 6;</code>
+       * @param value The ctaUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setPreviewImageUrl(
+      public Builder setCtaUrl(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        previewImageUrl_ = value;
+        ctaUrl_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string preview_image_url = 1;</code>
+       * <code>string cta_url = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPreviewImageUrl() {
+      public Builder clearCtaUrl() {
         
-        previewImageUrl_ = getDefaultInstance().getPreviewImageUrl();
+        ctaUrl_ = getDefaultInstance().getCtaUrl();
         onChanged();
         return this;
       }
       /**
-       * <code>string preview_image_url = 1;</code>
-       * @param value The bytes for previewImageUrl to set.
+       * <code>string cta_url = 6;</code>
+       * @param value The bytes for ctaUrl to set.
        * @return This builder for chaining.
        */
-      public Builder setPreviewImageUrlBytes(
+      public Builder setCtaUrlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        previewImageUrl_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean isPersistedGift_ ;
-      /**
-       * <code>bool is_persisted_gift = 2;</code>
-       * @return The isPersistedGift.
-       */
-      @java.lang.Override
-      public boolean getIsPersistedGift() {
-        return isPersistedGift_;
-      }
-      /**
-       * <code>bool is_persisted_gift = 2;</code>
-       * @param value The isPersistedGift to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsPersistedGift(boolean value) {
-        
-        isPersistedGift_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_persisted_gift = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsPersistedGift() {
-        
-        isPersistedGift_ = false;
+        ctaUrl_ = value;
         onChanged();
         return this;
       }
@@ -2679,41 +4177,41 @@ private static final long serialVersionUID = 0L;
       }
 
 
-      // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
+      // @@protoc_insertion_point(builder_scope:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
     }
 
-    // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction)
-    private static final POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction)
+    private static final POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction();
+      DEFAULT_INSTANCE = new POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction();
     }
 
-    public static POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction getDefaultInstance() {
+    public static POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ViewImpressionInteraction>
-        PARSER = new com.google.protobuf.AbstractParser<ViewImpressionInteraction>() {
+    private static final com.google.protobuf.Parser<CTAClickInteraction>
+        PARSER = new com.google.protobuf.AbstractParser<CTAClickInteraction>() {
       @java.lang.Override
-      public ViewImpressionInteraction parsePartialFrom(
+      public CTAClickInteraction parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ViewImpressionInteraction(input, extensionRegistry);
+        return new CTAClickInteraction(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ViewImpressionInteraction> parser() {
+    public static com.google.protobuf.Parser<CTAClickInteraction> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ViewImpressionInteraction> getParserForType() {
+    public com.google.protobuf.Parser<CTAClickInteraction> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction getDefaultInstanceForType() {
+    public POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2728,6 +4226,8 @@ private static final long serialVersionUID = 0L;
     VIEW_FULLSCREEN(6),
     FULLSCREEN_INTERACTION(7),
     CTA_CLICKED(8),
+    AD_SPAWNED(9),
+    AD_DISMISSED(10),
     INTERACTIONTYPE_NOT_SET(0);
     private final int value;
     private InteractionTypeCase(int value) {
@@ -2749,6 +4249,8 @@ private static final long serialVersionUID = 0L;
         case 6: return VIEW_FULLSCREEN;
         case 7: return FULLSCREEN_INTERACTION;
         case 8: return CTA_CLICKED;
+        case 9: return AD_SPAWNED;
+        case 10: return AD_DISMISSED;
         case 0: return INTERACTIONTYPE_NOT_SET;
         default: return null;
       }
@@ -2888,6 +4390,68 @@ private static final long serialVersionUID = 0L;
     return POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction.getDefaultInstance();
   }
 
+  public static final int AD_SPAWNED_FIELD_NUMBER = 9;
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+   * @return Whether the adSpawned field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdSpawned() {
+    return interactionTypeCase_ == 9;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+   * @return The adSpawned.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction getAdSpawned() {
+    if (interactionTypeCase_ == 9) {
+       return (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_;
+    }
+    return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder getAdSpawnedOrBuilder() {
+    if (interactionTypeCase_ == 9) {
+       return (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_;
+    }
+    return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+  }
+
+  public static final int AD_DISMISSED_FIELD_NUMBER = 10;
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+   * @return Whether the adDismissed field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdDismissed() {
+    return interactionTypeCase_ == 10;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+   * @return The adDismissed.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction getAdDismissed() {
+    if (interactionTypeCase_ == 10) {
+       return (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_;
+    }
+    return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder getAdDismissedOrBuilder() {
+    if (interactionTypeCase_ == 10) {
+       return (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_;
+    }
+    return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+  }
+
   public static final int GAME_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object gameId_;
   /**
@@ -3013,6 +4577,25 @@ private static final long serialVersionUID = 0L;
     return encryptedAdToken_;
   }
 
+  public static final int AD_TYPE_FIELD_NUMBER = 100;
+  private int adType_;
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+   * @return The enum numeric value on the wire for adType.
+   */
+  @java.lang.Override public int getAdTypeValue() {
+    return adType_;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+   * @return The adType.
+   */
+  @java.lang.Override public POGOProtos.Rpc.ReportAdInteractionProto.AdType getAdType() {
+    @SuppressWarnings("deprecation")
+    POGOProtos.Rpc.ReportAdInteractionProto.AdType result = POGOProtos.Rpc.ReportAdInteractionProto.AdType.valueOf(adType_);
+    return result == null ? POGOProtos.Rpc.ReportAdInteractionProto.AdType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -3050,6 +4633,15 @@ private static final long serialVersionUID = 0L;
     }
     if (interactionTypeCase_ == 8) {
       output.writeMessage(8, (POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) interactionType_);
+    }
+    if (interactionTypeCase_ == 9) {
+      output.writeMessage(9, (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_);
+    }
+    if (interactionTypeCase_ == 10) {
+      output.writeMessage(10, (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_);
+    }
+    if (adType_ != POGOProtos.Rpc.ReportAdInteractionProto.AdType.AD_TYPE_UNKNOWN.getNumber()) {
+      output.writeEnum(100, adType_);
     }
     unknownFields.writeTo(output);
   }
@@ -3089,6 +4681,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, (POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction) interactionType_);
     }
+    if (interactionTypeCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_);
+    }
+    if (interactionTypeCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_);
+    }
+    if (adType_ != POGOProtos.Rpc.ReportAdInteractionProto.AdType.AD_TYPE_UNKNOWN.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(100, adType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3112,6 +4716,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGuid())) return false;
     if (!getEncryptedAdToken()
         .equals(other.getEncryptedAdToken())) return false;
+    if (adType_ != other.adType_) return false;
     if (!getInteractionTypeCase().equals(other.getInteractionTypeCase())) return false;
     switch (interactionTypeCase_) {
       case 5:
@@ -3129,6 +4734,14 @@ private static final long serialVersionUID = 0L;
       case 8:
         if (!getCtaClicked()
             .equals(other.getCtaClicked())) return false;
+        break;
+      case 9:
+        if (!getAdSpawned()
+            .equals(other.getAdSpawned())) return false;
+        break;
+      case 10:
+        if (!getAdDismissed()
+            .equals(other.getAdDismissed())) return false;
         break;
       case 0:
       default:
@@ -3152,6 +4765,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getGuid().hashCode();
     hash = (37 * hash) + ENCRYPTED_AD_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getEncryptedAdToken().hashCode();
+    hash = (37 * hash) + AD_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + adType_;
     switch (interactionTypeCase_) {
       case 5:
         hash = (37 * hash) + VIEW_IMPRESSION_FIELD_NUMBER;
@@ -3168,6 +4783,14 @@ private static final long serialVersionUID = 0L;
       case 8:
         hash = (37 * hash) + CTA_CLICKED_FIELD_NUMBER;
         hash = (53 * hash) + getCtaClicked().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + AD_SPAWNED_FIELD_NUMBER;
+        hash = (53 * hash) + getAdSpawned().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + AD_DISMISSED_FIELD_NUMBER;
+        hash = (53 * hash) + getAdDismissed().hashCode();
         break;
       case 0:
       default:
@@ -3313,6 +4936,8 @@ private static final long serialVersionUID = 0L;
 
       encryptedAdToken_ = com.google.protobuf.ByteString.EMPTY;
 
+      adType_ = 0;
+
       interactionTypeCase_ = 0;
       interactionType_ = null;
       return this;
@@ -3369,10 +4994,25 @@ private static final long serialVersionUID = 0L;
           result.interactionType_ = ctaClickedBuilder_.build();
         }
       }
+      if (interactionTypeCase_ == 9) {
+        if (adSpawnedBuilder_ == null) {
+          result.interactionType_ = interactionType_;
+        } else {
+          result.interactionType_ = adSpawnedBuilder_.build();
+        }
+      }
+      if (interactionTypeCase_ == 10) {
+        if (adDismissedBuilder_ == null) {
+          result.interactionType_ = interactionType_;
+        } else {
+          result.interactionType_ = adDismissedBuilder_.build();
+        }
+      }
       result.gameId_ = gameId_;
       result.userId_ = userId_;
       result.guid_ = guid_;
       result.encryptedAdToken_ = encryptedAdToken_;
+      result.adType_ = adType_;
       result.interactionTypeCase_ = interactionTypeCase_;
       onBuilt();
       return result;
@@ -3437,6 +5077,9 @@ private static final long serialVersionUID = 0L;
       if (other.getEncryptedAdToken() != com.google.protobuf.ByteString.EMPTY) {
         setEncryptedAdToken(other.getEncryptedAdToken());
       }
+      if (other.adType_ != 0) {
+        setAdTypeValue(other.getAdTypeValue());
+      }
       switch (other.getInteractionTypeCase()) {
         case VIEW_IMPRESSION: {
           mergeViewImpression(other.getViewImpression());
@@ -3452,6 +5095,14 @@ private static final long serialVersionUID = 0L;
         }
         case CTA_CLICKED: {
           mergeCtaClicked(other.getCtaClicked());
+          break;
+        }
+        case AD_SPAWNED: {
+          mergeAdSpawned(other.getAdSpawned());
+          break;
+        }
+        case AD_DISMISSED: {
+          mergeAdDismissed(other.getAdDismissed());
           break;
         }
         case INTERACTIONTYPE_NOT_SET: {
@@ -4066,6 +5717,288 @@ private static final long serialVersionUID = 0L;
       return ctaClickedBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder> adSpawnedBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     * @return Whether the adSpawned field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdSpawned() {
+      return interactionTypeCase_ == 9;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     * @return The adSpawned.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction getAdSpawned() {
+      if (adSpawnedBuilder_ == null) {
+        if (interactionTypeCase_ == 9) {
+          return (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_;
+        }
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+      } else {
+        if (interactionTypeCase_ == 9) {
+          return adSpawnedBuilder_.getMessage();
+        }
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    public Builder setAdSpawned(POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction value) {
+      if (adSpawnedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        interactionType_ = value;
+        onChanged();
+      } else {
+        adSpawnedBuilder_.setMessage(value);
+      }
+      interactionTypeCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    public Builder setAdSpawned(
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder builderForValue) {
+      if (adSpawnedBuilder_ == null) {
+        interactionType_ = builderForValue.build();
+        onChanged();
+      } else {
+        adSpawnedBuilder_.setMessage(builderForValue.build());
+      }
+      interactionTypeCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    public Builder mergeAdSpawned(POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction value) {
+      if (adSpawnedBuilder_ == null) {
+        if (interactionTypeCase_ == 9 &&
+            interactionType_ != POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance()) {
+          interactionType_ = POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.newBuilder((POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          interactionType_ = value;
+        }
+        onChanged();
+      } else {
+        if (interactionTypeCase_ == 9) {
+          adSpawnedBuilder_.mergeFrom(value);
+        }
+        adSpawnedBuilder_.setMessage(value);
+      }
+      interactionTypeCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    public Builder clearAdSpawned() {
+      if (adSpawnedBuilder_ == null) {
+        if (interactionTypeCase_ == 9) {
+          interactionTypeCase_ = 0;
+          interactionType_ = null;
+          onChanged();
+        }
+      } else {
+        if (interactionTypeCase_ == 9) {
+          interactionTypeCase_ = 0;
+          interactionType_ = null;
+        }
+        adSpawnedBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder getAdSpawnedBuilder() {
+      return getAdSpawnedFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder getAdSpawnedOrBuilder() {
+      if ((interactionTypeCase_ == 9) && (adSpawnedBuilder_ != null)) {
+        return adSpawnedBuilder_.getMessageOrBuilder();
+      } else {
+        if (interactionTypeCase_ == 9) {
+          return (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_;
+        }
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction ad_spawned = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder> 
+        getAdSpawnedFieldBuilder() {
+      if (adSpawnedBuilder_ == null) {
+        if (!(interactionTypeCase_ == 9)) {
+          interactionType_ = POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.getDefaultInstance();
+        }
+        adSpawnedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.Builder, POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteractionOrBuilder>(
+                (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction) interactionType_,
+                getParentForChildren(),
+                isClean());
+        interactionType_ = null;
+      }
+      interactionTypeCase_ = 9;
+      onChanged();;
+      return adSpawnedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder> adDismissedBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     * @return Whether the adDismissed field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdDismissed() {
+      return interactionTypeCase_ == 10;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     * @return The adDismissed.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction getAdDismissed() {
+      if (adDismissedBuilder_ == null) {
+        if (interactionTypeCase_ == 10) {
+          return (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_;
+        }
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+      } else {
+        if (interactionTypeCase_ == 10) {
+          return adDismissedBuilder_.getMessage();
+        }
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    public Builder setAdDismissed(POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction value) {
+      if (adDismissedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        interactionType_ = value;
+        onChanged();
+      } else {
+        adDismissedBuilder_.setMessage(value);
+      }
+      interactionTypeCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    public Builder setAdDismissed(
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder builderForValue) {
+      if (adDismissedBuilder_ == null) {
+        interactionType_ = builderForValue.build();
+        onChanged();
+      } else {
+        adDismissedBuilder_.setMessage(builderForValue.build());
+      }
+      interactionTypeCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    public Builder mergeAdDismissed(POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction value) {
+      if (adDismissedBuilder_ == null) {
+        if (interactionTypeCase_ == 10 &&
+            interactionType_ != POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance()) {
+          interactionType_ = POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.newBuilder((POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          interactionType_ = value;
+        }
+        onChanged();
+      } else {
+        if (interactionTypeCase_ == 10) {
+          adDismissedBuilder_.mergeFrom(value);
+        }
+        adDismissedBuilder_.setMessage(value);
+      }
+      interactionTypeCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    public Builder clearAdDismissed() {
+      if (adDismissedBuilder_ == null) {
+        if (interactionTypeCase_ == 10) {
+          interactionTypeCase_ = 0;
+          interactionType_ = null;
+          onChanged();
+        }
+      } else {
+        if (interactionTypeCase_ == 10) {
+          interactionTypeCase_ = 0;
+          interactionType_ = null;
+        }
+        adDismissedBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder getAdDismissedBuilder() {
+      return getAdDismissedFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder getAdDismissedOrBuilder() {
+      if ((interactionTypeCase_ == 10) && (adDismissedBuilder_ != null)) {
+        return adDismissedBuilder_.getMessageOrBuilder();
+      } else {
+        if (interactionTypeCase_ == 10) {
+          return (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_;
+        }
+        return POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction ad_dismissed = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder> 
+        getAdDismissedFieldBuilder() {
+      if (adDismissedBuilder_ == null) {
+        if (!(interactionTypeCase_ == 10)) {
+          interactionType_ = POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.getDefaultInstance();
+        }
+        adDismissedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.Builder, POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteractionOrBuilder>(
+                (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction) interactionType_,
+                getParentForChildren(),
+                isClean());
+        interactionType_ = null;
+      }
+      interactionTypeCase_ = 10;
+      onChanged();;
+      return adDismissedBuilder_;
+    }
+
     private java.lang.Object gameId_ = "";
     /**
      * <code>string game_id = 1;</code>
@@ -4324,6 +6257,60 @@ private static final long serialVersionUID = 0L;
     public Builder clearEncryptedAdToken() {
       
       encryptedAdToken_ = getDefaultInstance().getEncryptedAdToken();
+      onChanged();
+      return this;
+    }
+
+    private int adType_ = 0;
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+     * @return The enum numeric value on the wire for adType.
+     */
+    @java.lang.Override public int getAdTypeValue() {
+      return adType_;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+     * @param value The enum numeric value on the wire for adType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdTypeValue(int value) {
+      
+      adType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+     * @return The adType.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.ReportAdInteractionProto.AdType getAdType() {
+      @SuppressWarnings("deprecation")
+      POGOProtos.Rpc.ReportAdInteractionProto.AdType result = POGOProtos.Rpc.ReportAdInteractionProto.AdType.valueOf(adType_);
+      return result == null ? POGOProtos.Rpc.ReportAdInteractionProto.AdType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+     * @param value The adType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdType(POGOProtos.Rpc.ReportAdInteractionProto.AdType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      adType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.ReportAdInteractionProto.AdType ad_type = 100;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdType() {
+      
+      adType_ = 0;
       onChanged();
       return this;
     }

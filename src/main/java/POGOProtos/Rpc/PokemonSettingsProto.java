@@ -44,6 +44,7 @@ private static final long serialVersionUID = 0L;
     eliteQuickMove_ = java.util.Collections.emptyList();
     eliteCinematicMove_ = java.util.Collections.emptyList();
     tempEvoOverrides_ = java.util.Collections.emptyList();
+    formChange_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -639,6 +640,15 @@ private static final long serialVersionUID = 0L;
             raidBossDistanceOffset_ = input.readFloat();
             break;
           }
+          case 506: {
+            if (!((mutable_bitField0_ & 0x00020000) != 0)) {
+              formChange_ = new java.util.ArrayList<POGOProtos.Rpc.FormChangeProto>();
+              mutable_bitField0_ |= 0x00020000;
+            }
+            formChange_.add(
+                input.readMessage(POGOProtos.Rpc.FormChangeProto.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -704,6 +714,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00010000) != 0)) {
         tempEvoOverrides_ = java.util.Collections.unmodifiableList(tempEvoOverrides_);
+      }
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
+        formChange_ = java.util.Collections.unmodifiableList(formChange_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -2078,6 +2091,46 @@ private static final long serialVersionUID = 0L;
     return raidBossDistanceOffset_;
   }
 
+  public static final int FORM_CHANGE_FIELD_NUMBER = 63;
+  private java.util.List<POGOProtos.Rpc.FormChangeProto> formChange_;
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  @java.lang.Override
+  public java.util.List<POGOProtos.Rpc.FormChangeProto> getFormChangeList() {
+    return formChange_;
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends POGOProtos.Rpc.FormChangeProtoOrBuilder> 
+      getFormChangeOrBuilderList() {
+    return formChange_;
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  @java.lang.Override
+  public int getFormChangeCount() {
+    return formChange_.size();
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.FormChangeProto getFormChange(int index) {
+    return formChange_.get(index);
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.FormChangeProtoOrBuilder getFormChangeOrBuilder(
+      int index) {
+    return formChange_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2307,6 +2360,9 @@ private static final long serialVersionUID = 0L;
     }
     if (raidBossDistanceOffset_ != 0F) {
       output.writeFloat(62, raidBossDistanceOffset_);
+    }
+    for (int i = 0; i < formChange_.size(); i++) {
+      output.writeMessage(63, formChange_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2632,6 +2688,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(62, raidBossDistanceOffset_);
     }
+    for (int i = 0; i < formChange_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(63, formChange_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2763,6 +2823,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getRaidBossDistanceOffset())
         != java.lang.Float.floatToIntBits(
             other.getRaidBossDistanceOffset())) return false;
+    if (!getFormChangeList()
+        .equals(other.getFormChangeList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2939,6 +3001,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RAID_BOSS_DISTANCE_OFFSET_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getRaidBossDistanceOffset());
+    if (getFormChangeCount() > 0) {
+      hash = (37 * hash) + FORM_CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getFormChangeList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3070,6 +3136,7 @@ private static final long serialVersionUID = 0L;
         getEvolutionBranchFieldBuilder();
         getPhotobombAnimationOverridesFieldBuilder();
         getTempEvoOverridesFieldBuilder();
+        getFormChangeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -3213,6 +3280,12 @@ private static final long serialVersionUID = 0L;
 
       raidBossDistanceOffset_ = 0F;
 
+      if (formChangeBuilder_ == null) {
+        formChange_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00020000);
+      } else {
+        formChangeBuilder_.clear();
+      }
       return this;
     }
 
@@ -3393,6 +3466,15 @@ private static final long serialVersionUID = 0L;
       result.buddyWalkedMegaEnergyAward_ = buddyWalkedMegaEnergyAward_;
       result.disableTransferToPokemonHome_ = disableTransferToPokemonHome_;
       result.raidBossDistanceOffset_ = raidBossDistanceOffset_;
+      if (formChangeBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)) {
+          formChange_ = java.util.Collections.unmodifiableList(formChange_);
+          bitField0_ = (bitField0_ & ~0x00020000);
+        }
+        result.formChange_ = formChange_;
+      } else {
+        result.formChange_ = formChangeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3766,6 +3848,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRaidBossDistanceOffset() != 0F) {
         setRaidBossDistanceOffset(other.getRaidBossDistanceOffset());
+      }
+      if (formChangeBuilder_ == null) {
+        if (!other.formChange_.isEmpty()) {
+          if (formChange_.isEmpty()) {
+            formChange_ = other.formChange_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+          } else {
+            ensureFormChangeIsMutable();
+            formChange_.addAll(other.formChange_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.formChange_.isEmpty()) {
+          if (formChangeBuilder_.isEmpty()) {
+            formChangeBuilder_.dispose();
+            formChangeBuilder_ = null;
+            formChange_ = other.formChange_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+            formChangeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getFormChangeFieldBuilder() : null;
+          } else {
+            formChangeBuilder_.addAllMessages(other.formChange_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7735,6 +7843,246 @@ private static final long serialVersionUID = 0L;
       raidBossDistanceOffset_ = 0F;
       onChanged();
       return this;
+    }
+
+    private java.util.List<POGOProtos.Rpc.FormChangeProto> formChange_ =
+      java.util.Collections.emptyList();
+    private void ensureFormChangeIsMutable() {
+      if (!((bitField0_ & 0x00020000) != 0)) {
+        formChange_ = new java.util.ArrayList<POGOProtos.Rpc.FormChangeProto>(formChange_);
+        bitField0_ |= 0x00020000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        POGOProtos.Rpc.FormChangeProto, POGOProtos.Rpc.FormChangeProto.Builder, POGOProtos.Rpc.FormChangeProtoOrBuilder> formChangeBuilder_;
+
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public java.util.List<POGOProtos.Rpc.FormChangeProto> getFormChangeList() {
+      if (formChangeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(formChange_);
+      } else {
+        return formChangeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public int getFormChangeCount() {
+      if (formChangeBuilder_ == null) {
+        return formChange_.size();
+      } else {
+        return formChangeBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public POGOProtos.Rpc.FormChangeProto getFormChange(int index) {
+      if (formChangeBuilder_ == null) {
+        return formChange_.get(index);
+      } else {
+        return formChangeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder setFormChange(
+        int index, POGOProtos.Rpc.FormChangeProto value) {
+      if (formChangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFormChangeIsMutable();
+        formChange_.set(index, value);
+        onChanged();
+      } else {
+        formChangeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder setFormChange(
+        int index, POGOProtos.Rpc.FormChangeProto.Builder builderForValue) {
+      if (formChangeBuilder_ == null) {
+        ensureFormChangeIsMutable();
+        formChange_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        formChangeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder addFormChange(POGOProtos.Rpc.FormChangeProto value) {
+      if (formChangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFormChangeIsMutable();
+        formChange_.add(value);
+        onChanged();
+      } else {
+        formChangeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder addFormChange(
+        int index, POGOProtos.Rpc.FormChangeProto value) {
+      if (formChangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFormChangeIsMutable();
+        formChange_.add(index, value);
+        onChanged();
+      } else {
+        formChangeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder addFormChange(
+        POGOProtos.Rpc.FormChangeProto.Builder builderForValue) {
+      if (formChangeBuilder_ == null) {
+        ensureFormChangeIsMutable();
+        formChange_.add(builderForValue.build());
+        onChanged();
+      } else {
+        formChangeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder addFormChange(
+        int index, POGOProtos.Rpc.FormChangeProto.Builder builderForValue) {
+      if (formChangeBuilder_ == null) {
+        ensureFormChangeIsMutable();
+        formChange_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        formChangeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder addAllFormChange(
+        java.lang.Iterable<? extends POGOProtos.Rpc.FormChangeProto> values) {
+      if (formChangeBuilder_ == null) {
+        ensureFormChangeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, formChange_);
+        onChanged();
+      } else {
+        formChangeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder clearFormChange() {
+      if (formChangeBuilder_ == null) {
+        formChange_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+      } else {
+        formChangeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public Builder removeFormChange(int index) {
+      if (formChangeBuilder_ == null) {
+        ensureFormChangeIsMutable();
+        formChange_.remove(index);
+        onChanged();
+      } else {
+        formChangeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public POGOProtos.Rpc.FormChangeProto.Builder getFormChangeBuilder(
+        int index) {
+      return getFormChangeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public POGOProtos.Rpc.FormChangeProtoOrBuilder getFormChangeOrBuilder(
+        int index) {
+      if (formChangeBuilder_ == null) {
+        return formChange_.get(index);  } else {
+        return formChangeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public java.util.List<? extends POGOProtos.Rpc.FormChangeProtoOrBuilder> 
+         getFormChangeOrBuilderList() {
+      if (formChangeBuilder_ != null) {
+        return formChangeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(formChange_);
+      }
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public POGOProtos.Rpc.FormChangeProto.Builder addFormChangeBuilder() {
+      return getFormChangeFieldBuilder().addBuilder(
+          POGOProtos.Rpc.FormChangeProto.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public POGOProtos.Rpc.FormChangeProto.Builder addFormChangeBuilder(
+        int index) {
+      return getFormChangeFieldBuilder().addBuilder(
+          index, POGOProtos.Rpc.FormChangeProto.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.FormChangeProto form_change = 63;</code>
+     */
+    public java.util.List<POGOProtos.Rpc.FormChangeProto.Builder> 
+         getFormChangeBuilderList() {
+      return getFormChangeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        POGOProtos.Rpc.FormChangeProto, POGOProtos.Rpc.FormChangeProto.Builder, POGOProtos.Rpc.FormChangeProtoOrBuilder> 
+        getFormChangeFieldBuilder() {
+      if (formChangeBuilder_ == null) {
+        formChangeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            POGOProtos.Rpc.FormChangeProto, POGOProtos.Rpc.FormChangeProto.Builder, POGOProtos.Rpc.FormChangeProtoOrBuilder>(
+                formChange_,
+                ((bitField0_ & 0x00020000) != 0),
+                getParentForChildren(),
+                isClean());
+        formChange_ = null;
+      }
+      return formChangeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

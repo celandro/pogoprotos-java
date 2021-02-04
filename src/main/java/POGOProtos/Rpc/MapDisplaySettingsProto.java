@@ -299,6 +299,46 @@ private static final long serialVersionUID = 0L;
      */
     BGM_HALLOWEEN(200),
     /**
+     * <code>BGM_GO_TOUR_00 = 201;</code>
+     */
+    BGM_GO_TOUR_00(201),
+    /**
+     * <code>BGM_GO_TOUR_01 = 202;</code>
+     */
+    BGM_GO_TOUR_01(202),
+    /**
+     * <code>BGM_GO_TOUR_02 = 203;</code>
+     */
+    BGM_GO_TOUR_02(203),
+    /**
+     * <code>BGM_GO_TOUR_03 = 204;</code>
+     */
+    BGM_GO_TOUR_03(204),
+    /**
+     * <code>BGM_GO_TOUR_04 = 205;</code>
+     */
+    BGM_GO_TOUR_04(205),
+    /**
+     * <code>BGM_GO_TOUR_05 = 206;</code>
+     */
+    BGM_GO_TOUR_05(206),
+    /**
+     * <code>BGM_GO_TOUR_06 = 207;</code>
+     */
+    BGM_GO_TOUR_06(207),
+    /**
+     * <code>BGM_GO_TOUR_07 = 208;</code>
+     */
+    BGM_GO_TOUR_07(208),
+    /**
+     * <code>BGM_GO_TOUR_08 = 209;</code>
+     */
+    BGM_GO_TOUR_08(209),
+    /**
+     * <code>BGM_GO_TOUR_09 = 210;</code>
+     */
+    BGM_GO_TOUR_09(210),
+    /**
      * <code>BGM_TEAM_ROCKET_DEFAULT = 300;</code>
      */
     BGM_TEAM_ROCKET_DEFAULT(300),
@@ -317,6 +357,46 @@ private static final long serialVersionUID = 0L;
      * <code>BGM_HALLOWEEN = 200;</code>
      */
     public static final int BGM_HALLOWEEN_VALUE = 200;
+    /**
+     * <code>BGM_GO_TOUR_00 = 201;</code>
+     */
+    public static final int BGM_GO_TOUR_00_VALUE = 201;
+    /**
+     * <code>BGM_GO_TOUR_01 = 202;</code>
+     */
+    public static final int BGM_GO_TOUR_01_VALUE = 202;
+    /**
+     * <code>BGM_GO_TOUR_02 = 203;</code>
+     */
+    public static final int BGM_GO_TOUR_02_VALUE = 203;
+    /**
+     * <code>BGM_GO_TOUR_03 = 204;</code>
+     */
+    public static final int BGM_GO_TOUR_03_VALUE = 204;
+    /**
+     * <code>BGM_GO_TOUR_04 = 205;</code>
+     */
+    public static final int BGM_GO_TOUR_04_VALUE = 205;
+    /**
+     * <code>BGM_GO_TOUR_05 = 206;</code>
+     */
+    public static final int BGM_GO_TOUR_05_VALUE = 206;
+    /**
+     * <code>BGM_GO_TOUR_06 = 207;</code>
+     */
+    public static final int BGM_GO_TOUR_06_VALUE = 207;
+    /**
+     * <code>BGM_GO_TOUR_07 = 208;</code>
+     */
+    public static final int BGM_GO_TOUR_07_VALUE = 208;
+    /**
+     * <code>BGM_GO_TOUR_08 = 209;</code>
+     */
+    public static final int BGM_GO_TOUR_08_VALUE = 209;
+    /**
+     * <code>BGM_GO_TOUR_09 = 210;</code>
+     */
+    public static final int BGM_GO_TOUR_09_VALUE = 210;
     /**
      * <code>BGM_TEAM_ROCKET_DEFAULT = 300;</code>
      */
@@ -350,6 +430,16 @@ private static final long serialVersionUID = 0L;
         case 0: return BGM_UNSET;
         case 101: return BGM_EVENT;
         case 200: return BGM_HALLOWEEN;
+        case 201: return BGM_GO_TOUR_00;
+        case 202: return BGM_GO_TOUR_01;
+        case 203: return BGM_GO_TOUR_02;
+        case 204: return BGM_GO_TOUR_03;
+        case 205: return BGM_GO_TOUR_04;
+        case 206: return BGM_GO_TOUR_05;
+        case 207: return BGM_GO_TOUR_06;
+        case 208: return BGM_GO_TOUR_07;
+        case 209: return BGM_GO_TOUR_08;
+        case 210: return BGM_GO_TOUR_09;
         case 300: return BGM_TEAM_ROCKET_DEFAULT;
         default: return null;
       }

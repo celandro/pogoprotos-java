@@ -102,6 +102,141 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   * Protobuf enum {@code POGOProtos.Rpc.PoiSubmissionTelemetry.PoiCameraStepIds}
+   */
+  public enum PoiCameraStepIds
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>UNSET = 0;</code>
+     */
+    UNSET(0),
+    /**
+     * <code>ENTER = 1;</code>
+     */
+    ENTER(1),
+    /**
+     * <code>RETAKE = 2;</code>
+     */
+    RETAKE(2),
+    /**
+     * <code>CONFIRM = 3;</code>
+     */
+    CONFIRM(3),
+    /**
+     * <code>EXIT = 4;</code>
+     */
+    EXIT(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNSET = 0;</code>
+     */
+    public static final int UNSET_VALUE = 0;
+    /**
+     * <code>ENTER = 1;</code>
+     */
+    public static final int ENTER_VALUE = 1;
+    /**
+     * <code>RETAKE = 2;</code>
+     */
+    public static final int RETAKE_VALUE = 2;
+    /**
+     * <code>CONFIRM = 3;</code>
+     */
+    public static final int CONFIRM_VALUE = 3;
+    /**
+     * <code>EXIT = 4;</code>
+     */
+    public static final int EXIT_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PoiCameraStepIds valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PoiCameraStepIds forNumber(int value) {
+      switch (value) {
+        case 0: return UNSET;
+        case 1: return ENTER;
+        case 2: return RETAKE;
+        case 3: return CONFIRM;
+        case 4: return EXIT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PoiCameraStepIds>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PoiCameraStepIds> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PoiCameraStepIds>() {
+            public PoiCameraStepIds findValueByNumber(int number) {
+              return PoiCameraStepIds.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return POGOProtos.Rpc.PoiSubmissionTelemetry.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PoiCameraStepIds[] VALUES = values();
+
+    public static PoiCameraStepIds valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PoiCameraStepIds(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.PoiSubmissionTelemetry.PoiCameraStepIds)
+  }
+
+  /**
    * Protobuf enum {@code POGOProtos.Rpc.PoiSubmissionTelemetry.PoiSubmissionGuiEventId}
    */
   public enum PoiSubmissionGuiEventId
@@ -300,7 +435,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return POGOProtos.Rpc.PoiSubmissionTelemetry.getDescriptor().getEnumTypes().get(0);
+      return POGOProtos.Rpc.PoiSubmissionTelemetry.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final PoiSubmissionGuiEventId[] VALUES = values();
@@ -324,141 +459,6 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.PoiSubmissionTelemetry.PoiSubmissionGuiEventId)
-  }
-
-  /**
-   * Protobuf enum {@code POGOProtos.Rpc.PoiSubmissionTelemetry.PoiCameraStepIds}
-   */
-  public enum PoiCameraStepIds
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNSET = 0;</code>
-     */
-    UNSET(0),
-    /**
-     * <code>ENTER = 1;</code>
-     */
-    ENTER(1),
-    /**
-     * <code>RETAKE = 2;</code>
-     */
-    RETAKE(2),
-    /**
-     * <code>CONFIRM = 3;</code>
-     */
-    CONFIRM(3),
-    /**
-     * <code>EXIT = 4;</code>
-     */
-    EXIT(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNSET = 0;</code>
-     */
-    public static final int UNSET_VALUE = 0;
-    /**
-     * <code>ENTER = 1;</code>
-     */
-    public static final int ENTER_VALUE = 1;
-    /**
-     * <code>RETAKE = 2;</code>
-     */
-    public static final int RETAKE_VALUE = 2;
-    /**
-     * <code>CONFIRM = 3;</code>
-     */
-    public static final int CONFIRM_VALUE = 3;
-    /**
-     * <code>EXIT = 4;</code>
-     */
-    public static final int EXIT_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static PoiCameraStepIds valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static PoiCameraStepIds forNumber(int value) {
-      switch (value) {
-        case 0: return UNSET;
-        case 1: return ENTER;
-        case 2: return RETAKE;
-        case 3: return CONFIRM;
-        case 4: return EXIT;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<PoiCameraStepIds>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        PoiCameraStepIds> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PoiCameraStepIds>() {
-            public PoiCameraStepIds findValueByNumber(int number) {
-              return PoiCameraStepIds.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return POGOProtos.Rpc.PoiSubmissionTelemetry.getDescriptor().getEnumTypes().get(1);
-    }
-
-    private static final PoiCameraStepIds[] VALUES = values();
-
-    public static PoiCameraStepIds valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private PoiCameraStepIds(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:POGOProtos.Rpc.PoiSubmissionTelemetry.PoiCameraStepIds)
   }
 
   public static final int GUI_EVENT_ID_FIELD_NUMBER = 1;

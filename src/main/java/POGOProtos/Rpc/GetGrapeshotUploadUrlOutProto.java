@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
             status_ = rawValue;
             break;
           }
-          case 34: {
+          case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               fileContextToGrapeshotData_ = com.google.protobuf.MapField.newMapField(
                   FileContextToGrapeshotDataDefaultEntryHolder.defaultEntry);
@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 4:
+      case 2:
         return internalGetFileContextToGrapeshotData();
       default:
         throw new RuntimeException(
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
     return result == null ? POGOProtos.Rpc.GetGrapeshotUploadUrlOutProto.Status.UNRECOGNIZED : result;
   }
 
-  public static final int FILE_CONTEXT_TO_GRAPESHOT_DATA_FIELD_NUMBER = 4;
+  public static final int FILE_CONTEXT_TO_GRAPESHOT_DATA_FIELD_NUMBER = 2;
   private static final class FileContextToGrapeshotDataDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, POGOProtos.Rpc.GrapeshotUploadingDataProto> defaultEntry =
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
     return internalGetFileContextToGrapeshotData().getMap().size();
   }
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
 
   @java.lang.Override
@@ -330,7 +330,7 @@ private static final long serialVersionUID = 0L;
     return getFileContextToGrapeshotDataMap();
   }
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
   @java.lang.Override
 
@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
     return internalGetFileContextToGrapeshotData().getMap();
   }
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
   @java.lang.Override
 
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+   * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
    */
   @java.lang.Override
 
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
         output,
         internalGetFileContextToGrapeshotData(),
         FileContextToGrapeshotDataDefaultEntryHolder.defaultEntry,
-        4);
+        2);
     unknownFields.writeTo(output);
   }
 
@@ -410,7 +410,7 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, fileContextToGrapeshotData__);
+          .computeMessageSize(2, fileContextToGrapeshotData__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -558,7 +558,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 2:
           return internalGetFileContextToGrapeshotData();
         default:
           throw new RuntimeException(
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 2:
           return internalGetMutableFileContextToGrapeshotData();
         default:
           throw new RuntimeException(
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
       return internalGetFileContextToGrapeshotData().getMap().size();
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
 
     @java.lang.Override
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
       return getFileContextToGrapeshotDataMap();
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
     @java.lang.Override
 
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
       return internalGetFileContextToGrapeshotData().getMap();
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
     @java.lang.Override
 
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
     @java.lang.Override
 
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
 
     public Builder removeFileContextToGrapeshotData(
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableFileContextToGrapeshotData().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
     public Builder putFileContextToGrapeshotData(
         java.lang.String key,
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 4;</code>
+     * <code>map&lt;string, .POGOProtos.Rpc.GrapeshotUploadingDataProto&gt; file_context_to_grapeshot_data = 2;</code>
      */
 
     public Builder putAllFileContextToGrapeshotData(

@@ -188,5 +188,11 @@ public interface HoloInventoryKeyProtoOrBuilder extends
    */
   long getUnknownKey();
 
+  /**
+   * <code>uint64 dummy_data = 27;</code>
+   * @return The dummyData.
+   */
+  long getDummyData();
+
   public POGOProtos.Rpc.HoloInventoryKeyProto.TypeCase getTypeCase();
 }

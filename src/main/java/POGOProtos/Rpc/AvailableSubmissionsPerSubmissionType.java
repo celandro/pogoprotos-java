@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AvailableSubmissionsPerSubmissionType() {
-    playerSubmissionType_ = 0;
     blacklistedOs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     blacklistedDeviceId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -53,37 +52,31 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            int rawValue = input.readEnum();
-
-            playerSubmissionType_ = rawValue;
-            break;
-          }
-          case 16: {
 
             submissionsLeft_ = input.readInt32();
             break;
           }
-          case 24: {
+          case 16: {
 
             minPlayerLevel_ = input.readInt32();
             break;
           }
-          case 32: {
+          case 24: {
 
             isFeatureEnabled_ = input.readBool();
             break;
           }
-          case 40: {
+          case 32: {
 
             timeWindowForSubmissionsLimitMs_ = input.readInt64();
             break;
           }
-          case 48: {
+          case 40: {
 
             maxPoiDistanceInMeters_ = input.readInt32();
             break;
           }
-          case 58: {
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               blacklistedOs_ = new com.google.protobuf.LazyStringArrayList();
@@ -92,7 +85,7 @@ private static final long serialVersionUID = 0L;
             blacklistedOs_.add(s);
             break;
           }
-          case 66: {
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               blacklistedDeviceId_ = new com.google.protobuf.LazyStringArrayList();
@@ -101,7 +94,7 @@ private static final long serialVersionUID = 0L;
             blacklistedDeviceId_.add(s);
             break;
           }
-          case 72: {
+          case 64: {
 
             isWhitelistedUser_ = input.readBool();
             break;
@@ -144,29 +137,10 @@ private static final long serialVersionUID = 0L;
             POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType.class, POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType.Builder.class);
   }
 
-  public static final int PLAYER_SUBMISSION_TYPE_FIELD_NUMBER = 1;
-  private int playerSubmissionType_;
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-   * @return The enum numeric value on the wire for playerSubmissionType.
-   */
-  @java.lang.Override public int getPlayerSubmissionTypeValue() {
-    return playerSubmissionType_;
-  }
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-   * @return The playerSubmissionType.
-   */
-  @java.lang.Override public POGOProtos.Rpc.PlayerSubmissionTypeProto getPlayerSubmissionType() {
-    @SuppressWarnings("deprecation")
-    POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(playerSubmissionType_);
-    return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-  }
-
-  public static final int SUBMISSIONS_LEFT_FIELD_NUMBER = 2;
+  public static final int SUBMISSIONS_LEFT_FIELD_NUMBER = 1;
   private int submissionsLeft_;
   /**
-   * <code>int32 submissions_left = 2;</code>
+   * <code>int32 submissions_left = 1;</code>
    * @return The submissionsLeft.
    */
   @java.lang.Override
@@ -174,10 +148,10 @@ private static final long serialVersionUID = 0L;
     return submissionsLeft_;
   }
 
-  public static final int MIN_PLAYER_LEVEL_FIELD_NUMBER = 3;
+  public static final int MIN_PLAYER_LEVEL_FIELD_NUMBER = 2;
   private int minPlayerLevel_;
   /**
-   * <code>int32 min_player_level = 3;</code>
+   * <code>int32 min_player_level = 2;</code>
    * @return The minPlayerLevel.
    */
   @java.lang.Override
@@ -185,10 +159,10 @@ private static final long serialVersionUID = 0L;
     return minPlayerLevel_;
   }
 
-  public static final int IS_FEATURE_ENABLED_FIELD_NUMBER = 4;
+  public static final int IS_FEATURE_ENABLED_FIELD_NUMBER = 3;
   private boolean isFeatureEnabled_;
   /**
-   * <code>bool is_feature_enabled = 4;</code>
+   * <code>bool is_feature_enabled = 3;</code>
    * @return The isFeatureEnabled.
    */
   @java.lang.Override
@@ -196,10 +170,10 @@ private static final long serialVersionUID = 0L;
     return isFeatureEnabled_;
   }
 
-  public static final int TIME_WINDOW_FOR_SUBMISSIONS_LIMIT_MS_FIELD_NUMBER = 5;
+  public static final int TIME_WINDOW_FOR_SUBMISSIONS_LIMIT_MS_FIELD_NUMBER = 4;
   private long timeWindowForSubmissionsLimitMs_;
   /**
-   * <code>int64 time_window_for_submissions_limit_ms = 5;</code>
+   * <code>int64 time_window_for_submissions_limit_ms = 4;</code>
    * @return The timeWindowForSubmissionsLimitMs.
    */
   @java.lang.Override
@@ -207,10 +181,10 @@ private static final long serialVersionUID = 0L;
     return timeWindowForSubmissionsLimitMs_;
   }
 
-  public static final int MAX_POI_DISTANCE_IN_METERS_FIELD_NUMBER = 6;
+  public static final int MAX_POI_DISTANCE_IN_METERS_FIELD_NUMBER = 5;
   private int maxPoiDistanceInMeters_;
   /**
-   * <code>int32 max_poi_distance_in_meters = 6;</code>
+   * <code>int32 max_poi_distance_in_meters = 5;</code>
    * @return The maxPoiDistanceInMeters.
    */
   @java.lang.Override
@@ -218,10 +192,10 @@ private static final long serialVersionUID = 0L;
     return maxPoiDistanceInMeters_;
   }
 
-  public static final int BLACKLISTED_OS_FIELD_NUMBER = 7;
+  public static final int BLACKLISTED_OS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList blacklistedOs_;
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @return A list containing the blacklistedOs.
    */
   public com.google.protobuf.ProtocolStringList
@@ -229,14 +203,14 @@ private static final long serialVersionUID = 0L;
     return blacklistedOs_;
   }
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @return The count of blacklistedOs.
    */
   public int getBlacklistedOsCount() {
     return blacklistedOs_.size();
   }
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @param index The index of the element to return.
    * @return The blacklistedOs at the given index.
    */
@@ -244,7 +218,7 @@ private static final long serialVersionUID = 0L;
     return blacklistedOs_.get(index);
   }
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the blacklistedOs at the given index.
    */
@@ -253,10 +227,10 @@ private static final long serialVersionUID = 0L;
     return blacklistedOs_.getByteString(index);
   }
 
-  public static final int BLACKLISTED_DEVICE_ID_FIELD_NUMBER = 8;
+  public static final int BLACKLISTED_DEVICE_ID_FIELD_NUMBER = 7;
   private com.google.protobuf.LazyStringList blacklistedDeviceId_;
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @return A list containing the blacklistedDeviceId.
    */
   public com.google.protobuf.ProtocolStringList
@@ -264,14 +238,14 @@ private static final long serialVersionUID = 0L;
     return blacklistedDeviceId_;
   }
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @return The count of blacklistedDeviceId.
    */
   public int getBlacklistedDeviceIdCount() {
     return blacklistedDeviceId_.size();
   }
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @param index The index of the element to return.
    * @return The blacklistedDeviceId at the given index.
    */
@@ -279,7 +253,7 @@ private static final long serialVersionUID = 0L;
     return blacklistedDeviceId_.get(index);
   }
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @param index The index of the value to return.
    * @return The bytes of the blacklistedDeviceId at the given index.
    */
@@ -288,10 +262,10 @@ private static final long serialVersionUID = 0L;
     return blacklistedDeviceId_.getByteString(index);
   }
 
-  public static final int IS_WHITELISTED_USER_FIELD_NUMBER = 9;
+  public static final int IS_WHITELISTED_USER_FIELD_NUMBER = 8;
   private boolean isWhitelistedUser_;
   /**
-   * <code>bool is_whitelisted_user = 9;</code>
+   * <code>bool is_whitelisted_user = 8;</code>
    * @return The isWhitelistedUser.
    */
   @java.lang.Override
@@ -313,32 +287,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (playerSubmissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(1, playerSubmissionType_);
-    }
     if (submissionsLeft_ != 0) {
-      output.writeInt32(2, submissionsLeft_);
+      output.writeInt32(1, submissionsLeft_);
     }
     if (minPlayerLevel_ != 0) {
-      output.writeInt32(3, minPlayerLevel_);
+      output.writeInt32(2, minPlayerLevel_);
     }
     if (isFeatureEnabled_ != false) {
-      output.writeBool(4, isFeatureEnabled_);
+      output.writeBool(3, isFeatureEnabled_);
     }
     if (timeWindowForSubmissionsLimitMs_ != 0L) {
-      output.writeInt64(5, timeWindowForSubmissionsLimitMs_);
+      output.writeInt64(4, timeWindowForSubmissionsLimitMs_);
     }
     if (maxPoiDistanceInMeters_ != 0) {
-      output.writeInt32(6, maxPoiDistanceInMeters_);
+      output.writeInt32(5, maxPoiDistanceInMeters_);
     }
     for (int i = 0; i < blacklistedOs_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, blacklistedOs_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, blacklistedOs_.getRaw(i));
     }
     for (int i = 0; i < blacklistedDeviceId_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, blacklistedDeviceId_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, blacklistedDeviceId_.getRaw(i));
     }
     if (isWhitelistedUser_ != false) {
-      output.writeBool(9, isWhitelistedUser_);
+      output.writeBool(8, isWhitelistedUser_);
     }
     unknownFields.writeTo(output);
   }
@@ -349,29 +320,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (playerSubmissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, playerSubmissionType_);
-    }
     if (submissionsLeft_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, submissionsLeft_);
+        .computeInt32Size(1, submissionsLeft_);
     }
     if (minPlayerLevel_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, minPlayerLevel_);
+        .computeInt32Size(2, minPlayerLevel_);
     }
     if (isFeatureEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, isFeatureEnabled_);
+        .computeBoolSize(3, isFeatureEnabled_);
     }
     if (timeWindowForSubmissionsLimitMs_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, timeWindowForSubmissionsLimitMs_);
+        .computeInt64Size(4, timeWindowForSubmissionsLimitMs_);
     }
     if (maxPoiDistanceInMeters_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, maxPoiDistanceInMeters_);
+        .computeInt32Size(5, maxPoiDistanceInMeters_);
     }
     {
       int dataSize = 0;
@@ -391,7 +358,7 @@ private static final long serialVersionUID = 0L;
     }
     if (isWhitelistedUser_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(9, isWhitelistedUser_);
+        .computeBoolSize(8, isWhitelistedUser_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -408,7 +375,6 @@ private static final long serialVersionUID = 0L;
     }
     POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType other = (POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType) obj;
 
-    if (playerSubmissionType_ != other.playerSubmissionType_) return false;
     if (getSubmissionsLeft()
         != other.getSubmissionsLeft()) return false;
     if (getMinPlayerLevel()
@@ -436,8 +402,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PLAYER_SUBMISSION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + playerSubmissionType_;
     hash = (37 * hash) + SUBMISSIONS_LEFT_FIELD_NUMBER;
     hash = (53 * hash) + getSubmissionsLeft();
     hash = (37 * hash) + MIN_PLAYER_LEVEL_FIELD_NUMBER;
@@ -594,8 +558,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      playerSubmissionType_ = 0;
-
       submissionsLeft_ = 0;
 
       minPlayerLevel_ = 0;
@@ -639,7 +601,6 @@ private static final long serialVersionUID = 0L;
     public POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType buildPartial() {
       POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType result = new POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType(this);
       int from_bitField0_ = bitField0_;
-      result.playerSubmissionType_ = playerSubmissionType_;
       result.submissionsLeft_ = submissionsLeft_;
       result.minPlayerLevel_ = minPlayerLevel_;
       result.isFeatureEnabled_ = isFeatureEnabled_;
@@ -704,9 +665,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType other) {
       if (other == POGOProtos.Rpc.AvailableSubmissionsPerSubmissionType.getDefaultInstance()) return this;
-      if (other.playerSubmissionType_ != 0) {
-        setPlayerSubmissionTypeValue(other.getPlayerSubmissionTypeValue());
-      }
       if (other.getSubmissionsLeft() != 0) {
         setSubmissionsLeft(other.getSubmissionsLeft());
       }
@@ -775,63 +733,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int playerSubmissionType_ = 0;
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-     * @return The enum numeric value on the wire for playerSubmissionType.
-     */
-    @java.lang.Override public int getPlayerSubmissionTypeValue() {
-      return playerSubmissionType_;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-     * @param value The enum numeric value on the wire for playerSubmissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPlayerSubmissionTypeValue(int value) {
-      
-      playerSubmissionType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-     * @return The playerSubmissionType.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PlayerSubmissionTypeProto getPlayerSubmissionType() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(playerSubmissionType_);
-      return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-     * @param value The playerSubmissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPlayerSubmissionType(POGOProtos.Rpc.PlayerSubmissionTypeProto value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      playerSubmissionType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPlayerSubmissionType() {
-      
-      playerSubmissionType_ = 0;
-      onChanged();
-      return this;
-    }
-
     private int submissionsLeft_ ;
     /**
-     * <code>int32 submissions_left = 2;</code>
+     * <code>int32 submissions_left = 1;</code>
      * @return The submissionsLeft.
      */
     @java.lang.Override
@@ -839,7 +743,7 @@ private static final long serialVersionUID = 0L;
       return submissionsLeft_;
     }
     /**
-     * <code>int32 submissions_left = 2;</code>
+     * <code>int32 submissions_left = 1;</code>
      * @param value The submissionsLeft to set.
      * @return This builder for chaining.
      */
@@ -850,7 +754,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 submissions_left = 2;</code>
+     * <code>int32 submissions_left = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearSubmissionsLeft() {
@@ -862,7 +766,7 @@ private static final long serialVersionUID = 0L;
 
     private int minPlayerLevel_ ;
     /**
-     * <code>int32 min_player_level = 3;</code>
+     * <code>int32 min_player_level = 2;</code>
      * @return The minPlayerLevel.
      */
     @java.lang.Override
@@ -870,7 +774,7 @@ private static final long serialVersionUID = 0L;
       return minPlayerLevel_;
     }
     /**
-     * <code>int32 min_player_level = 3;</code>
+     * <code>int32 min_player_level = 2;</code>
      * @param value The minPlayerLevel to set.
      * @return This builder for chaining.
      */
@@ -881,7 +785,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 min_player_level = 3;</code>
+     * <code>int32 min_player_level = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearMinPlayerLevel() {
@@ -893,7 +797,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean isFeatureEnabled_ ;
     /**
-     * <code>bool is_feature_enabled = 4;</code>
+     * <code>bool is_feature_enabled = 3;</code>
      * @return The isFeatureEnabled.
      */
     @java.lang.Override
@@ -901,7 +805,7 @@ private static final long serialVersionUID = 0L;
       return isFeatureEnabled_;
     }
     /**
-     * <code>bool is_feature_enabled = 4;</code>
+     * <code>bool is_feature_enabled = 3;</code>
      * @param value The isFeatureEnabled to set.
      * @return This builder for chaining.
      */
@@ -912,7 +816,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_feature_enabled = 4;</code>
+     * <code>bool is_feature_enabled = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsFeatureEnabled() {
@@ -924,7 +828,7 @@ private static final long serialVersionUID = 0L;
 
     private long timeWindowForSubmissionsLimitMs_ ;
     /**
-     * <code>int64 time_window_for_submissions_limit_ms = 5;</code>
+     * <code>int64 time_window_for_submissions_limit_ms = 4;</code>
      * @return The timeWindowForSubmissionsLimitMs.
      */
     @java.lang.Override
@@ -932,7 +836,7 @@ private static final long serialVersionUID = 0L;
       return timeWindowForSubmissionsLimitMs_;
     }
     /**
-     * <code>int64 time_window_for_submissions_limit_ms = 5;</code>
+     * <code>int64 time_window_for_submissions_limit_ms = 4;</code>
      * @param value The timeWindowForSubmissionsLimitMs to set.
      * @return This builder for chaining.
      */
@@ -943,7 +847,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 time_window_for_submissions_limit_ms = 5;</code>
+     * <code>int64 time_window_for_submissions_limit_ms = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearTimeWindowForSubmissionsLimitMs() {
@@ -955,7 +859,7 @@ private static final long serialVersionUID = 0L;
 
     private int maxPoiDistanceInMeters_ ;
     /**
-     * <code>int32 max_poi_distance_in_meters = 6;</code>
+     * <code>int32 max_poi_distance_in_meters = 5;</code>
      * @return The maxPoiDistanceInMeters.
      */
     @java.lang.Override
@@ -963,7 +867,7 @@ private static final long serialVersionUID = 0L;
       return maxPoiDistanceInMeters_;
     }
     /**
-     * <code>int32 max_poi_distance_in_meters = 6;</code>
+     * <code>int32 max_poi_distance_in_meters = 5;</code>
      * @param value The maxPoiDistanceInMeters to set.
      * @return This builder for chaining.
      */
@@ -974,7 +878,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 max_poi_distance_in_meters = 6;</code>
+     * <code>int32 max_poi_distance_in_meters = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxPoiDistanceInMeters() {
@@ -992,7 +896,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @return A list containing the blacklistedOs.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1000,14 +904,14 @@ private static final long serialVersionUID = 0L;
       return blacklistedOs_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @return The count of blacklistedOs.
      */
     public int getBlacklistedOsCount() {
       return blacklistedOs_.size();
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @param index The index of the element to return.
      * @return The blacklistedOs at the given index.
      */
@@ -1015,7 +919,7 @@ private static final long serialVersionUID = 0L;
       return blacklistedOs_.get(index);
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @param index The index of the value to return.
      * @return The bytes of the blacklistedOs at the given index.
      */
@@ -1024,7 +928,7 @@ private static final long serialVersionUID = 0L;
       return blacklistedOs_.getByteString(index);
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @param index The index to set the value at.
      * @param value The blacklistedOs to set.
      * @return This builder for chaining.
@@ -1040,7 +944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @param value The blacklistedOs to add.
      * @return This builder for chaining.
      */
@@ -1055,7 +959,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @param values The blacklistedOs to add.
      * @return This builder for chaining.
      */
@@ -1068,7 +972,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearBlacklistedOs() {
@@ -1078,7 +982,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_os = 7;</code>
+     * <code>repeated string blacklisted_os = 6;</code>
      * @param value The bytes of the blacklistedOs to add.
      * @return This builder for chaining.
      */
@@ -1102,7 +1006,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @return A list containing the blacklistedDeviceId.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1110,14 +1014,14 @@ private static final long serialVersionUID = 0L;
       return blacklistedDeviceId_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @return The count of blacklistedDeviceId.
      */
     public int getBlacklistedDeviceIdCount() {
       return blacklistedDeviceId_.size();
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @param index The index of the element to return.
      * @return The blacklistedDeviceId at the given index.
      */
@@ -1125,7 +1029,7 @@ private static final long serialVersionUID = 0L;
       return blacklistedDeviceId_.get(index);
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @param index The index of the value to return.
      * @return The bytes of the blacklistedDeviceId at the given index.
      */
@@ -1134,7 +1038,7 @@ private static final long serialVersionUID = 0L;
       return blacklistedDeviceId_.getByteString(index);
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @param index The index to set the value at.
      * @param value The blacklistedDeviceId to set.
      * @return This builder for chaining.
@@ -1150,7 +1054,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @param value The blacklistedDeviceId to add.
      * @return This builder for chaining.
      */
@@ -1165,7 +1069,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @param values The blacklistedDeviceId to add.
      * @return This builder for chaining.
      */
@@ -1178,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearBlacklistedDeviceId() {
@@ -1188,7 +1092,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string blacklisted_device_id = 8;</code>
+     * <code>repeated string blacklisted_device_id = 7;</code>
      * @param value The bytes of the blacklistedDeviceId to add.
      * @return This builder for chaining.
      */
@@ -1206,7 +1110,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean isWhitelistedUser_ ;
     /**
-     * <code>bool is_whitelisted_user = 9;</code>
+     * <code>bool is_whitelisted_user = 8;</code>
      * @return The isWhitelistedUser.
      */
     @java.lang.Override
@@ -1214,7 +1118,7 @@ private static final long serialVersionUID = 0L;
       return isWhitelistedUser_;
     }
     /**
-     * <code>bool is_whitelisted_user = 9;</code>
+     * <code>bool is_whitelisted_user = 8;</code>
      * @param value The isWhitelistedUser to set.
      * @return This builder for chaining.
      */
@@ -1225,7 +1129,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_whitelisted_user = 9;</code>
+     * <code>bool is_whitelisted_user = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsWhitelistedUser() {

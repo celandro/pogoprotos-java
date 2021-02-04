@@ -56,6 +56,10 @@ public enum EncounterType
    * <code>ENCOUNTER_TYPE_DAILY_BONUS = 11;</code>
    */
   ENCOUNTER_TYPE_DAILY_BONUS(11),
+  /**
+   * <code>ENCOUNTER_TYPE_TIMED_MINI_COLLECTION_QUEST = 13;</code>
+   */
+  ENCOUNTER_TYPE_TIMED_MINI_COLLECTION_QUEST(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +111,10 @@ public enum EncounterType
    * <code>ENCOUNTER_TYPE_DAILY_BONUS = 11;</code>
    */
   public static final int ENCOUNTER_TYPE_DAILY_BONUS_VALUE = 11;
+  /**
+   * <code>ENCOUNTER_TYPE_TIMED_MINI_COLLECTION_QUEST = 13;</code>
+   */
+  public static final int ENCOUNTER_TYPE_TIMED_MINI_COLLECTION_QUEST_VALUE = 13;
 
 
   public final int getNumber() {
@@ -145,6 +153,7 @@ public enum EncounterType
       case 9: return ENCOUNTER_TYPE_VS_SEEKER_REWARD;
       case 10: return ENCOUNTER_TYPE_TIMED_STORY_QUEST;
       case 11: return ENCOUNTER_TYPE_DAILY_BONUS;
+      case 13: return ENCOUNTER_TYPE_TIMED_MINI_COLLECTION_QUEST;
       default: return null;
     }
   }
@@ -175,7 +184,7 @@ public enum EncounterType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(42);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(41);
   }
 
   private static final EncounterType[] VALUES = values();

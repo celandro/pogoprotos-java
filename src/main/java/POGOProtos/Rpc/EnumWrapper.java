@@ -121,6 +121,10 @@ private static final long serialVersionUID = 0L;
      * <code>GRUNTBM = 8;</code>
      */
     GRUNTBM(8),
+    /**
+     * <code>EVENT_NPC = 9;</code>
+     */
+    EVENT_NPC(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,6 +164,10 @@ private static final long serialVersionUID = 0L;
      * <code>GRUNTBM = 8;</code>
      */
     public static final int GRUNTBM_VALUE = 8;
+    /**
+     * <code>EVENT_NPC = 9;</code>
+     */
+    public static final int EVENT_NPC_VALUE = 9;
 
 
     public final int getNumber() {
@@ -195,6 +203,7 @@ private static final long serialVersionUID = 0L;
         case 6: return GIOVANNI;
         case 7: return GRUNTBF;
         case 8: return GRUNTBM;
+        case 9: return EVENT_NPC;
         default: return null;
       }
     }
@@ -620,6 +629,50 @@ private static final long serialVersionUID = 0L;
      * <code>CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE = 90;</code>
      */
     CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE(90),
+    /**
+     * <code>CHARACTER_EVENT_NPC_0 = 500;</code>
+     */
+    CHARACTER_EVENT_NPC_0(500),
+    /**
+     * <code>CHARACTER_EVENT_NPC_1 = 501;</code>
+     */
+    CHARACTER_EVENT_NPC_1(501),
+    /**
+     * <code>CHARACTER_EVENT_NPC_2 = 502;</code>
+     */
+    CHARACTER_EVENT_NPC_2(502),
+    /**
+     * <code>CHARACTER_EVENT_NPC_3 = 503;</code>
+     */
+    CHARACTER_EVENT_NPC_3(503),
+    /**
+     * <code>CHARACTER_EVENT_NPC_4 = 504;</code>
+     */
+    CHARACTER_EVENT_NPC_4(504),
+    /**
+     * <code>CHARACTER_EVENT_NPC_5 = 505;</code>
+     */
+    CHARACTER_EVENT_NPC_5(505),
+    /**
+     * <code>CHARACTER_EVENT_NPC_6 = 506;</code>
+     */
+    CHARACTER_EVENT_NPC_6(506),
+    /**
+     * <code>CHARACTER_EVENT_NPC_7 = 507;</code>
+     */
+    CHARACTER_EVENT_NPC_7(507),
+    /**
+     * <code>CHARACTER_EVENT_NPC_8 = 508;</code>
+     */
+    CHARACTER_EVENT_NPC_8(508),
+    /**
+     * <code>CHARACTER_EVENT_NPC_9 = 509;</code>
+     */
+    CHARACTER_EVENT_NPC_9(509),
+    /**
+     * <code>CHARACTER_EVENT_NPC_10 = 510;</code>
+     */
+    CHARACTER_EVENT_NPC_10(510),
     UNRECOGNIZED(-1),
     ;
 
@@ -987,6 +1040,50 @@ private static final long serialVersionUID = 0L;
      * <code>CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE = 90;</code>
      */
     public static final int CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE_VALUE = 90;
+    /**
+     * <code>CHARACTER_EVENT_NPC_0 = 500;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_0_VALUE = 500;
+    /**
+     * <code>CHARACTER_EVENT_NPC_1 = 501;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_1_VALUE = 501;
+    /**
+     * <code>CHARACTER_EVENT_NPC_2 = 502;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_2_VALUE = 502;
+    /**
+     * <code>CHARACTER_EVENT_NPC_3 = 503;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_3_VALUE = 503;
+    /**
+     * <code>CHARACTER_EVENT_NPC_4 = 504;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_4_VALUE = 504;
+    /**
+     * <code>CHARACTER_EVENT_NPC_5 = 505;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_5_VALUE = 505;
+    /**
+     * <code>CHARACTER_EVENT_NPC_6 = 506;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_6_VALUE = 506;
+    /**
+     * <code>CHARACTER_EVENT_NPC_7 = 507;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_7_VALUE = 507;
+    /**
+     * <code>CHARACTER_EVENT_NPC_8 = 508;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_8_VALUE = 508;
+    /**
+     * <code>CHARACTER_EVENT_NPC_9 = 509;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_9_VALUE = 509;
+    /**
+     * <code>CHARACTER_EVENT_NPC_10 = 510;</code>
+     */
+    public static final int CHARACTER_EVENT_NPC_10_VALUE = 510;
 
 
     public final int getNumber() {
@@ -1104,6 +1201,17 @@ private static final long serialVersionUID = 0L;
         case 88: return CHARACTER_GHOST_BALLOON_GRUNT_MALE;
         case 89: return CHARACTER_ELECTRIC_BALLOON_GRUNT_FEMALE;
         case 90: return CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE;
+        case 500: return CHARACTER_EVENT_NPC_0;
+        case 501: return CHARACTER_EVENT_NPC_1;
+        case 502: return CHARACTER_EVENT_NPC_2;
+        case 503: return CHARACTER_EVENT_NPC_3;
+        case 504: return CHARACTER_EVENT_NPC_4;
+        case 505: return CHARACTER_EVENT_NPC_5;
+        case 506: return CHARACTER_EVENT_NPC_6;
+        case 507: return CHARACTER_EVENT_NPC_7;
+        case 508: return CHARACTER_EVENT_NPC_8;
+        case 509: return CHARACTER_EVENT_NPC_9;
+        case 510: return CHARACTER_EVENT_NPC_10;
         default: return null;
       }
     }

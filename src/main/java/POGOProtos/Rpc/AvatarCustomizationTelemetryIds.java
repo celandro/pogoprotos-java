@@ -157,7 +157,7 @@ public enum AvatarCustomizationTelemetryIds
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(13);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(12);
   }
 
   private static final AvatarCustomizationTelemetryIds[] VALUES = values();

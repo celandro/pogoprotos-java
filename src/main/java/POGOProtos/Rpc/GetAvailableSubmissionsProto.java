@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetAvailableSubmissionsProto() {
-    submissionType_ = 0;
     submissionTypes_ = java.util.Collections.emptyList();
   }
 
@@ -53,12 +52,6 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-
-            submissionType_ = rawValue;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               submissionTypes_ = new java.util.ArrayList<java.lang.Integer>();
               mutable_bitField0_ |= 0x00000001;
@@ -66,7 +59,7 @@ private static final long serialVersionUID = 0L;
             submissionTypes_.add(rawValue);
             break;
           }
-          case 18: {
+          case 10: {
             int length = input.readRawVarint32();
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
@@ -115,26 +108,7 @@ private static final long serialVersionUID = 0L;
             POGOProtos.Rpc.GetAvailableSubmissionsProto.class, POGOProtos.Rpc.GetAvailableSubmissionsProto.Builder.class);
   }
 
-  public static final int SUBMISSION_TYPE_FIELD_NUMBER = 1;
-  private int submissionType_;
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-   * @return The enum numeric value on the wire for submissionType.
-   */
-  @java.lang.Override public int getSubmissionTypeValue() {
-    return submissionType_;
-  }
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-   * @return The submissionType.
-   */
-  @java.lang.Override public POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType() {
-    @SuppressWarnings("deprecation")
-    POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(submissionType_);
-    return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-  }
-
-  public static final int SUBMISSION_TYPES_FIELD_NUMBER = 2;
+  public static final int SUBMISSION_TYPES_FIELD_NUMBER = 1;
   private java.util.List<java.lang.Integer> submissionTypes_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
       java.lang.Integer, POGOProtos.Rpc.PlayerSubmissionTypeProto> submissionTypes_converter_ =
@@ -147,7 +121,7 @@ private static final long serialVersionUID = 0L;
             }
           };
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @return A list containing the submissionTypes.
    */
   @java.lang.Override
@@ -156,7 +130,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Integer, POGOProtos.Rpc.PlayerSubmissionTypeProto>(submissionTypes_, submissionTypes_converter_);
   }
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @return The count of submissionTypes.
    */
   @java.lang.Override
@@ -164,7 +138,7 @@ private static final long serialVersionUID = 0L;
     return submissionTypes_.size();
   }
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @param index The index of the element to return.
    * @return The submissionTypes at the given index.
    */
@@ -173,7 +147,7 @@ private static final long serialVersionUID = 0L;
     return submissionTypes_converter_.convert(submissionTypes_.get(index));
   }
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @return A list containing the enum numeric values on the wire for submissionTypes.
    */
   @java.lang.Override
@@ -182,7 +156,7 @@ private static final long serialVersionUID = 0L;
     return submissionTypes_;
   }
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of submissionTypes at the given index.
    */
@@ -207,11 +181,8 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (submissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(1, submissionType_);
-    }
     if (getSubmissionTypesList().size() > 0) {
-      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(10);
       output.writeUInt32NoTag(submissionTypesMemoizedSerializedSize);
     }
     for (int i = 0; i < submissionTypes_.size(); i++) {
@@ -226,10 +197,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (submissionType_ != POGOProtos.Rpc.PlayerSubmissionTypeProto.PLAYER_SUBMISSION_TYPE_PROTO_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, submissionType_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < submissionTypes_.size(); i++) {
@@ -257,7 +224,6 @@ private static final long serialVersionUID = 0L;
     }
     POGOProtos.Rpc.GetAvailableSubmissionsProto other = (POGOProtos.Rpc.GetAvailableSubmissionsProto) obj;
 
-    if (submissionType_ != other.submissionType_) return false;
     if (!submissionTypes_.equals(other.submissionTypes_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -270,8 +236,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUBMISSION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + submissionType_;
     if (getSubmissionTypesCount() > 0) {
       hash = (37 * hash) + SUBMISSION_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + submissionTypes_.hashCode();
@@ -409,8 +373,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      submissionType_ = 0;
-
       submissionTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -440,7 +402,6 @@ private static final long serialVersionUID = 0L;
     public POGOProtos.Rpc.GetAvailableSubmissionsProto buildPartial() {
       POGOProtos.Rpc.GetAvailableSubmissionsProto result = new POGOProtos.Rpc.GetAvailableSubmissionsProto(this);
       int from_bitField0_ = bitField0_;
-      result.submissionType_ = submissionType_;
       if (((bitField0_ & 0x00000001) != 0)) {
         submissionTypes_ = java.util.Collections.unmodifiableList(submissionTypes_);
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -494,9 +455,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(POGOProtos.Rpc.GetAvailableSubmissionsProto other) {
       if (other == POGOProtos.Rpc.GetAvailableSubmissionsProto.getDefaultInstance()) return this;
-      if (other.submissionType_ != 0) {
-        setSubmissionTypeValue(other.getSubmissionTypeValue());
-      }
       if (!other.submissionTypes_.isEmpty()) {
         if (submissionTypes_.isEmpty()) {
           submissionTypes_ = other.submissionTypes_;
@@ -537,60 +495,6 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int submissionType_ = 0;
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @return The enum numeric value on the wire for submissionType.
-     */
-    @java.lang.Override public int getSubmissionTypeValue() {
-      return submissionType_;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @param value The enum numeric value on the wire for submissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubmissionTypeValue(int value) {
-      
-      submissionType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @return The submissionType.
-     */
-    @java.lang.Override
-    public POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType() {
-      @SuppressWarnings("deprecation")
-      POGOProtos.Rpc.PlayerSubmissionTypeProto result = POGOProtos.Rpc.PlayerSubmissionTypeProto.valueOf(submissionType_);
-      return result == null ? POGOProtos.Rpc.PlayerSubmissionTypeProto.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @param value The submissionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSubmissionType(POGOProtos.Rpc.PlayerSubmissionTypeProto value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      submissionType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSubmissionType() {
-      
-      submissionType_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<java.lang.Integer> submissionTypes_ =
       java.util.Collections.emptyList();
     private void ensureSubmissionTypesIsMutable() {
@@ -600,7 +504,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @return A list containing the submissionTypes.
      */
     public java.util.List<POGOProtos.Rpc.PlayerSubmissionTypeProto> getSubmissionTypesList() {
@@ -608,14 +512,14 @@ private static final long serialVersionUID = 0L;
           java.lang.Integer, POGOProtos.Rpc.PlayerSubmissionTypeProto>(submissionTypes_, submissionTypes_converter_);
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @return The count of submissionTypes.
      */
     public int getSubmissionTypesCount() {
       return submissionTypes_.size();
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param index The index of the element to return.
      * @return The submissionTypes at the given index.
      */
@@ -623,7 +527,7 @@ private static final long serialVersionUID = 0L;
       return submissionTypes_converter_.convert(submissionTypes_.get(index));
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param index The index to set the value at.
      * @param value The submissionTypes to set.
      * @return This builder for chaining.
@@ -639,7 +543,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param value The submissionTypes to add.
      * @return This builder for chaining.
      */
@@ -653,7 +557,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param values The submissionTypes to add.
      * @return This builder for chaining.
      */
@@ -667,7 +571,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearSubmissionTypes() {
@@ -677,7 +581,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @return A list containing the enum numeric values on the wire for submissionTypes.
      */
     public java.util.List<java.lang.Integer>
@@ -685,7 +589,7 @@ private static final long serialVersionUID = 0L;
       return java.util.Collections.unmodifiableList(submissionTypes_);
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of submissionTypes at the given index.
      */
@@ -693,7 +597,7 @@ private static final long serialVersionUID = 0L;
       return submissionTypes_.get(index);
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of submissionTypes at the given index.
      * @return This builder for chaining.
@@ -706,7 +610,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param value The enum numeric value on the wire for submissionTypes to add.
      * @return This builder for chaining.
      */
@@ -717,7 +621,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+     * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
      * @param values The enum numeric values on the wire for submissionTypes to add.
      * @return This builder for chaining.
      */

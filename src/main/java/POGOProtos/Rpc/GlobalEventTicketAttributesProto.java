@@ -20,6 +20,11 @@ private static final long serialVersionUID = 0L;
     eventStartTime_ = "";
     eventEndTime_ = "";
     itemBagDescriptionKey_ = "";
+    eventVariantBadges_ = java.util.Collections.emptyList();
+    eventVariantTitleStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventVariantDescriptionStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    itemBagDescriptionVariantSelected_ = "";
+    eventVariantButtonStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -42,6 +47,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -81,6 +87,62 @@ private static final long serialVersionUID = 0L;
             itemBagDescriptionKey_ = s;
             break;
           }
+          case 56: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              eventVariantBadges_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            eventVariantBadges_.add(rawValue);
+            break;
+          }
+          case 58: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                eventVariantBadges_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              eventVariantBadges_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              eventVariantTitleStringKeys_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            eventVariantTitleStringKeys_.add(s);
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              eventVariantDescriptionStringKeys_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            eventVariantDescriptionStringKeys_.add(s);
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            itemBagDescriptionVariantSelected_ = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              eventVariantButtonStringKeys_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            eventVariantButtonStringKeys_.add(s);
+            break;
+          }
           case 800: {
 
             clientEventStartTimeUtcMs_ = input.readInt64();
@@ -106,6 +168,18 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        eventVariantBadges_ = java.util.Collections.unmodifiableList(eventVariantBadges_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        eventVariantTitleStringKeys_ = eventVariantTitleStringKeys_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        eventVariantDescriptionStringKeys_ = eventVariantDescriptionStringKeys_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        eventVariantButtonStringKeys_ = eventVariantButtonStringKeys_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -267,6 +341,207 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int EVENT_VARIANT_BADGES_FIELD_NUMBER = 7;
+  private java.util.List<java.lang.Integer> eventVariantBadges_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, POGOProtos.Rpc.HoloBadgeType> eventVariantBadges_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, POGOProtos.Rpc.HoloBadgeType>() {
+            public POGOProtos.Rpc.HoloBadgeType convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              POGOProtos.Rpc.HoloBadgeType result = POGOProtos.Rpc.HoloBadgeType.valueOf(from);
+              return result == null ? POGOProtos.Rpc.HoloBadgeType.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @return A list containing the eventVariantBadges.
+   */
+  @java.lang.Override
+  public java.util.List<POGOProtos.Rpc.HoloBadgeType> getEventVariantBadgesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, POGOProtos.Rpc.HoloBadgeType>(eventVariantBadges_, eventVariantBadges_converter_);
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @return The count of eventVariantBadges.
+   */
+  @java.lang.Override
+  public int getEventVariantBadgesCount() {
+    return eventVariantBadges_.size();
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantBadges at the given index.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.HoloBadgeType getEventVariantBadges(int index) {
+    return eventVariantBadges_converter_.convert(eventVariantBadges_.get(index));
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @return A list containing the enum numeric values on the wire for eventVariantBadges.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getEventVariantBadgesValueList() {
+    return eventVariantBadges_;
+  }
+  /**
+   * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of eventVariantBadges at the given index.
+   */
+  @java.lang.Override
+  public int getEventVariantBadgesValue(int index) {
+    return eventVariantBadges_.get(index);
+  }
+  private int eventVariantBadgesMemoizedSerializedSize;
+
+  public static final int EVENT_VARIANT_TITLE_STRING_KEYS_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList eventVariantTitleStringKeys_;
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @return A list containing the eventVariantTitleStringKeys.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventVariantTitleStringKeysList() {
+    return eventVariantTitleStringKeys_;
+  }
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @return The count of eventVariantTitleStringKeys.
+   */
+  public int getEventVariantTitleStringKeysCount() {
+    return eventVariantTitleStringKeys_.size();
+  }
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantTitleStringKeys at the given index.
+   */
+  public java.lang.String getEventVariantTitleStringKeys(int index) {
+    return eventVariantTitleStringKeys_.get(index);
+  }
+  /**
+   * <code>repeated string event_variant_title_string_keys = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventVariantTitleStringKeys at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventVariantTitleStringKeysBytes(int index) {
+    return eventVariantTitleStringKeys_.getByteString(index);
+  }
+
+  public static final int EVENT_VARIANT_DESCRIPTION_STRING_KEYS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList eventVariantDescriptionStringKeys_;
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @return A list containing the eventVariantDescriptionStringKeys.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventVariantDescriptionStringKeysList() {
+    return eventVariantDescriptionStringKeys_;
+  }
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @return The count of eventVariantDescriptionStringKeys.
+   */
+  public int getEventVariantDescriptionStringKeysCount() {
+    return eventVariantDescriptionStringKeys_.size();
+  }
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantDescriptionStringKeys at the given index.
+   */
+  public java.lang.String getEventVariantDescriptionStringKeys(int index) {
+    return eventVariantDescriptionStringKeys_.get(index);
+  }
+  /**
+   * <code>repeated string event_variant_description_string_keys = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventVariantDescriptionStringKeys at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventVariantDescriptionStringKeysBytes(int index) {
+    return eventVariantDescriptionStringKeys_.getByteString(index);
+  }
+
+  public static final int ITEM_BAG_DESCRIPTION_VARIANT_SELECTED_FIELD_NUMBER = 10;
+  private volatile java.lang.Object itemBagDescriptionVariantSelected_;
+  /**
+   * <code>string item_bag_description_variant_selected = 10;</code>
+   * @return The itemBagDescriptionVariantSelected.
+   */
+  @java.lang.Override
+  public java.lang.String getItemBagDescriptionVariantSelected() {
+    java.lang.Object ref = itemBagDescriptionVariantSelected_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      itemBagDescriptionVariantSelected_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string item_bag_description_variant_selected = 10;</code>
+   * @return The bytes for itemBagDescriptionVariantSelected.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getItemBagDescriptionVariantSelectedBytes() {
+    java.lang.Object ref = itemBagDescriptionVariantSelected_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      itemBagDescriptionVariantSelected_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVENT_VARIANT_BUTTON_STRING_KEYS_FIELD_NUMBER = 11;
+  private com.google.protobuf.LazyStringList eventVariantButtonStringKeys_;
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @return A list containing the eventVariantButtonStringKeys.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventVariantButtonStringKeysList() {
+    return eventVariantButtonStringKeys_;
+  }
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @return The count of eventVariantButtonStringKeys.
+   */
+  public int getEventVariantButtonStringKeysCount() {
+    return eventVariantButtonStringKeys_.size();
+  }
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @param index The index of the element to return.
+   * @return The eventVariantButtonStringKeys at the given index.
+   */
+  public java.lang.String getEventVariantButtonStringKeys(int index) {
+    return eventVariantButtonStringKeys_.get(index);
+  }
+  /**
+   * <code>repeated string event_variant_button_string_keys = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventVariantButtonStringKeys at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventVariantButtonStringKeysBytes(int index) {
+    return eventVariantButtonStringKeys_.getByteString(index);
+  }
+
   public static final int CLIENT_EVENT_START_TIME_UTC_MS_FIELD_NUMBER = 100;
   private long clientEventStartTimeUtcMs_;
   /**
@@ -303,6 +578,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (eventBadge_ != POGOProtos.Rpc.HoloBadgeType.BADGE_UNSET.getNumber()) {
       output.writeEnum(1, eventBadge_);
     }
@@ -317,6 +593,25 @@ private static final long serialVersionUID = 0L;
     }
     if (!getItemBagDescriptionKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, itemBagDescriptionKey_);
+    }
+    if (getEventVariantBadgesList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(eventVariantBadgesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < eventVariantBadges_.size(); i++) {
+      output.writeEnumNoTag(eventVariantBadges_.get(i));
+    }
+    for (int i = 0; i < eventVariantTitleStringKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, eventVariantTitleStringKeys_.getRaw(i));
+    }
+    for (int i = 0; i < eventVariantDescriptionStringKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, eventVariantDescriptionStringKeys_.getRaw(i));
+    }
+    if (!getItemBagDescriptionVariantSelectedBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, itemBagDescriptionVariantSelected_);
+    }
+    for (int i = 0; i < eventVariantButtonStringKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, eventVariantButtonStringKeys_.getRaw(i));
     }
     if (clientEventStartTimeUtcMs_ != 0L) {
       output.writeInt64(100, clientEventStartTimeUtcMs_);
@@ -350,6 +645,45 @@ private static final long serialVersionUID = 0L;
     if (!getItemBagDescriptionKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, itemBagDescriptionKey_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventVariantBadges_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(eventVariantBadges_.get(i));
+      }
+      size += dataSize;
+      if (!getEventVariantBadgesList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }eventVariantBadgesMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventVariantTitleStringKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventVariantTitleStringKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventVariantTitleStringKeysList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventVariantDescriptionStringKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventVariantDescriptionStringKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventVariantDescriptionStringKeysList().size();
+    }
+    if (!getItemBagDescriptionVariantSelectedBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, itemBagDescriptionVariantSelected_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventVariantButtonStringKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventVariantButtonStringKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventVariantButtonStringKeysList().size();
+    }
     if (clientEventStartTimeUtcMs_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(100, clientEventStartTimeUtcMs_);
@@ -382,6 +716,15 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEventEndTime())) return false;
     if (!getItemBagDescriptionKey()
         .equals(other.getItemBagDescriptionKey())) return false;
+    if (!eventVariantBadges_.equals(other.eventVariantBadges_)) return false;
+    if (!getEventVariantTitleStringKeysList()
+        .equals(other.getEventVariantTitleStringKeysList())) return false;
+    if (!getEventVariantDescriptionStringKeysList()
+        .equals(other.getEventVariantDescriptionStringKeysList())) return false;
+    if (!getItemBagDescriptionVariantSelected()
+        .equals(other.getItemBagDescriptionVariantSelected())) return false;
+    if (!getEventVariantButtonStringKeysList()
+        .equals(other.getEventVariantButtonStringKeysList())) return false;
     if (getClientEventStartTimeUtcMs()
         != other.getClientEventStartTimeUtcMs()) return false;
     if (getClientEventEndTimeUtcMs()
@@ -408,6 +751,24 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEventEndTime().hashCode();
     hash = (37 * hash) + ITEM_BAG_DESCRIPTION_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getItemBagDescriptionKey().hashCode();
+    if (getEventVariantBadgesCount() > 0) {
+      hash = (37 * hash) + EVENT_VARIANT_BADGES_FIELD_NUMBER;
+      hash = (53 * hash) + eventVariantBadges_.hashCode();
+    }
+    if (getEventVariantTitleStringKeysCount() > 0) {
+      hash = (37 * hash) + EVENT_VARIANT_TITLE_STRING_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getEventVariantTitleStringKeysList().hashCode();
+    }
+    if (getEventVariantDescriptionStringKeysCount() > 0) {
+      hash = (37 * hash) + EVENT_VARIANT_DESCRIPTION_STRING_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getEventVariantDescriptionStringKeysList().hashCode();
+    }
+    hash = (37 * hash) + ITEM_BAG_DESCRIPTION_VARIANT_SELECTED_FIELD_NUMBER;
+    hash = (53 * hash) + getItemBagDescriptionVariantSelected().hashCode();
+    if (getEventVariantButtonStringKeysCount() > 0) {
+      hash = (37 * hash) + EVENT_VARIANT_BUTTON_STRING_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getEventVariantButtonStringKeysList().hashCode();
+    }
     hash = (37 * hash) + CLIENT_EVENT_START_TIME_UTC_MS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getClientEventStartTimeUtcMs());
@@ -557,6 +918,16 @@ private static final long serialVersionUID = 0L;
 
       itemBagDescriptionKey_ = "";
 
+      eventVariantBadges_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      eventVariantTitleStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      eventVariantDescriptionStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      itemBagDescriptionVariantSelected_ = "";
+
+      eventVariantButtonStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       clientEventStartTimeUtcMs_ = 0L;
 
       clientEventEndTimeUtcMs_ = 0L;
@@ -587,11 +958,33 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public POGOProtos.Rpc.GlobalEventTicketAttributesProto buildPartial() {
       POGOProtos.Rpc.GlobalEventTicketAttributesProto result = new POGOProtos.Rpc.GlobalEventTicketAttributesProto(this);
+      int from_bitField0_ = bitField0_;
       result.eventBadge_ = eventBadge_;
       result.grantBadgeBeforeEventStartMs_ = grantBadgeBeforeEventStartMs_;
       result.eventStartTime_ = eventStartTime_;
       result.eventEndTime_ = eventEndTime_;
       result.itemBagDescriptionKey_ = itemBagDescriptionKey_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        eventVariantBadges_ = java.util.Collections.unmodifiableList(eventVariantBadges_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.eventVariantBadges_ = eventVariantBadges_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        eventVariantTitleStringKeys_ = eventVariantTitleStringKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.eventVariantTitleStringKeys_ = eventVariantTitleStringKeys_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        eventVariantDescriptionStringKeys_ = eventVariantDescriptionStringKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.eventVariantDescriptionStringKeys_ = eventVariantDescriptionStringKeys_;
+      result.itemBagDescriptionVariantSelected_ = itemBagDescriptionVariantSelected_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        eventVariantButtonStringKeys_ = eventVariantButtonStringKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.eventVariantButtonStringKeys_ = eventVariantButtonStringKeys_;
       result.clientEventStartTimeUtcMs_ = clientEventStartTimeUtcMs_;
       result.clientEventEndTimeUtcMs_ = clientEventEndTimeUtcMs_;
       onBuilt();
@@ -660,6 +1053,50 @@ private static final long serialVersionUID = 0L;
         itemBagDescriptionKey_ = other.itemBagDescriptionKey_;
         onChanged();
       }
+      if (!other.eventVariantBadges_.isEmpty()) {
+        if (eventVariantBadges_.isEmpty()) {
+          eventVariantBadges_ = other.eventVariantBadges_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureEventVariantBadgesIsMutable();
+          eventVariantBadges_.addAll(other.eventVariantBadges_);
+        }
+        onChanged();
+      }
+      if (!other.eventVariantTitleStringKeys_.isEmpty()) {
+        if (eventVariantTitleStringKeys_.isEmpty()) {
+          eventVariantTitleStringKeys_ = other.eventVariantTitleStringKeys_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureEventVariantTitleStringKeysIsMutable();
+          eventVariantTitleStringKeys_.addAll(other.eventVariantTitleStringKeys_);
+        }
+        onChanged();
+      }
+      if (!other.eventVariantDescriptionStringKeys_.isEmpty()) {
+        if (eventVariantDescriptionStringKeys_.isEmpty()) {
+          eventVariantDescriptionStringKeys_ = other.eventVariantDescriptionStringKeys_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureEventVariantDescriptionStringKeysIsMutable();
+          eventVariantDescriptionStringKeys_.addAll(other.eventVariantDescriptionStringKeys_);
+        }
+        onChanged();
+      }
+      if (!other.getItemBagDescriptionVariantSelected().isEmpty()) {
+        itemBagDescriptionVariantSelected_ = other.itemBagDescriptionVariantSelected_;
+        onChanged();
+      }
+      if (!other.eventVariantButtonStringKeys_.isEmpty()) {
+        if (eventVariantButtonStringKeys_.isEmpty()) {
+          eventVariantButtonStringKeys_ = other.eventVariantButtonStringKeys_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureEventVariantButtonStringKeysIsMutable();
+          eventVariantButtonStringKeys_.addAll(other.eventVariantButtonStringKeys_);
+        }
+        onChanged();
+      }
       if (other.getClientEventStartTimeUtcMs() != 0L) {
         setClientEventStartTimeUtcMs(other.getClientEventStartTimeUtcMs());
       }
@@ -694,6 +1131,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int eventBadge_ = 0;
     /**
@@ -1004,6 +1442,552 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       itemBagDescriptionKey_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> eventVariantBadges_ =
+      java.util.Collections.emptyList();
+    private void ensureEventVariantBadgesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        eventVariantBadges_ = new java.util.ArrayList<java.lang.Integer>(eventVariantBadges_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @return A list containing the eventVariantBadges.
+     */
+    public java.util.List<POGOProtos.Rpc.HoloBadgeType> getEventVariantBadgesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, POGOProtos.Rpc.HoloBadgeType>(eventVariantBadges_, eventVariantBadges_converter_);
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @return The count of eventVariantBadges.
+     */
+    public int getEventVariantBadgesCount() {
+      return eventVariantBadges_.size();
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param index The index of the element to return.
+     * @return The eventVariantBadges at the given index.
+     */
+    public POGOProtos.Rpc.HoloBadgeType getEventVariantBadges(int index) {
+      return eventVariantBadges_converter_.convert(eventVariantBadges_.get(index));
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The eventVariantBadges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventVariantBadges(
+        int index, POGOProtos.Rpc.HoloBadgeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEventVariantBadgesIsMutable();
+      eventVariantBadges_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param value The eventVariantBadges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantBadges(POGOProtos.Rpc.HoloBadgeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEventVariantBadgesIsMutable();
+      eventVariantBadges_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param values The eventVariantBadges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventVariantBadges(
+        java.lang.Iterable<? extends POGOProtos.Rpc.HoloBadgeType> values) {
+      ensureEventVariantBadgesIsMutable();
+      for (POGOProtos.Rpc.HoloBadgeType value : values) {
+        eventVariantBadges_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventVariantBadges() {
+      eventVariantBadges_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @return A list containing the enum numeric values on the wire for eventVariantBadges.
+     */
+    public java.util.List<java.lang.Integer>
+    getEventVariantBadgesValueList() {
+      return java.util.Collections.unmodifiableList(eventVariantBadges_);
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of eventVariantBadges at the given index.
+     */
+    public int getEventVariantBadgesValue(int index) {
+      return eventVariantBadges_.get(index);
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of eventVariantBadges at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setEventVariantBadgesValue(
+        int index, int value) {
+      ensureEventVariantBadgesIsMutable();
+      eventVariantBadges_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param value The enum numeric value on the wire for eventVariantBadges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantBadgesValue(int value) {
+      ensureEventVariantBadgesIsMutable();
+      eventVariantBadges_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .POGOProtos.Rpc.HoloBadgeType event_variant_badges = 7;</code>
+     * @param values The enum numeric values on the wire for eventVariantBadges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventVariantBadgesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureEventVariantBadgesIsMutable();
+      for (int value : values) {
+        eventVariantBadges_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventVariantTitleStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventVariantTitleStringKeysIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        eventVariantTitleStringKeys_ = new com.google.protobuf.LazyStringArrayList(eventVariantTitleStringKeys_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @return A list containing the eventVariantTitleStringKeys.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventVariantTitleStringKeysList() {
+      return eventVariantTitleStringKeys_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @return The count of eventVariantTitleStringKeys.
+     */
+    public int getEventVariantTitleStringKeysCount() {
+      return eventVariantTitleStringKeys_.size();
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @param index The index of the element to return.
+     * @return The eventVariantTitleStringKeys at the given index.
+     */
+    public java.lang.String getEventVariantTitleStringKeys(int index) {
+      return eventVariantTitleStringKeys_.get(index);
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventVariantTitleStringKeys at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventVariantTitleStringKeysBytes(int index) {
+      return eventVariantTitleStringKeys_.getByteString(index);
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The eventVariantTitleStringKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventVariantTitleStringKeys(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventVariantTitleStringKeysIsMutable();
+      eventVariantTitleStringKeys_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @param value The eventVariantTitleStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantTitleStringKeys(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventVariantTitleStringKeysIsMutable();
+      eventVariantTitleStringKeys_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @param values The eventVariantTitleStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventVariantTitleStringKeys(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventVariantTitleStringKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventVariantTitleStringKeys_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventVariantTitleStringKeys() {
+      eventVariantTitleStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_title_string_keys = 8;</code>
+     * @param value The bytes of the eventVariantTitleStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantTitleStringKeysBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventVariantTitleStringKeysIsMutable();
+      eventVariantTitleStringKeys_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventVariantDescriptionStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventVariantDescriptionStringKeysIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        eventVariantDescriptionStringKeys_ = new com.google.protobuf.LazyStringArrayList(eventVariantDescriptionStringKeys_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @return A list containing the eventVariantDescriptionStringKeys.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventVariantDescriptionStringKeysList() {
+      return eventVariantDescriptionStringKeys_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @return The count of eventVariantDescriptionStringKeys.
+     */
+    public int getEventVariantDescriptionStringKeysCount() {
+      return eventVariantDescriptionStringKeys_.size();
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @param index The index of the element to return.
+     * @return The eventVariantDescriptionStringKeys at the given index.
+     */
+    public java.lang.String getEventVariantDescriptionStringKeys(int index) {
+      return eventVariantDescriptionStringKeys_.get(index);
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventVariantDescriptionStringKeys at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventVariantDescriptionStringKeysBytes(int index) {
+      return eventVariantDescriptionStringKeys_.getByteString(index);
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The eventVariantDescriptionStringKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventVariantDescriptionStringKeys(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventVariantDescriptionStringKeysIsMutable();
+      eventVariantDescriptionStringKeys_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @param value The eventVariantDescriptionStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantDescriptionStringKeys(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventVariantDescriptionStringKeysIsMutable();
+      eventVariantDescriptionStringKeys_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @param values The eventVariantDescriptionStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventVariantDescriptionStringKeys(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventVariantDescriptionStringKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventVariantDescriptionStringKeys_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventVariantDescriptionStringKeys() {
+      eventVariantDescriptionStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_description_string_keys = 9;</code>
+     * @param value The bytes of the eventVariantDescriptionStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantDescriptionStringKeysBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventVariantDescriptionStringKeysIsMutable();
+      eventVariantDescriptionStringKeys_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object itemBagDescriptionVariantSelected_ = "";
+    /**
+     * <code>string item_bag_description_variant_selected = 10;</code>
+     * @return The itemBagDescriptionVariantSelected.
+     */
+    public java.lang.String getItemBagDescriptionVariantSelected() {
+      java.lang.Object ref = itemBagDescriptionVariantSelected_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        itemBagDescriptionVariantSelected_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string item_bag_description_variant_selected = 10;</code>
+     * @return The bytes for itemBagDescriptionVariantSelected.
+     */
+    public com.google.protobuf.ByteString
+        getItemBagDescriptionVariantSelectedBytes() {
+      java.lang.Object ref = itemBagDescriptionVariantSelected_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        itemBagDescriptionVariantSelected_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string item_bag_description_variant_selected = 10;</code>
+     * @param value The itemBagDescriptionVariantSelected to set.
+     * @return This builder for chaining.
+     */
+    public Builder setItemBagDescriptionVariantSelected(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      itemBagDescriptionVariantSelected_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string item_bag_description_variant_selected = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearItemBagDescriptionVariantSelected() {
+      
+      itemBagDescriptionVariantSelected_ = getDefaultInstance().getItemBagDescriptionVariantSelected();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string item_bag_description_variant_selected = 10;</code>
+     * @param value The bytes for itemBagDescriptionVariantSelected to set.
+     * @return This builder for chaining.
+     */
+    public Builder setItemBagDescriptionVariantSelectedBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      itemBagDescriptionVariantSelected_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventVariantButtonStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventVariantButtonStringKeysIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        eventVariantButtonStringKeys_ = new com.google.protobuf.LazyStringArrayList(eventVariantButtonStringKeys_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @return A list containing the eventVariantButtonStringKeys.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventVariantButtonStringKeysList() {
+      return eventVariantButtonStringKeys_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @return The count of eventVariantButtonStringKeys.
+     */
+    public int getEventVariantButtonStringKeysCount() {
+      return eventVariantButtonStringKeys_.size();
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @param index The index of the element to return.
+     * @return The eventVariantButtonStringKeys at the given index.
+     */
+    public java.lang.String getEventVariantButtonStringKeys(int index) {
+      return eventVariantButtonStringKeys_.get(index);
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventVariantButtonStringKeys at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventVariantButtonStringKeysBytes(int index) {
+      return eventVariantButtonStringKeys_.getByteString(index);
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @param index The index to set the value at.
+     * @param value The eventVariantButtonStringKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventVariantButtonStringKeys(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventVariantButtonStringKeysIsMutable();
+      eventVariantButtonStringKeys_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @param value The eventVariantButtonStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantButtonStringKeys(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventVariantButtonStringKeysIsMutable();
+      eventVariantButtonStringKeys_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @param values The eventVariantButtonStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventVariantButtonStringKeys(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventVariantButtonStringKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventVariantButtonStringKeys_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventVariantButtonStringKeys() {
+      eventVariantButtonStringKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string event_variant_button_string_keys = 11;</code>
+     * @param value The bytes of the eventVariantButtonStringKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventVariantButtonStringKeysBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventVariantButtonStringKeysIsMutable();
+      eventVariantButtonStringKeys_.add(value);
       onChanged();
       return this;
     }

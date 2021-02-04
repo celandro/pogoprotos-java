@@ -8,40 +8,29 @@ public interface GetAvailableSubmissionsProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-   * @return The enum numeric value on the wire for submissionType.
-   */
-  int getSubmissionTypeValue();
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto submission_type = 1;</code>
-   * @return The submissionType.
-   */
-  POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionType();
-
-  /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @return A list containing the submissionTypes.
    */
   java.util.List<POGOProtos.Rpc.PlayerSubmissionTypeProto> getSubmissionTypesList();
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @return The count of submissionTypes.
    */
   int getSubmissionTypesCount();
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @param index The index of the element to return.
    * @return The submissionTypes at the given index.
    */
   POGOProtos.Rpc.PlayerSubmissionTypeProto getSubmissionTypes(int index);
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @return A list containing the enum numeric values on the wire for submissionTypes.
    */
   java.util.List<java.lang.Integer>
   getSubmissionTypesValueList();
   /**
-   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 2;</code>
+   * <code>repeated .POGOProtos.Rpc.PlayerSubmissionTypeProto submission_types = 1;</code>
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of submissionTypes at the given index.
    */

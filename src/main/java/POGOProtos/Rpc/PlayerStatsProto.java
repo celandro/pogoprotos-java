@@ -373,6 +373,11 @@ private static final long serialVersionUID = 0L;
             numMiniCollectionEventCompleted_ = input.readInt32();
             break;
           }
+          case 488: {
+
+            numPokemonFormChanges_ = input.readInt32();
+            break;
+          }
           case 496: {
 
             numRocketBalloonBattlesWon_ = input.readInt32();
@@ -1116,6 +1121,17 @@ private static final long serialVersionUID = 0L;
     return numMiniCollectionEventCompleted_;
   }
 
+  public static final int NUM_POKEMON_FORM_CHANGES_FIELD_NUMBER = 61;
+  private int numPokemonFormChanges_;
+  /**
+   * <code>int32 num_pokemon_form_changes = 61;</code>
+   * @return The numPokemonFormChanges.
+   */
+  @java.lang.Override
+  public int getNumPokemonFormChanges() {
+    return numPokemonFormChanges_;
+  }
+
   public static final int NUM_ROCKET_BALLOON_BATTLES_WON_FIELD_NUMBER = 62;
   private int numRocketBalloonBattlesWon_;
   /**
@@ -1328,6 +1344,9 @@ private static final long serialVersionUID = 0L;
     }
     if (numMiniCollectionEventCompleted_ != 0) {
       output.writeInt32(60, numMiniCollectionEventCompleted_);
+    }
+    if (numPokemonFormChanges_ != 0) {
+      output.writeInt32(61, numPokemonFormChanges_);
     }
     if (numRocketBalloonBattlesWon_ != 0) {
       output.writeInt32(62, numRocketBalloonBattlesWon_);
@@ -1586,6 +1605,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(60, numMiniCollectionEventCompleted_);
     }
+    if (numPokemonFormChanges_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(61, numPokemonFormChanges_);
+    }
     if (numRocketBalloonBattlesWon_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(62, numRocketBalloonBattlesWon_);
@@ -1726,6 +1749,8 @@ private static final long serialVersionUID = 0L;
         != other.getNumUniqueMegaEvolutions()) return false;
     if (getNumMiniCollectionEventCompleted()
         != other.getNumMiniCollectionEventCompleted()) return false;
+    if (getNumPokemonFormChanges()
+        != other.getNumPokemonFormChanges()) return false;
     if (getNumRocketBalloonBattlesWon()
         != other.getNumRocketBalloonBattlesWon()) return false;
     if (getNumRocketBalloonBattlesTotal()
@@ -1870,6 +1895,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getNumUniqueMegaEvolutions();
     hash = (37 * hash) + NUM_MINI_COLLECTION_EVENT_COMPLETED_FIELD_NUMBER;
     hash = (53 * hash) + getNumMiniCollectionEventCompleted();
+    hash = (37 * hash) + NUM_POKEMON_FORM_CHANGES_FIELD_NUMBER;
+    hash = (53 * hash) + getNumPokemonFormChanges();
     hash = (37 * hash) + NUM_ROCKET_BALLOON_BATTLES_WON_FIELD_NUMBER;
     hash = (53 * hash) + getNumRocketBalloonBattlesWon();
     hash = (37 * hash) + NUM_ROCKET_BALLOON_BATTLES_TOTAL_FIELD_NUMBER;
@@ -2123,6 +2150,8 @@ private static final long serialVersionUID = 0L;
 
       numMiniCollectionEventCompleted_ = 0;
 
+      numPokemonFormChanges_ = 0;
+
       numRocketBalloonBattlesWon_ = 0;
 
       numRocketBalloonBattlesTotal_ = 0;
@@ -2222,6 +2251,7 @@ private static final long serialVersionUID = 0L;
       result.numTotalMegaEvolutions_ = numTotalMegaEvolutions_;
       result.numUniqueMegaEvolutions_ = numUniqueMegaEvolutions_;
       result.numMiniCollectionEventCompleted_ = numMiniCollectionEventCompleted_;
+      result.numPokemonFormChanges_ = numPokemonFormChanges_;
       result.numRocketBalloonBattlesWon_ = numRocketBalloonBattlesWon_;
       result.numRocketBalloonBattlesTotal_ = numRocketBalloonBattlesTotal_;
       onBuilt();
@@ -2453,6 +2483,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getNumMiniCollectionEventCompleted() != 0) {
         setNumMiniCollectionEventCompleted(other.getNumMiniCollectionEventCompleted());
+      }
+      if (other.getNumPokemonFormChanges() != 0) {
+        setNumPokemonFormChanges(other.getNumPokemonFormChanges());
       }
       if (other.getNumRocketBalloonBattlesWon() != 0) {
         setNumRocketBalloonBattlesWon(other.getNumRocketBalloonBattlesWon());
@@ -4467,6 +4500,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearNumMiniCollectionEventCompleted() {
       
       numMiniCollectionEventCompleted_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int numPokemonFormChanges_ ;
+    /**
+     * <code>int32 num_pokemon_form_changes = 61;</code>
+     * @return The numPokemonFormChanges.
+     */
+    @java.lang.Override
+    public int getNumPokemonFormChanges() {
+      return numPokemonFormChanges_;
+    }
+    /**
+     * <code>int32 num_pokemon_form_changes = 61;</code>
+     * @param value The numPokemonFormChanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumPokemonFormChanges(int value) {
+      
+      numPokemonFormChanges_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 num_pokemon_form_changes = 61;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNumPokemonFormChanges() {
+      
+      numPokemonFormChanges_ = 0;
       onChanged();
       return this;
     }

@@ -121,7 +121,7 @@ public enum BattlePartyTelemetryIds
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(18);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(17);
   }
 
   private static final BattlePartyTelemetryIds[] VALUES = values();

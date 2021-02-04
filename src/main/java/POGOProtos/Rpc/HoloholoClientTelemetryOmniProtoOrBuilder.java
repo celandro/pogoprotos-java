@@ -1058,6 +1058,36 @@ public interface HoloholoClientTelemetryOmniProtoOrBuilder extends
   POGOProtos.Rpc.PokemonSearchTelemetryOrBuilder getPokemonSearchTelemetryOrBuilder();
 
   /**
+   * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+   * @return Whether the imageGalleryTelemetry field is set.
+   */
+  boolean hasImageGalleryTelemetry();
+  /**
+   * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+   * @return The imageGalleryTelemetry.
+   */
+  POGOProtos.Rpc.ImageGalleryTelemetry getImageGalleryTelemetry();
+  /**
+   * <code>.POGOProtos.Rpc.ImageGalleryTelemetry image_gallery_telemetry = 71;</code>
+   */
+  POGOProtos.Rpc.ImageGalleryTelemetryOrBuilder getImageGalleryTelemetryOrBuilder();
+
+  /**
+   * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+   * @return Whether the playerShownLevelUpShareScreenTelemetry field is set.
+   */
+  boolean hasPlayerShownLevelUpShareScreenTelemetry();
+  /**
+   * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+   * @return The playerShownLevelUpShareScreenTelemetry.
+   */
+  POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry getPlayerShownLevelUpShareScreenTelemetry();
+  /**
+   * <code>.POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;</code>
+   */
+  POGOProtos.Rpc.PlayerShownLevelUpShareScreenTelemetryOrBuilder getPlayerShownLevelUpShareScreenTelemetryOrBuilder();
+
+  /**
    * <code>.POGOProtos.Rpc.ServerData server_data = 1001;</code>
    * @return Whether the serverData field is set.
    */

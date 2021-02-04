@@ -85,7 +85,7 @@ public enum ExitVfxContext
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(43);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(42);
   }
 
   private static final ExitVfxContext[] VALUES = values();

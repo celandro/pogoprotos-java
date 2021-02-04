@@ -21,9 +21,9 @@ public enum NotificationType
    */
   NOTIFICATION_TYPE_POKESTOP_NOTIFICATIONS(2),
   /**
-   * <code>NOTIFICATION_TYPE_ALL_NOTIFICATIONS = 3;</code>
+   * <code>NOTIFICATION_TYPE_SYSTEM_NOTIFICATIONS = 4;</code>
    */
-  NOTIFICATION_TYPE_ALL_NOTIFICATIONS(3),
+  NOTIFICATION_TYPE_SYSTEM_NOTIFICATIONS(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -40,9 +40,9 @@ public enum NotificationType
    */
   public static final int NOTIFICATION_TYPE_POKESTOP_NOTIFICATIONS_VALUE = 2;
   /**
-   * <code>NOTIFICATION_TYPE_ALL_NOTIFICATIONS = 3;</code>
+   * <code>NOTIFICATION_TYPE_SYSTEM_NOTIFICATIONS = 4;</code>
    */
-  public static final int NOTIFICATION_TYPE_ALL_NOTIFICATIONS_VALUE = 3;
+  public static final int NOTIFICATION_TYPE_SYSTEM_NOTIFICATIONS_VALUE = 4;
 
 
   public final int getNumber() {
@@ -72,7 +72,7 @@ public enum NotificationType
       case 0: return NOTIFICATION_TYPE_NO_NOTIFICATIONS;
       case 1: return NOTIFICATION_TYPE_POKEMON_NOTIFICATIONS;
       case 2: return NOTIFICATION_TYPE_POKESTOP_NOTIFICATIONS;
-      case 3: return NOTIFICATION_TYPE_ALL_NOTIFICATIONS;
+      case 4: return NOTIFICATION_TYPE_SYSTEM_NOTIFICATIONS;
       default: return null;
     }
   }

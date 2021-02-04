@@ -39,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -91,6 +92,19 @@ private static final long serialVersionUID = 0L;
             bucketsUntilWeeklyAward_ = input.readInt32();
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              xlCandyAwardedPerId_ = com.google.protobuf.MapField.newMapField(
+                  XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+            xlCandyAwardedPerId__ = input.readMessage(
+                XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            xlCandyAwardedPerId_.getMutableMap().put(
+                xlCandyAwardedPerId__.getKey(), xlCandyAwardedPerId__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -115,6 +129,18 @@ private static final long serialVersionUID = 0L;
     return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BelugaTransactionCompleteOutProto_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 6:
+        return internalGetXlCandyAwardedPerId();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -387,6 +413,87 @@ private static final long serialVersionUID = 0L;
     return bucketsUntilWeeklyAward_;
   }
 
+  public static final int XL_CANDY_AWARDED_PER_ID_FIELD_NUMBER = 6;
+  private static final class XlCandyAwardedPerIdDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.Integer, java.lang.Integer> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BelugaTransactionCompleteOutProto_XlCandyAwardedPerIdEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.INT32,
+                0,
+                com.google.protobuf.WireFormat.FieldType.INT32,
+                0);
+  }
+  private com.google.protobuf.MapField<
+      java.lang.Integer, java.lang.Integer> xlCandyAwardedPerId_;
+  private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+  internalGetXlCandyAwardedPerId() {
+    if (xlCandyAwardedPerId_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry);
+    }
+    return xlCandyAwardedPerId_;
+  }
+
+  public int getXlCandyAwardedPerIdCount() {
+    return internalGetXlCandyAwardedPerId().getMap().size();
+  }
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsXlCandyAwardedPerId(
+      int key) {
+    
+    return internalGetXlCandyAwardedPerId().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getXlCandyAwardedPerIdMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.Integer, java.lang.Integer> getXlCandyAwardedPerId() {
+    return getXlCandyAwardedPerIdMap();
+  }
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.Integer, java.lang.Integer> getXlCandyAwardedPerIdMap() {
+    return internalGetXlCandyAwardedPerId().getMap();
+  }
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+  @java.lang.Override
+
+  public int getXlCandyAwardedPerIdOrDefault(
+      int key,
+      int defaultValue) {
+    
+    java.util.Map<java.lang.Integer, java.lang.Integer> map =
+        internalGetXlCandyAwardedPerId().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+   */
+  @java.lang.Override
+
+  public int getXlCandyAwardedPerIdOrThrow(
+      int key) {
+    
+    java.util.Map<java.lang.Integer, java.lang.Integer> map =
+        internalGetXlCandyAwardedPerId().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -416,6 +523,12 @@ private static final long serialVersionUID = 0L;
     if (bucketsUntilWeeklyAward_ != 0) {
       output.writeInt32(5, bucketsUntilWeeklyAward_);
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeIntegerMapTo(
+        output,
+        internalGetXlCandyAwardedPerId(),
+        XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry,
+        6);
     unknownFields.writeTo(output);
   }
 
@@ -444,6 +557,16 @@ private static final long serialVersionUID = 0L;
     if (bucketsUntilWeeklyAward_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, bucketsUntilWeeklyAward_);
+    }
+    for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+         : internalGetXlCandyAwardedPerId().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+      xlCandyAwardedPerId__ = XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, xlCandyAwardedPerId__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -475,6 +598,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getBucketsUntilWeeklyAward()
         != other.getBucketsUntilWeeklyAward()) return false;
+    if (!internalGetXlCandyAwardedPerId().equals(
+        other.internalGetXlCandyAwardedPerId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -500,6 +625,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + BUCKETS_UNTIL_WEEKLY_AWARD_FIELD_NUMBER;
     hash = (53 * hash) + getBucketsUntilWeeklyAward();
+    if (!internalGetXlCandyAwardedPerId().getMap().isEmpty()) {
+      hash = (37 * hash) + XL_CANDY_AWARDED_PER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetXlCandyAwardedPerId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -607,6 +736,28 @@ private static final long serialVersionUID = 0L;
       return POGOProtos.Rpc.POGOProtosRpc.internal_static_POGOProtos_Rpc_BelugaTransactionCompleteOutProto_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetXlCandyAwardedPerId();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableXlCandyAwardedPerId();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -651,6 +802,7 @@ private static final long serialVersionUID = 0L;
       }
       bucketsUntilWeeklyAward_ = 0;
 
+      internalGetMutableXlCandyAwardedPerId().clear();
       return this;
     }
 
@@ -677,6 +829,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public POGOProtos.Rpc.BelugaTransactionCompleteOutProto buildPartial() {
       POGOProtos.Rpc.BelugaTransactionCompleteOutProto result = new POGOProtos.Rpc.BelugaTransactionCompleteOutProto(this);
+      int from_bitField0_ = bitField0_;
       result.status_ = status_;
       result.candyAwarded_ = candyAwarded_;
       if (lootAwardedBuilder_ == null) {
@@ -690,6 +843,8 @@ private static final long serialVersionUID = 0L;
         result.belugaFinalizeResponse_ = belugaFinalizeResponseBuilder_.build();
       }
       result.bucketsUntilWeeklyAward_ = bucketsUntilWeeklyAward_;
+      result.xlCandyAwardedPerId_ = internalGetXlCandyAwardedPerId();
+      result.xlCandyAwardedPerId_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -753,6 +908,8 @@ private static final long serialVersionUID = 0L;
       if (other.getBucketsUntilWeeklyAward() != 0) {
         setBucketsUntilWeeklyAward(other.getBucketsUntilWeeklyAward());
       }
+      internalGetMutableXlCandyAwardedPerId().mergeFrom(
+          other.internalGetXlCandyAwardedPerId());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -781,6 +938,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int status_ = 0;
     /**
@@ -1133,6 +1291,134 @@ private static final long serialVersionUID = 0L;
       
       bucketsUntilWeeklyAward_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Integer> xlCandyAwardedPerId_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    internalGetXlCandyAwardedPerId() {
+      if (xlCandyAwardedPerId_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry);
+      }
+      return xlCandyAwardedPerId_;
+    }
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    internalGetMutableXlCandyAwardedPerId() {
+      onChanged();;
+      if (xlCandyAwardedPerId_ == null) {
+        xlCandyAwardedPerId_ = com.google.protobuf.MapField.newMapField(
+            XlCandyAwardedPerIdDefaultEntryHolder.defaultEntry);
+      }
+      if (!xlCandyAwardedPerId_.isMutable()) {
+        xlCandyAwardedPerId_ = xlCandyAwardedPerId_.copy();
+      }
+      return xlCandyAwardedPerId_;
+    }
+
+    public int getXlCandyAwardedPerIdCount() {
+      return internalGetXlCandyAwardedPerId().getMap().size();
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsXlCandyAwardedPerId(
+        int key) {
+      
+      return internalGetXlCandyAwardedPerId().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getXlCandyAwardedPerIdMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getXlCandyAwardedPerId() {
+      return getXlCandyAwardedPerIdMap();
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getXlCandyAwardedPerIdMap() {
+      return internalGetXlCandyAwardedPerId().getMap();
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+    @java.lang.Override
+
+    public int getXlCandyAwardedPerIdOrDefault(
+        int key,
+        int defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetXlCandyAwardedPerId().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+    @java.lang.Override
+
+    public int getXlCandyAwardedPerIdOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetXlCandyAwardedPerId().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearXlCandyAwardedPerId() {
+      internalGetMutableXlCandyAwardedPerId().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+
+    public Builder removeXlCandyAwardedPerId(
+        int key) {
+      
+      internalGetMutableXlCandyAwardedPerId().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Integer>
+    getMutableXlCandyAwardedPerId() {
+      return internalGetMutableXlCandyAwardedPerId().getMutableMap();
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+    public Builder putXlCandyAwardedPerId(
+        int key,
+        int value) {
+      
+      
+      internalGetMutableXlCandyAwardedPerId().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;int32, int32&gt; xl_candy_awarded_per_id = 6;</code>
+     */
+
+    public Builder putAllXlCandyAwardedPerId(
+        java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+      internalGetMutableXlCandyAwardedPerId().getMutableMap()
+          .putAll(values);
       return this;
     }
     @java.lang.Override

@@ -26,10 +26,15 @@ public interface UserIssueWeatherReportOrBuilder extends
   boolean getAlertActive();
 
   /**
-   * <code>int32 severity = 3;</code>
+   * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
+   * @return The enum numeric value on the wire for severity.
+   */
+  int getSeverityValue();
+  /**
+   * <code>.POGOProtos.Rpc.WeatherAlertProto.Severity severity = 3;</code>
    * @return The severity.
    */
-  int getSeverity();
+  POGOProtos.Rpc.WeatherAlertProto.Severity getSeverity();
 
   /**
    * <code>int32 user_report = 4;</code>

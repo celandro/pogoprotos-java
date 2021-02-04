@@ -21,9 +21,29 @@ public enum FeatureType
    */
   FEATURE_TYPE_NIANTIC_PROFILE(2),
   /**
-   * <code>FEATURE_TYPE_FRIENDS_LIST = 3;</code>
+   * <code>FEATURE_TYPE_CROSS_GAME_FRIENDS_LIST = 3;</code>
    */
-  FEATURE_TYPE_FRIENDS_LIST(3),
+  FEATURE_TYPE_CROSS_GAME_FRIENDS_LIST(3),
+  /**
+   * <code>FEATURE_TYPE_SEND_GAME_INVITE = 4;</code>
+   */
+  FEATURE_TYPE_SEND_GAME_INVITE(4),
+  /**
+   * <code>FEATURE_TYPE_RECEIVE_GAME_INVITE = 5;</code>
+   */
+  FEATURE_TYPE_RECEIVE_GAME_INVITE(5),
+  /**
+   * <code>FEATURE_TYPE_NICKNAME = 6;</code>
+   */
+  FEATURE_TYPE_NICKNAME(6),
+  /**
+   * <code>FEATURE_TYPE_CROSS_GAME_ONLINE_STATUS = 7;</code>
+   */
+  FEATURE_TYPE_CROSS_GAME_ONLINE_STATUS(7),
+  /**
+   * <code>FEATURE_TYPE_SHARED_FRIEND_GRAPH = 8;</code>
+   */
+  FEATURE_TYPE_SHARED_FRIEND_GRAPH(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -40,9 +60,29 @@ public enum FeatureType
    */
   public static final int FEATURE_TYPE_NIANTIC_PROFILE_VALUE = 2;
   /**
-   * <code>FEATURE_TYPE_FRIENDS_LIST = 3;</code>
+   * <code>FEATURE_TYPE_CROSS_GAME_FRIENDS_LIST = 3;</code>
    */
-  public static final int FEATURE_TYPE_FRIENDS_LIST_VALUE = 3;
+  public static final int FEATURE_TYPE_CROSS_GAME_FRIENDS_LIST_VALUE = 3;
+  /**
+   * <code>FEATURE_TYPE_SEND_GAME_INVITE = 4;</code>
+   */
+  public static final int FEATURE_TYPE_SEND_GAME_INVITE_VALUE = 4;
+  /**
+   * <code>FEATURE_TYPE_RECEIVE_GAME_INVITE = 5;</code>
+   */
+  public static final int FEATURE_TYPE_RECEIVE_GAME_INVITE_VALUE = 5;
+  /**
+   * <code>FEATURE_TYPE_NICKNAME = 6;</code>
+   */
+  public static final int FEATURE_TYPE_NICKNAME_VALUE = 6;
+  /**
+   * <code>FEATURE_TYPE_CROSS_GAME_ONLINE_STATUS = 7;</code>
+   */
+  public static final int FEATURE_TYPE_CROSS_GAME_ONLINE_STATUS_VALUE = 7;
+  /**
+   * <code>FEATURE_TYPE_SHARED_FRIEND_GRAPH = 8;</code>
+   */
+  public static final int FEATURE_TYPE_SHARED_FRIEND_GRAPH_VALUE = 8;
 
 
   public final int getNumber() {
@@ -72,7 +112,12 @@ public enum FeatureType
       case 0: return FEATURE_TYPE_UNSET;
       case 1: return FEATURE_TYPE_ONLINE_STATUS;
       case 2: return FEATURE_TYPE_NIANTIC_PROFILE;
-      case 3: return FEATURE_TYPE_FRIENDS_LIST;
+      case 3: return FEATURE_TYPE_CROSS_GAME_FRIENDS_LIST;
+      case 4: return FEATURE_TYPE_SEND_GAME_INVITE;
+      case 5: return FEATURE_TYPE_RECEIVE_GAME_INVITE;
+      case 6: return FEATURE_TYPE_NICKNAME;
+      case 7: return FEATURE_TYPE_CROSS_GAME_ONLINE_STATUS;
+      case 8: return FEATURE_TYPE_SHARED_FRIEND_GRAPH;
       default: return null;
     }
   }
@@ -103,7 +148,7 @@ public enum FeatureType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(45);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(44);
   }
 
   private static final FeatureType[] VALUES = values();

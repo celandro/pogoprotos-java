@@ -3,7 +3,7 @@
 
 package POGOProtos.Rpc;
 
-public interface ARMappingValidationStatusProtoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.ARMappingValidationStatusProto)
+public interface GetIncomingGameInvitesRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:POGOProtos.Rpc.GetIncomingGameInvitesRequest)
     com.google.protobuf.MessageOrBuilder {
 }

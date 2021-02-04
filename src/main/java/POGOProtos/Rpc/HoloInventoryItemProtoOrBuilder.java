@@ -337,5 +337,20 @@ public interface HoloInventoryItemProtoOrBuilder extends
    */
   POGOProtos.Rpc.PlayerStatsSnapshotsProtoOrBuilder getPlayerStatsSnapshotsOrBuilder();
 
+  /**
+   * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+   * @return Whether the dummyData field is set.
+   */
+  boolean hasDummyData();
+  /**
+   * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+   * @return The dummyData.
+   */
+  POGOProtos.Rpc.DummyDataProto getDummyData();
+  /**
+   * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+   */
+  POGOProtos.Rpc.DummyDataProtoOrBuilder getDummyDataOrBuilder();
+
   public POGOProtos.Rpc.HoloInventoryItemProto.TypeCase getTypeCase();
 }

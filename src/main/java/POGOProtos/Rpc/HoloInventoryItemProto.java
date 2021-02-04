@@ -356,6 +356,20 @@ private static final long serialVersionUID = 0L;
             typeCase_ = 25;
             break;
           }
+          case 210: {
+            POGOProtos.Rpc.DummyDataProto.Builder subBuilder = null;
+            if (typeCase_ == 26) {
+              subBuilder = ((POGOProtos.Rpc.DummyDataProto) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(POGOProtos.Rpc.DummyDataProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((POGOProtos.Rpc.DummyDataProto) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 26;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -415,6 +429,7 @@ private static final long serialVersionUID = 0L;
     POKEMON_HOME(23),
     BADGE_DATA(24),
     PLAYER_STATS_SNAPSHOTS(25),
+    DUMMY_DATA(26),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -454,6 +469,7 @@ private static final long serialVersionUID = 0L;
         case 23: return POKEMON_HOME;
         case 24: return BADGE_DATA;
         case 25: return PLAYER_STATS_SNAPSHOTS;
+        case 26: return DUMMY_DATA;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -1151,6 +1167,37 @@ private static final long serialVersionUID = 0L;
     return POGOProtos.Rpc.PlayerStatsSnapshotsProto.getDefaultInstance();
   }
 
+  public static final int DUMMY_DATA_FIELD_NUMBER = 26;
+  /**
+   * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+   * @return Whether the dummyData field is set.
+   */
+  @java.lang.Override
+  public boolean hasDummyData() {
+    return typeCase_ == 26;
+  }
+  /**
+   * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+   * @return The dummyData.
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.DummyDataProto getDummyData() {
+    if (typeCase_ == 26) {
+       return (POGOProtos.Rpc.DummyDataProto) type_;
+    }
+    return POGOProtos.Rpc.DummyDataProto.getDefaultInstance();
+  }
+  /**
+   * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+   */
+  @java.lang.Override
+  public POGOProtos.Rpc.DummyDataProtoOrBuilder getDummyDataOrBuilder() {
+    if (typeCase_ == 26) {
+       return (POGOProtos.Rpc.DummyDataProto) type_;
+    }
+    return POGOProtos.Rpc.DummyDataProto.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1230,6 +1277,9 @@ private static final long serialVersionUID = 0L;
     }
     if (typeCase_ == 25) {
       output.writeMessage(25, (POGOProtos.Rpc.PlayerStatsSnapshotsProto) type_);
+    }
+    if (typeCase_ == 26) {
+      output.writeMessage(26, (POGOProtos.Rpc.DummyDataProto) type_);
     }
     unknownFields.writeTo(output);
   }
@@ -1327,6 +1377,10 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 25) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(25, (POGOProtos.Rpc.PlayerStatsSnapshotsProto) type_);
+    }
+    if (typeCase_ == 26) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(26, (POGOProtos.Rpc.DummyDataProto) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1433,6 +1487,10 @@ private static final long serialVersionUID = 0L;
         if (!getPlayerStatsSnapshots()
             .equals(other.getPlayerStatsSnapshots())) return false;
         break;
+      case 26:
+        if (!getDummyData()
+            .equals(other.getDummyData())) return false;
+        break;
       case 0:
       default:
     }
@@ -1535,6 +1593,10 @@ private static final long serialVersionUID = 0L;
       case 25:
         hash = (37 * hash) + PLAYER_STATS_SNAPSHOTS_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerStatsSnapshots().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + DUMMY_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getDummyData().hashCode();
         break;
       case 0:
       default:
@@ -1854,6 +1916,13 @@ private static final long serialVersionUID = 0L;
           result.type_ = playerStatsSnapshotsBuilder_.build();
         }
       }
+      if (typeCase_ == 26) {
+        if (dummyDataBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = dummyDataBuilder_.build();
+        }
+      }
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -1990,6 +2059,10 @@ private static final long serialVersionUID = 0L;
         }
         case PLAYER_STATS_SNAPSHOTS: {
           mergePlayerStatsSnapshots(other.getPlayerStatsSnapshots());
+          break;
+        }
+        case DUMMY_DATA: {
+          mergeDummyData(other.getDummyData());
           break;
         }
         case TYPE_NOT_SET: {
@@ -5140,6 +5213,147 @@ private static final long serialVersionUID = 0L;
       typeCase_ = 25;
       onChanged();;
       return playerStatsSnapshotsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.DummyDataProto, POGOProtos.Rpc.DummyDataProto.Builder, POGOProtos.Rpc.DummyDataProtoOrBuilder> dummyDataBuilder_;
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     * @return Whether the dummyData field is set.
+     */
+    @java.lang.Override
+    public boolean hasDummyData() {
+      return typeCase_ == 26;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     * @return The dummyData.
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.DummyDataProto getDummyData() {
+      if (dummyDataBuilder_ == null) {
+        if (typeCase_ == 26) {
+          return (POGOProtos.Rpc.DummyDataProto) type_;
+        }
+        return POGOProtos.Rpc.DummyDataProto.getDefaultInstance();
+      } else {
+        if (typeCase_ == 26) {
+          return dummyDataBuilder_.getMessage();
+        }
+        return POGOProtos.Rpc.DummyDataProto.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    public Builder setDummyData(POGOProtos.Rpc.DummyDataProto value) {
+      if (dummyDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        dummyDataBuilder_.setMessage(value);
+      }
+      typeCase_ = 26;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    public Builder setDummyData(
+        POGOProtos.Rpc.DummyDataProto.Builder builderForValue) {
+      if (dummyDataBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        dummyDataBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 26;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    public Builder mergeDummyData(POGOProtos.Rpc.DummyDataProto value) {
+      if (dummyDataBuilder_ == null) {
+        if (typeCase_ == 26 &&
+            type_ != POGOProtos.Rpc.DummyDataProto.getDefaultInstance()) {
+          type_ = POGOProtos.Rpc.DummyDataProto.newBuilder((POGOProtos.Rpc.DummyDataProto) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 26) {
+          dummyDataBuilder_.mergeFrom(value);
+        }
+        dummyDataBuilder_.setMessage(value);
+      }
+      typeCase_ = 26;
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    public Builder clearDummyData() {
+      if (dummyDataBuilder_ == null) {
+        if (typeCase_ == 26) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 26) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        dummyDataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    public POGOProtos.Rpc.DummyDataProto.Builder getDummyDataBuilder() {
+      return getDummyDataFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    @java.lang.Override
+    public POGOProtos.Rpc.DummyDataProtoOrBuilder getDummyDataOrBuilder() {
+      if ((typeCase_ == 26) && (dummyDataBuilder_ != null)) {
+        return dummyDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 26) {
+          return (POGOProtos.Rpc.DummyDataProto) type_;
+        }
+        return POGOProtos.Rpc.DummyDataProto.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.POGOProtos.Rpc.DummyDataProto dummy_data = 26;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        POGOProtos.Rpc.DummyDataProto, POGOProtos.Rpc.DummyDataProto.Builder, POGOProtos.Rpc.DummyDataProtoOrBuilder> 
+        getDummyDataFieldBuilder() {
+      if (dummyDataBuilder_ == null) {
+        if (!(typeCase_ == 26)) {
+          type_ = POGOProtos.Rpc.DummyDataProto.getDefaultInstance();
+        }
+        dummyDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            POGOProtos.Rpc.DummyDataProto, POGOProtos.Rpc.DummyDataProto.Builder, POGOProtos.Rpc.DummyDataProtoOrBuilder>(
+                (POGOProtos.Rpc.DummyDataProto) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 26;
+      onChanged();;
+      return dummyDataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

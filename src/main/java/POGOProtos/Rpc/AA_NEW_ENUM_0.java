@@ -9,24 +9,32 @@ package POGOProtos.Rpc;
 public enum AA_NEW_ENUM_0
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>AA_NEW_ENUM_0_NORMAL = 0;</code>
+   * <code>AA_NEW_ENUM_0_POI = 0;</code>
    */
-  AA_NEW_ENUM_0_NORMAL(0),
+  AA_NEW_ENUM_0_POI(0),
   /**
-   * <code>AA_NEW_ENUM_0_CALL_TO_ACTION = 1;</code>
+   * <code>AA_NEW_ENUM_0_GIFT = 1;</code>
    */
-  AA_NEW_ENUM_0_CALL_TO_ACTION(1),
+  AA_NEW_ENUM_0_GIFT(1),
+  /**
+   * <code>AA_NEW_ENUM_0_NEARBY_POKEMON = 2;</code>
+   */
+  AA_NEW_ENUM_0_NEARBY_POKEMON(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>AA_NEW_ENUM_0_NORMAL = 0;</code>
+   * <code>AA_NEW_ENUM_0_POI = 0;</code>
    */
-  public static final int AA_NEW_ENUM_0_NORMAL_VALUE = 0;
+  public static final int AA_NEW_ENUM_0_POI_VALUE = 0;
   /**
-   * <code>AA_NEW_ENUM_0_CALL_TO_ACTION = 1;</code>
+   * <code>AA_NEW_ENUM_0_GIFT = 1;</code>
    */
-  public static final int AA_NEW_ENUM_0_CALL_TO_ACTION_VALUE = 1;
+  public static final int AA_NEW_ENUM_0_GIFT_VALUE = 1;
+  /**
+   * <code>AA_NEW_ENUM_0_NEARBY_POKEMON = 2;</code>
+   */
+  public static final int AA_NEW_ENUM_0_NEARBY_POKEMON_VALUE = 2;
 
 
   public final int getNumber() {
@@ -53,8 +61,9 @@ public enum AA_NEW_ENUM_0
    */
   public static AA_NEW_ENUM_0 forNumber(int value) {
     switch (value) {
-      case 0: return AA_NEW_ENUM_0_NORMAL;
-      case 1: return AA_NEW_ENUM_0_CALL_TO_ACTION;
+      case 0: return AA_NEW_ENUM_0_POI;
+      case 1: return AA_NEW_ENUM_0_GIFT;
+      case 2: return AA_NEW_ENUM_0_NEARBY_POKEMON;
       default: return null;
     }
   }

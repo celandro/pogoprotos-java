@@ -8,65 +8,54 @@ public interface AvailableSubmissionsPerSubmissionTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-   * @return The enum numeric value on the wire for playerSubmissionType.
-   */
-  int getPlayerSubmissionTypeValue();
-  /**
-   * <code>.POGOProtos.Rpc.PlayerSubmissionTypeProto player_submission_type = 1;</code>
-   * @return The playerSubmissionType.
-   */
-  POGOProtos.Rpc.PlayerSubmissionTypeProto getPlayerSubmissionType();
-
-  /**
-   * <code>int32 submissions_left = 2;</code>
+   * <code>int32 submissions_left = 1;</code>
    * @return The submissionsLeft.
    */
   int getSubmissionsLeft();
 
   /**
-   * <code>int32 min_player_level = 3;</code>
+   * <code>int32 min_player_level = 2;</code>
    * @return The minPlayerLevel.
    */
   int getMinPlayerLevel();
 
   /**
-   * <code>bool is_feature_enabled = 4;</code>
+   * <code>bool is_feature_enabled = 3;</code>
    * @return The isFeatureEnabled.
    */
   boolean getIsFeatureEnabled();
 
   /**
-   * <code>int64 time_window_for_submissions_limit_ms = 5;</code>
+   * <code>int64 time_window_for_submissions_limit_ms = 4;</code>
    * @return The timeWindowForSubmissionsLimitMs.
    */
   long getTimeWindowForSubmissionsLimitMs();
 
   /**
-   * <code>int32 max_poi_distance_in_meters = 6;</code>
+   * <code>int32 max_poi_distance_in_meters = 5;</code>
    * @return The maxPoiDistanceInMeters.
    */
   int getMaxPoiDistanceInMeters();
 
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @return A list containing the blacklistedOs.
    */
   java.util.List<java.lang.String>
       getBlacklistedOsList();
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @return The count of blacklistedOs.
    */
   int getBlacklistedOsCount();
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @param index The index of the element to return.
    * @return The blacklistedOs at the given index.
    */
   java.lang.String getBlacklistedOs(int index);
   /**
-   * <code>repeated string blacklisted_os = 7;</code>
+   * <code>repeated string blacklisted_os = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the blacklistedOs at the given index.
    */
@@ -74,24 +63,24 @@ public interface AvailableSubmissionsPerSubmissionTypeOrBuilder extends
       getBlacklistedOsBytes(int index);
 
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @return A list containing the blacklistedDeviceId.
    */
   java.util.List<java.lang.String>
       getBlacklistedDeviceIdList();
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @return The count of blacklistedDeviceId.
    */
   int getBlacklistedDeviceIdCount();
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @param index The index of the element to return.
    * @return The blacklistedDeviceId at the given index.
    */
   java.lang.String getBlacklistedDeviceId(int index);
   /**
-   * <code>repeated string blacklisted_device_id = 8;</code>
+   * <code>repeated string blacklisted_device_id = 7;</code>
    * @param index The index of the value to return.
    * @return The bytes of the blacklistedDeviceId at the given index.
    */
@@ -99,7 +88,7 @@ public interface AvailableSubmissionsPerSubmissionTypeOrBuilder extends
       getBlacklistedDeviceIdBytes(int index);
 
   /**
-   * <code>bool is_whitelisted_user = 9;</code>
+   * <code>bool is_whitelisted_user = 8;</code>
    * @return The isWhitelistedUser.
    */
   boolean getIsWhitelistedUser();

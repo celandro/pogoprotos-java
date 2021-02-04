@@ -130,7 +130,7 @@ public enum AdFeedbackComplaintReason
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(2);
+    return POGOProtos.Rpc.POGOProtosRpc.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final AdFeedbackComplaintReason[] VALUES = values();

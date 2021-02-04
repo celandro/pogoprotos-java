@@ -188,6 +188,21 @@ public interface QuestProtoOrBuilder extends
   POGOProtos.Rpc.BuddyEvolutionWalkQuestProtoOrBuilder getBuddyEvolutionWalkOrBuilder();
 
   /**
+   * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+   * @return Whether the battle field is set.
+   */
+  boolean hasBattle();
+  /**
+   * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+   * @return The battle.
+   */
+  POGOProtos.Rpc.BattleQuestProto getBattle();
+  /**
+   * <code>.POGOProtos.Rpc.BattleQuestProto battle = 14;</code>
+   */
+  POGOProtos.Rpc.BattleQuestProtoOrBuilder getBattleOrBuilder();
+
+  /**
    * <code>.POGOProtos.Rpc.QuestType quest_type = 1;</code>
    * @return The enum numeric value on the wire for questType.
    */

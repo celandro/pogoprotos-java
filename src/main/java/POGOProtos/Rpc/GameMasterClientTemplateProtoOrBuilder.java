@@ -1398,4 +1398,19 @@ public interface GameMasterClientTemplateProtoOrBuilder extends
    * <code>.POGOProtos.Rpc.InventorySettingsProto inventory_settings = 103;</code>
    */
   POGOProtos.Rpc.InventorySettingsProtoOrBuilder getInventorySettingsOrBuilder();
+
+  /**
+   * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+   * @return Whether the incidentPrioritySettings field is set.
+   */
+  boolean hasIncidentPrioritySettings();
+  /**
+   * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+   * @return The incidentPrioritySettings.
+   */
+  POGOProtos.Rpc.IncidentPrioritySettingsProto getIncidentPrioritySettings();
+  /**
+   * <code>.POGOProtos.Rpc.IncidentPrioritySettingsProto incident_priority_settings = 108;</code>
+   */
+  POGOProtos.Rpc.IncidentPrioritySettingsProtoOrBuilder getIncidentPrioritySettingsOrBuilder();
 }
